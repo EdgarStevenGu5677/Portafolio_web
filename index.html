@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Guaman | Desarrollador de Software</title>
+    <!--CSS -->
+<link rel="stylesheet" href="./assets/styles/index.css">
+    <!-- Fontawesome Iconos -->
+    <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
+
+    <!-- Librerías Objetos movimiento -->
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    
+    <!-- Fuentes -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        function mostrarOcultarMenu() {
+        var nav = document.getElementById("nav");
+        nav.classList.toggle("hidden");
+    }
+    </script>
+
+</head> 
+<body class="bg-gray-100">
+     <!-- MENU ENCABEZADO -->
+     <div class="container-header">
+        <header class="flex justify-between items-center py-4">
+            <div class="logo">
+                <a href="#">Steven</a>
+            </div>
+            <nav id="nav" class="hidden md:flex">
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-800">Inicio</a></li>
+                    <li><a href="#" class="text-gray-800">Sobre mí</a></li>
+                    <li><a href="#" class="text-gray-800">Habilidades</a></li>
+                    <li><a href="#" class="text-gray-800">Formación</a></li>
+                    <li><a href="#" class="text-gray-800">Experiencia</a></li>
+                    <li><a href="#" class="text-gray-800">Proyectos</a></li>
+                    <li><a href="#" class="text-gray-800">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive md:hidden">
+                <button onclick="mostrarOcultarMenu()" class="focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+    </div>
+</div>
+
+    <main>
+            <!-- SECCION INICIO -->
+    <section class="inicio" id="inicio">
+        <picture class="contenedor_image-inicio" data-aos="zoom-in">
+            <img class="image_home" src="./assets/images/image-home.png" alt="Ilustración programador">
+        </picture>
+        
+        <div class="inicio_info">
+            <div class="contenedor_text-info">
+                <p class="inicio_text-1" data-section="inicio" data-value="inicio_text-1">Hola! Soy</p>
+                <p class="inicio_text-2">Steven Guaman</p>
+            </div>
+
+            <div>
+                <p class="inicio_text-3 text-type" data-section="inicio" data-value="inicio_text-3">Desarrollador de Software</p>
+            </div>
+
+            <div class="container_parrafo-info">
+                <p data-section="home" data-value="parrafo-info">Estudiante de programación con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y atractivo para proporcionar la mejor experiencia al usuario.</p>
+            </div>
+
+            <div class="container_button">
+                <a href="#" target="_blank">
+                    <button class="cv_button" data-section="home" data-value="cv_button">Descargar CV</button>
+                </a>
+                <a href="#contacto">
+                    <button class="contact_button" data-section="home" data-value="contact_button">Contacto</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-linkedin.png" alt="LinkedIn" class="icon-linkedin">
+            </a>
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-github.png" alt="GitHub" class="icon-github">
+            </a>
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-codepen.png" alt="CodePen" class="icon-CodePen">
+            </a>
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-instagram.png" alt="Instagram" class="icon-instagram">
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section class="sobreMi" id="sobreMi">
+        <h1 data-section="sobre-mi" data-value="title" data-aos="fade-up">Sobre mí</h1>
+
+        <div class="container_content-sobreMi" data-aos="fade-right">
+            <div class="container_texto-sobreMi">
+                <span class="title_sobreMi">Steven Guaman</span>
+                <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy estudiante del pregrado de Estadística y estudiante autodidacta de Desarrollo Web enfocado en programación Frontend.<br>Aspiro conseguir empleo en el mundo del Desarrollo Web, adquirir experiencia, nuevos conocimientos y fortalecer mi vida profesional.<br><br>Soy una persona empática y entusiasta, con competencias enfocadas en el trabajo en equipo, comunicación asertiva, resolución de problemas, responsable y proactiva, me gusta aprender de los demás y superarme continuamente.</span>
+            </div>
+
+            <picture class="container_image-sobreMi">
+                <img class="image_sobreMi" src="./assets/images/image-sobreMi.png" alt="Ilustración mujer y café">
+            </picture>
+        </div>
+
+        <h1 data-section="lo-que-me-gusta" data-value="title" data-aos="fade-up">¿Lo que me gusta?</h1>
+        <div class="cards_container--habilidades">
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                <img src="./assets/images/icon-html.png" alt="HTML">
+                <p>Leer libros</p>
+            </div>
+            
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="700">
+                <img src="./assets/images/icon-css.png" alt="CSS">
+                <p>Dibujar</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="900">
+                <img src="./assets/images/icon-js.png" alt="JavaScript">
+                <p>Estudiar</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="1100">
+                <img src="./assets/images/icon-Notion.png" alt="Notion">
+                <p>Hacer codigo</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                <img src="./assets/images/icon-tailwind.png" alt="Tailwind">
+                <p>Jugar videojuegos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="habilidades" id="habilidades">
+        <h1 data-section="habilidades" data-value="title" data-aos="fade-up">Habilidades</h1>
+
+        <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos1-habilidades">
+        <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos2-habilidades">
+
+        <div class="cards_container--habilidades">
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                <img src="./assets/images/icon-html.png" alt="HTML">
+                <p>HTML 5</p>
+            </div>
+            
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="700">
+                <img src="./assets/images/icon-css.png" alt="CSS">
+                <p>CSS 3</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="900">
+                <img src="./assets/images/icon-js.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="1100">
+                <img src="./assets/images/icon-Notion.png" alt="Notion">
+                <p>Notion</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="500">
+                <img src="./assets/images/icon-tailwind.png" alt="Tailwind">
+                <p>Tailwind</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="700">
+                <img src="./assets/images/icon-git.png" alt="Git">
+                <p>Git</p>
+            </div>
+            
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="900">
+                <img src="./assets/images/icon-github-hab.png" alt="GitHub">
+                <p>Github</p>
+            </div>
+
+            <div class="cards--habilidades" data-aos="fade-up" data-aos-duration="1100">
+                <img src="./assets/images/icon-trello.png" alt="Trello">
+                <p>Trello</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formación -->
+    <section class="formacion" id="formacion">
+        <h1 data-section="formacion" data-value="title" data-aos="fade-up">Formación</h1>
+
+        <div class="cards_container--formacion">
+            <div class="cards--formacion" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                <img class="logo-sena" src="./assets/images/sena-logo.png" alt="Logo - SENA">
+                <div class="container_texto--formacion">
+                    <p data-section="formacion" data-value="formacion3">Tecnologo analisis y desarrollo de Software</p>
+                    <p>2022 - En curso</p>
+                </div>
+            </div>
+
+            <div class="cards--formacion" data-aos="fade-up" data-aos-duration="500">
+                <img class="logo-one" src="./assets/images/logo-one.png" alt="Logo - SENA">
+                <div class="container_texto--formacion">
+                    <p data-section="formacion" data-value="formacion2">Técnico en diseño e integración en multimedia</p>
+                    <p data-section="formacion" data-value="tiempo-formacion2">2020 - 2021</p>
+                </div>
+            </div>
+
+            <div class="cards--formacion" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                <img class="logo-sena" src="./assets/images/sena-logo.png" alt="Logo - SENA">
+                <div class="container_texto--formacion">
+                    <p data-section="formacion" data-value="formacion3">...</p>
+                    <p>2017 - 2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section class="experiencia" id="experiencia">
+         <h1 data-section="experiencia" data-value="title" data-aos="fade-up">Experencia</h1>
+    
+         <div class="cards_container--experiencia">
+            <div class="cards--experiencia" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                <img class="logo-sena" src="./assets/images/sena-logo.png" alt="Logo - SENA">
+                    <div class="container_texto--experiencia">
+                        <p data-section="experiencia" data-value="experiencia">Hino Motors Manufacturing Colombia SAS</p>
+                        <p>Area IT</p>
+                        <p>5 DE MARZO - 4 DE SEPTIEMBRE</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="proyectos" id="proyectos">
+        <h1 data-section="proyectos" data-value="title" data-aos="fade-up">Proyectos</h1>
+
+        <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos1-proyectos">
+        <img src="./assets/images/puntos.png" alt="Decoración puntos" class="puntos2-proyectos">
+
+            <div class="cards--proyectos card_portafolio" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
+                <div class="container_imgCard--proyectos">
+                    <img src="./assets/images/cap-portafolio.png" alt="Proyecto: Portafolio">
+                </div>
+
+                <div class="container_textCard--proyectos text-portafolio">
+                    <h2 data-section="proyectos" data-value="title-proyecto2">Portafolio</h2>
+                    <p data-section="proyectos" data-value="info-proyecto2">Mi portafolio web personal, donde se encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre mi formación.</p>
+                </div>
+
+                <div class="container_btn--proyectos">
+                    <a href="#" target="_blank">
+                        <button class="btn_demo">
+                            <img src="./assets/images/icon-demoProyecto.png" alt="Demostración">DEMO
+                        </button>
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <button class="btn_repo">
+                            <img src="./assets/images/icon-githubProyecto.png" alt="Repositorio de github">REPO
+                        </button>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Contacto -->
+    <section class="contacto" id="contacto">
+        <h1 data-section="contacto" data-value="title" data-aos="fade-up">Contacto</h1>
+
+        <div class="container_box--contacto" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+
+            <div class="container--contacto">
+                <div class="container_text--contacto">
+                    <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.</p>
+                </div>
+
+                <form id="form" class="form-contact" name="contacto-portafolio" netlify>
+                    <input id="nombre" type="text" name="name" placeholder="Nombre | Name" required>
+                    <input id="email" type="email" name="email" placeholder="E-mail" required>
+                    <input id="asunto" type="text" name="affair" placeholder="Asunto | Subject" required>
+                    <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje | Message" required></textarea>
+
+                    <div class="btn_form--contacto">
+                        <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+
+<footer>
+    <div class="contianer--footer">
+        <div class="container_redes-footer">
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-github.png" alt="GitHub">
+            </a>
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-codepen.png" alt="CodePen" class="icon_codepen--footer">
+            </a>
+            <a href="#" target="_blank">
+                <img src="./assets/images/icon-instagram.png" alt="Instagram">
+            </a>
+        </div>
+
+        <div class="container_text--footer">
+            <span>Copyright © | Coded with</span>
+            <img src="./assets/images/icon-corazon.png" alt="Corazón">
+            <span>by</span>
+            <span>Steven Guaman</span>
+        </div>
+    </div>
+</footer>
+
+<div class="go-top-container">
+    <div class="go-top-button">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</div>
+
+<!-- Archivo Js -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Librería de animaciones -->
+<script>
+    AOS.init();
+</script>
+
+<!-- Mi script -->
+<script src="#"></script>
+</body>
+</html>
