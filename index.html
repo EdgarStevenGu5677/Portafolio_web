@@ -32,7 +32,7 @@
             <div class="logo">
                 <a href="#">Steven</a>
             </div>
-            <nav id="nav" class="hidden md:flex">
+            <nav id="nav" class="hidden md:flex flex-grow">
                 <ul class="flex space-x-4">
                     <li><a href="#" class="text-gray-800">Inicio</a></li>
                     <li><a href="#" class="text-gray-800">Sobre mí</a></li>
@@ -42,7 +42,16 @@
                     <li><a href="#" class="text-gray-800">Proyectos</a></li>
                     <li><a href="#" class="text-gray-800">Contacto</a></li>
                 </ul>
+                <div class="flex items-center">
+                    <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none ml-4">
+                        <i class="fas fa-language"></i>
+                    </button>
+                </div>
             </nav>
+            
             <div class="nav-responsive md:hidden">
                 <button onclick="mostrarOcultarMenu()" class="focus:outline-none">
                     <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
