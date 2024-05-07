@@ -1,0 +1,231 @@
+ 
+/* Estilo para el relleno superior en el contenido principal */
+main {
+    padding-top: 80px; /* Ajusta este valor según la altura de tu barra de navegación */
+}
+
+/* Estilo para el enlace activo y hover */
+#menuList a.active,
+#menuList a:hover {
+    color: #1CB0E8; /* Color de texto azul */
+}
+
+/* Estilo para la línea debajo del enlace activo */
+#menuList a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    background-color: #1CB0E8; /* Color de la línea */
+    margin-top: 2px; /* Espacio entre el texto y la línea */
+}
+#mobileNav {
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+#mobileNav > div {
+    width: 100%; /* Ajusta el ancho del contenido al 100% */
+}
+
+
+/* Home */
+
+.container_button {
+    text-align: center;
+}
+
+.container_button a {
+    text-decoration: none;
+}
+
+.cv_button {
+    color: #1CB0E8; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #1CB0E8; /* Añadir borde con color especificado */
+    border-radius: 20px; /* Hacer bordes redondos */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave */
+    width: 200px; /* Ancho fijo para ambos botones */
+    height: 30px;
+    display: inline-flex; /* Utilizar flexbox para centrar verticalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+}
+
+.cv_button:hover {
+    background-color: transparent; /* Eliminar fondo al pasar sobre el botón */
+    color: #1CB0E8; /* Cambiar color del texto al pasar sobre el botón */
+    border-color: #1CB0E8; /* Cambiar color del borde al pasar sobre el botón */
+}
+
+.contact_button {
+    background-color: #1CB0E8; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Quitar borde */
+    border-radius: 20px; /* Hacer bordes redondos */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+    width: 200px; /* Ancho fijo para ambos botones */
+    height: 30px;
+    display: inline-flex; /* Utilizar flexbox para centrar verticalmente el contenido */
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+}
+
+
+.contact_button:hover {
+    background-color: #0e8eac; /* Cambiar color de fondo al pasar sobre el botón */
+}
+
+.links {
+    display: flex;
+    justify-content: space-x-4;
+}
+
+.icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white; /* Color de fondo del círculo */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+.icon-circle:hover {
+    background-color: #0e8eac; /* Cambiar color de fondo al pasar sobre el círculo */
+}
+
+.icon {
+    color: #1CB0E8; /* Color del icono */
+    transition: color 0.3s; /* Transición suave para el cambio de color del icono */
+}
+
+.icon-circle:hover .icon {
+    color: white; /* Cambiar color del icono al pasar sobre el círculo */
+}
+
+
+.inicio_text-1{
+    font-size: 2em;
+}
+
+.inicio_text-2{
+    color: #1CB0E8;
+    font-size: 5em; /* Tamaño relativo */
+}
+
+.home_text-3{
+    
+    font-size: 2em; /* Tamaño relativo */
+}
+
+.parrafo-info {
+    width: 70%; /* Cambia el valor según el ancho deseado */
+}
+
+
+/*Sobre mi*/
+
+    .sobreMi {
+        background-color: #f0f0f0; /* Cambia este valor al color que desees */
+        /* También puedes añadir otros estilos como padding, margen, etc. */
+    }
+
+    .title {
+        font-size: 38px; /* Tamaño de la fuente aumentado a 32px */
+      }
+
+      .title_sobreMi{
+        font-size:  34px;
+      }
+      .texto_sobreMi{
+        font-size:  20px;
+      }
+      
+
+      /*Habilidades*/
+      .cards--habilidades img {
+        width: 80px; /* Ajusta este valor según sea necesario */
+        height: 80px; /* Esto mantendrá la proporción original */
+    }
+
+
+    #menuhabilidades a.active{
+        color: #1CB0E8; /* Color de texto azul */
+        border-bottom: 2px solid #1CB0E8; /* Línea debajo */
+    }
+    
+    #menuhabilidades a:hover {
+        color: #1CB0E8; 
+    }
+
+     /*Experiencia*/
+
+  
+ /*Proyectos*/
+ .custom-blue-bg {
+    background-color: #1CB0E8;
+}
+
+.custom-blue-bg:hover {
+    background-color: #1689b9;
+}
+
+.custom-blue-border {
+    border: 3px solid #1CB0E8;
+    color: #1CB0E8; /* Color del texto */
+}
+
+.custom-blue-border:hover {
+    background-color: #1CB0E8;
+    color: white; /* Cambio de color de texto al hacer hover */
+}
+.text-center {
+    text-align: center;
+}
+
+.btn_ver-todos-proyectos {
+    background-color: #007bff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    padding: 12px 24px; /* Espaciado interno (arriba y abajo, izquierda y derecha) */
+    border-radius: 5px; /* Borde redondeado */
+    font-size: 16px; /* Tamaño del texto */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    display: inline-block; /* Hace que el enlace se comporte como un bloque, lo que permite definir dimensiones y márgenes */
+    transition: color 0.3s ease; /* Efecto de transición para el color del texto */
+    border: 2px solid transparent; /* Borde transparente */
+}
+
+.btn_ver-todos-proyectos:hover {
+    color: #007bff; /* Texto azul al hacer hover */
+    background-color: transparent; /* Fondo transparente al hacer hover */
+    border-color: #007bff; /* Borde azul al hacer hover */
+}
+
+
+.nombre-input:focus,
+    input:focus,
+    textarea:focus {
+        outline: none; /* Quita el borde de enfoque predeterminado */
+        border: 1px solid #1CB0E8; /* Establece el borde personalizado cuando está enfocado */
+        background-color: #D1EAF8; /* Establece el color de fondo cuando está enfocado */
+    }
+
+    #btn-enviar {
+        background-color: #1CB0E8; /* Color de fondo azul */
+        color: white; /* Color del texto blanco */
+        padding: 10px 20px; /* Espaciado interno del botón */
+        border: none; /* Quita el borde */
+        width: 200px; 
+        border-radius: 5px; /* Borde redondeado */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    }
+
+    /* Estilo para el botón cuando se pasa el mouse sobre él */
+    #btn-enviar:hover {
+        background-color: #13789e; /* Color de fondo más oscuro al pasar el mouse */
+    }
