@@ -229,3 +229,9 @@ main {
     #btn-enviar:hover {
         background-color: #13789e; /* Color de fondo más oscuro al pasar el mouse */
     }
+
+
+    /*Footer*/
+    .hidden-card {
+        display: none;
+    }
