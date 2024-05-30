@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Guaman | Desarrollador de Software</title>
     <!--CSS -->
- <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
     <!-- Fontawesome Iconos -->
     <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
 
 
     <!-- Librerías Objetos movimiento -->
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-    
+
     <!-- Fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head> 
+</head>
+
 <body id="inicio" class="bg-gray-100">
-     <!-- MENU ENCABEZADO -->
-     <div  class="container-header fixed top-0 w-full bg-white shadow-lg">
+    <!-- MENU ENCABEZADO -->
+    <div class="container-header fixed top-0 w-full bg-white shadow-lg">
         <header class="flex justify-between items-center py-4">
             <div class="logo md:min-w-0">
                 <a href="#inicio">
                     <img src="assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
-                </a>                                   
+                </a>
             </div>
-            <nav id="nav" class="lg:flex lg:flex-row lg:items-center lg:justify-end hidden flex flex-col lg:block mr-12">
+            <nav id="nav"
+                class="lg:flex lg:flex-row lg:items-center lg:justify-end hidden flex flex-col lg:block mr-12">
                 <ul id="menuList" class="flex space-x-12">
                     <li><a href="#inicio" class="menu-link">Inicio</a></li>
                     <li><a href="#sobreMi" class="menu-link">Sobre mí</a></li>
@@ -44,35 +47,38 @@
                         </button>
                     </div>
                 </ul>
-            </nav>
-      
+            </nav>    
             <div class="lg:hidden ml-4">
                 <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12">
-                    <svg id="menuIcon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="menuIcon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <!-- Definir los dos estados del ícono: menú y "x" -->
-                        <path id="menuPath" class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        <path id="xPath" class="x-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        <path id="menuPath" class="menu-icon" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <path id="xPath" class="x-icon hidden" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
-                
+
             </div>
         </header>
         <!-- Menú móvil -->
-        <div id="mobileNav" class="lg:hidden fixed top-full left-0 w-full bg-gray-200 hidden flex justify-center items-center">
+        <div id="mobileNav"
+            class="lg:hidden fixed top-full left-0 w-full bg-gray-200 hidden flex justify-center items-center">
             <div class="flex flex-col items-center space-y-4">
                 <!-- Aquí se agregará el menú móvil dinámicamente -->
             </div>
         </div>
     </div>
-      
-    <div id="projects-container"></div>
-    
+
     <main id="mainContent">
-      
+
         <!-- SECCION INICIO -->
-        <section class="home items-center h-screen flex justify-center"> <!-- Agrega clases para centrar verticalmente -->
+        <section class="home items-center h-screen flex justify-center">
+            <!-- Agrega clases para centrar verticalmente -->
             <div class="flex justify-center">
-                <div class="lg:col-span-1 lg:w-10 border-r border-gray-300 mx-6 mt-80"> <!-- Añade margen horizontal y vertical a la columna -->
+                <div class="lg:col-span-1 lg:w-10 border-r border-gray-300 mx-6 mt-80">
+                    <!-- Añade margen horizontal y vertical a la columna -->
                     <!-- Contenido de la primera columna -->
                     <div class="icon-circle mb-4"> <!-- Añade margen inferior -->
                         <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
@@ -94,7 +100,7 @@
                             <i class="fab fa-discord icon"></i>
                         </a>
                     </div>
-                </div>     
+                </div>
                 <!-- Segunda columna para el resto de los elementos -->
                 <div class="lg:w-65 border-r border-gray-300 mx-10"> <!-- Añade bordes a la izquierda de la columna -->
                     <!-- Información -->
@@ -104,456 +110,529 @@
                         <p class="inicio_text-2">Steven Guaman</p>
                     </div>
                     <div>
-                        <p id="typingEffect" class="home_text-3 text-type" data-section="inicio" data-value="home_text-3"></p>
+                        <p id="typingEffect" class="home_text-3 text-type" data-section="inicio"
+                            data-value="home_text-3"></p>
                     </div>
-                
+
                     <div class="container_parrafo-info">
-                        <p class="parrafo-info" data-section="home" data-value="parrafo-info">Estudiante de programación con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y atractivo para proporcionar la mejor experiencia al usuario.</p>
+                        <p class="parrafo-info" data-section="home" data-value="parrafo-info">Estudiante de programación
+                            con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y
+                            atractivo para proporcionar la mejor experiencia al usuario.</p>
                     </div>
-                
+
                     <!-- Contenedor para los botones -->
                     <div class="container_button mt-6 flex gap-4"> <!-- Utiliza flexbox para distribuir los botones -->
                         <a href="assets/pdf/curriculum.pdf" download="curriculum.pdf" target="_blank">
-                            <button class="cv_button" data-section="home" data-value="cv_button">Descargar CV <i class="fas fa-download"></i></button>
+                            <button class="cv_button" data-section="home" data-value="cv_button">Descargar CV <i
+                                    class="fas fa-download"></i></button>
                         </a>
-                        
-                        
+
+
                         <a href="#contacto">
-                            <button class="contact_button" data-section="home" data-value="contact_button">Contacto</button>
+                            <button class="contact_button" data-section="home"
+                                data-value="contact_button">Contacto</button>
                         </a>
                     </div>
                 </div>
                 <!-- Imagen -->
                 <div class="lg:w-25 border-r border-gray-300 ml-auto mr-52"> <!-- Añade margen horizontal al div -->
                     <picture class="contenedor_image-inicio" data-aos="zoom-in">
-                        <img class="image_home" src="./assets/images/fotosteven.png" alt="Ilustración programador" style="width: 650px; height: 400px;">
+                        <img class="image_home" src="./assets/images/fotosteven.png" alt="Ilustración programador"
+                            style="width: 650px; height: 400px;">
                     </picture>
                 </div>
             </div>
         </section>
-        
-    <!-- SECCION SOBRE MI -->
-    <section class="sobreMi items-center flex justify-center bg-gray-200 h-full py-16" id="sobreMi">
-        <div class="max-w-screen-xl w-full mx-auto p-8"> <!-- Agrega my-8 para margen vertical -->
-            <h1 class="title text-center mx-24" class="title text-center mx-24" data-section="sobre-mi" data-value="title" data-aos="fade-up">Sobre mí</h1>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Primera columna (imagen) -->
-                <div class="container_image-sobreMi">
-                    <picture>
-                        <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
-                    </picture>
-                </div>
-    
-                <!-- Segunda columna (texto) -->
-                <div class="container_texto-sobreMi mt-12">
-                    <span class="title_sobreMi">Steven Guaman<br></span>
-                    <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy desarrollador de software con
-                        conocimientos en diseño e integración en multimedia. Aspiro a obtener empleo en el campo del desarrollo, donde
-                        pueda aplicar mis habilidades técnicas y creativas para crear soluciones innovadoras. Busco oportunidades para
-                        adquirir experiencia, ampliar mis conocimientos y fortalecer mi trayectoria profesional en este emocionante
-                        campo. <br><br>
-                        Soy empático, entusiasta y competente en trabajo en equipo, comunicación, resolución de problemas,
-                        responsabilidad y proactividad. Disfruto aprendiendo de otros y superándome constantemente.</span>
-                </div>
-            </div>
-    
-            <h1 class="title text-center my-24" data-section="lo-que-me-gusta" data-value="title" data-aos="fade-up">¿Lo que me gusta?</h1>
-            <div class="cards_container--habilidades flex flex-wrap justify-center"> <!-- Cambia la disposición a fila -->
-                <div class="cards_container--habilidades flex flex-wrap justify-center"> <!-- Cambia la disposición a fila -->
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-duration="500">
-                        <i class="fas fa-book-open inline-block mb-2 text-3xl"></i> <!-- Centra el ícono verticalmente -->
-                        <p>Leer libros</p>
-                    </div>
-                
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-duration="700">
-                        <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i> <!-- Centra el ícono verticalmente -->
-                        <p>Dibujar</p>
-                    </div>
-                
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-duration="900">
-                        <i class="fas fa-graduation-cap inline-block mb-2 text-3xl"></i> <!-- Centra el ícono verticalmente -->
-                        <p>Estudiar</p>
-                    </div>
-                
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-duration="1100">
-                        <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i> <!-- Centra el ícono verticalmente -->
-                        <p>Hacer código</p>
-                    </div>
-                
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-duration="500">
-                        <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i> <!-- Centra el ícono verticalmente -->
-                        <p>Jugar videojuegos</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
-  
-    <!-- Habilidades -->
-    <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades">
-        <h1 class="title text-center mx-24"  data-section="habilidades" data-value="title" data-aos="fade-up">Habilidades</h1>
-    <div>
-        <div  class="flexjustify-between mt-12" id="menuhabilidades">
-            <a href="#" class="mr-8 active" onclick="mostrarHabilidades('habilidades1', event)">Tecnicas</a>
-            <a href="#" onclick="mostrarHabilidades('habilidades2', event)">Otras</a>
-        </div>   
-        <div id="habilidades1" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12">
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/html.webp" alt="HTML">
-                <p>HTML 5</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/css.webp" alt="CSS">
-                <p>CSS 3</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/js.webp" alt="JavaScript">
-                <p>JavaScript</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/net.webp" alt="Net">
-                <p>Asp.Net</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/laravel.webp" alt="Laravel">
-                <p>Laravel</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/sqlserver.webp" alt="SqlServer">
-                <p>Sql Server</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/mysql.webp" alt="MySQL">
-                <p>My SQL</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/github.webp" alt="Github">
-                <p>Git hub</p>
-            </div>
-        </div>
 
-        <div id="habilidades2" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12" style="display:none;">
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/adobexd.webp" alt="Adobexd">
-                <p>Adobe XD</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/inskape.webp" alt="Inskape">
-                <p>Inskape</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/krita.webp" alt="Krita">
-                <p>Krita</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/gimp.webp" alt="Gimp">
-                <p>Gimp</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/aseprite.webp" alt="Aseprite">
-                <p>Aseprite</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/notion.webp" alt="Notion">
-                <p>Notion</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/trello.webp" alt="Trello">
-                <p>Trello</p>
-            </div>
-    
-            <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300" data-aos="fade-up" data-aos-duration="500">
-                <img src="./assets/images/scratch.webp" alt="Scratch">
-                <p>Scratch</p>
-            </div>
-        </div>
-    </div>
-    </section>
-    
-    
-    <!-- Formación -->
-    <section class="formacion bg-gray-200 py-16" id="formacion">
-        <div class="max-w-screen-xl mx-auto p-8">
-            <h1 class="title text-center mb-12" data-section="formacion" data-value="title" data-aos="fade-up">Formación</h1>
-            <div class="flex justify-center">
-                <div class="cards_container--formacion grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <!-- Card 1 -->
-                    <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                        <div class="card-content p-4">
-                            <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp" alt="Logo - SENA">
-                            <div class="container_texto--formacion text-center">
-                                <p data-section="formacion" data-value="formacion3">Tecnologo analisis y desarrollo de Software</p>
-                                <p>2022 - En curso</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80" data-aos="fade-up" data-aos-duration="500">
-                        <div class="card-content p-4">
-                            <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp" alt="Logo - SENA">
-                            <div class="container_texto--formacion text-center">
-                                <p data-section="formacion" data-value="formacion2">Técnico en diseño e integración en multimedia</p>
-                                <p data-section="formacion" data-value="tiempo-formacion2">2020 - 2021</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                        <div class="card-content p-4">
-                            <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/logo-colegio.webp" alt="Logo - colegio">
-                            <div class="container_texto--formacion text-center">
-                                <p data-section="formacion" data-value="formacion3">Bachillerato Basico</p>
-                                <p>2016 - 2021</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- SECCION SOBRE MI -->
+        <section class="sobreMi items-center flex justify-center bg-gray-200 h-full py-16" id="sobreMi">
+            <div class="max-w-screen-xl w-full mx-auto p-8"> <!-- Agrega my-8 para margen vertical -->
+                <h1 class="title text-center mx-24" class="title text-center mx-24" data-section="sobre-mi"
+                    data-value="title" data-aos="fade-up">Sobre mí</h1>
 
-    <!-- Experiencia -->
-    <section class="experiencia bg-gray-200 py-16" id="experiencia">
-        <div class="max-w-screen-xl mx-auto p-8">
-            <h1 class="title text-center mb-12" data-section="experiencia" data-value="title" data-aos="fade-up">Experiencia</h1>
-            <div class="cards_container--experiencia flex flex-col justify-center items-center space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Primera columna (imagen) -->
+                    <div class="container_image-sobreMi">
+                        <picture>
+                            <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
+                        </picture>
+                    </div>
 
-                <!-- Primera experiencia -->
-                <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                    <div class="container_texto--experiencia">
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center space-x-2">
-                                <p class="text-gray-800 text-lg">Area IT @</p>
-                                <p class="text-gray-800 text-lg" data-section="experiencia" data-value="experiencia">Hino Motors
-                                    Manufacturing Colombia SAS</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <p class="text-gray-800 text-lg">2024 - Presente</p>
-                                <button class="toggle-button text-gray-800 focus:outline-none ml-2">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <!-- Segunda columna (texto) -->
+                    <div class="container_texto-sobreMi mt-12">
+                        <span class="title_sobreMi">Steven Guaman<br></span>
+                        <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy desarrollador
+                            de software con
+                            conocimientos en diseño e integración en multimedia. Aspiro a obtener empleo en el campo del
+                            desarrollo, donde
+                            pueda aplicar mis habilidades técnicas y creativas para crear soluciones innovadoras. Busco
+                            oportunidades para
+                            adquirir experiencia, ampliar mis conocimientos y fortalecer mi trayectoria profesional en
+                            este emocionante
+                            campo. <br><br>
+                            Soy empático, entusiasta y competente en trabajo en equipo, comunicación, resolución de
+                            problemas,
+                            responsabilidad y proactividad. Disfruto aprendiendo de otros y superándome
+                            constantemente.</span>
                     </div>
-                </div>
-                <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
-                    <p>Cota-Cundinamarca</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                       
-                        <div>
-                            <p class="text-gray-800 text-lg">Durante mi experiencia como aprendiz en tecnologías de la información,
-                                desarrollé habilidades en programación utilizando .NET y Laravel, así como en el manejo de bases de
-                                datos SQL Server. Participé en proyectos que incluyeron el desarrollo de aplicaciones web, aprendí a
-                                trabajar en equipo y a comunicarme efectivamente. Esta experiencia sentó una base sólida para mi
-                                carrera en tecnología de la información y estoy emocionado por seguir creciendo en este campo.</p>
-                        </div>
-                        <div class="flex justify-center items-center">
-                            <img src="assets/images/hino.webp" alt="Logo de Hino Motors" class="max-w-full h-auto">
-                        </div>
-                    </div>
-                </div>
-                <!-- Segunda experiencia -->
-                <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                    <div class="container_texto--experiencia">
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center space-x-2">
-                                <p class="text-gray-800 text-lg">Area IT @</p>
-                                <p class="text-gray-800 text-lg" data-section="experiencia" data-value="experiencia">Hino Motors
-                                    Manufacturing Colombia SAS</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <p class="text-gray-800 text-lg">2024 - Presente</p>
-                                <button class="toggle-button text-gray-800 focus:outline-none ml-2">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
-                    <p class="text-gray-800 text-lg">Durante mi experiencia como aprendiz en tecnologías de la información,
-                        desarrollé habilidades en programación utilizando .NET y Laravel, así como en el manejo de bases de
-                        datos SQL Server. Participé en proyectos que incluyeron el desarrollo de aplicaciones web, aprendí a
-                        trabajar en equipo y a comunicarme efectivamente. Esta experiencia sentó una base sólida para mi
-                        carrera en tecnología de la información y estoy emocionado por seguir creciendo en este campo.</p>
                 </div>
 
-            </div>
-        </div>
-    </section>
-    <script>
-        document.querySelectorAll('.toggle-button').forEach(button => {
-            button.addEventListener('click', function() {
-                const extraInfo = this.closest('.cards--experiencia').nextElementSibling;
-                if (extraInfo.classList.contains('hidden-card')) {
-                    extraInfo.classList.remove('hidden-card');
-                    this.innerHTML = '<i class="fas fa-minus"></i>';
-                } else {
-                    extraInfo.classList.add('hidden-card');
-                    this.innerHTML = '<i class="fas fa-plus"></i>';
-                }
-            });
-        });
-    </script>
+                <h1 class="title text-center my-24" data-section="lo-que-me-gusta" data-value="title"
+                    data-aos="fade-up">¿Lo que me gusta?</h1>
+                <div class="cards_container--habilidades flex flex-wrap justify-center">
+                    <!-- Cambia la disposición a fila -->
+                    <div class="cards_container--habilidades flex flex-wrap justify-center">
+                        <!-- Cambia la disposición a fila -->
+                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
+                            data-aos="fade-up" data-aos-duration="500">
+                            <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
+                            <!-- Centra el ícono verticalmente -->
+                            <p>Leer libros</p>
+                        </div>
 
-    <!-- Proyectos -->
-    <section class="proyectos bg-gray-200" id="proyectos">
-        <div class="max-w-screen-xl mx-auto p-8">
-            <h1 class="title text-center mb-12" data-section="proyectos" data-value="title" data-aos="fade-up">Proyectos</h1>
-            <div class="flex flex-wrap justify-center">
-                <!-- Proyecto 1 -->
-                <div class="w-full md:w-1/3 px-2 mb-4">
-                    <div class="cards--proyectos card_portafolio rounded-lg bg-white mb-4" data-aos="zoom-in-up"
-                        data-aos-anchor-placement="center-bottom">
-                        <div class="container_imgCard--proyectos">
-                            <img src="./assets/images/prueba2.png" alt="Proyecto: Portafolio" class="rounded-t-lg">
+                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
+                            data-aos="fade-up" data-aos-duration="700">
+                            <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i>
+                            <!-- Centra el ícono verticalmente -->
+                            <p>Dibujar</p>
                         </div>
-                        <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                            <h2 data-section="proyectos" data-value="title-proyecto1">Portafolio web</h2>
-                            <p data-section="proyectos" data-value="info-proyecto1">Mi portafolio web personal, donde se
-                                encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre
-                                mi formación.</p>
-                        </div>
-                        <div class="container_btn--proyectos flex justify-center mt-12 mb-4">
-                            <a href="#" target="_blank" class="mr-4 mb-4">
-                                <button class="btn_demo flex items-center custom-blue-bg text-white px-12 py-3 rounded-md">
-                                    <i class="fas fa-eye mr-2"></i> DEMO
-                                </button>
-                            </a>
-                            <a href="#" target="_blank" class="mb-4">
-                                <button class="btn_demo flex items-center custom-blue-border px-12 py-3 rounded-md"
-                                    style="height: 48px;">
-                                    <i class="fab fa-github mr-2"></i> REPO
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 2 -->
-                <div class="w-full md:w-1/3 px-2 mb-4">
-                    <div class="cards--proyectos card_portafolio bg-white rounded-lg" data-aos="zoom-in-up"
-                        data-aos-anchor-placement="center-bottom">
-                        <div class="container_imgCard--proyectos">
-                            <img src="./assets/images/prueba1.png" alt="Proyecto: Portafolio" class="rounded-t-lg">
-                        </div>
-                        <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                            <h2 data-section="proyectos" data-value="title-proyecto2">Servisoft</h2>
-                            <p data-section="proyectos" data-value="info-proyecto2">Mi portafolio web personal, donde se
-                                encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre
-                                mi formación.</p>
-                        </div>
-                        <div class="container_btn--proyectos flex justify-center mt-12 mb-4">
-                            <a href="#" target="_blank" class="mr-4 mb-4">
-                                <button class="btn_demo flex items-center custom-blue-bg text-white px-12 py-3 rounded-md">
-                                    <i class="fas fa-eye mr-2"></i> DEMO
-                                </button>
-                            </a>
-                            <a href="#" target="_blank" class="mb-4">
-                                <button class="btn_demo flex items-center custom-blue-border px-12 py-3 rounded-md"
-                                    style="height: 48px;">
-                                    <i class="fab fa-github mr-2"></i> REPO
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto 3 -->
-                <div class="w-full md:w-1/3 px-2 mb-4">
-                    <div class="cards--proyectos card_portafolio bg-white rounded-lg" data-aos="zoom-in-up"
-                        data-aos-anchor-placement="center-bottom">
-                        <div class="container_imgCard--proyectos">
-                            <img src="./assets/images/prueba3.png" alt="Proyecto: Portafolio" class="rounded-t-lg">
-                        </div>
-                        <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                            <h2 data-section="proyectos" data-value="title-proyecto3">Proyecto 3</h2>
-                            <p data-section="proyectos" data-value="info-proyecto3">Mi portafolio web personal, donde se
-                                encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre
-                                mi formación.</p>
-                        </div>
-                        <div class="container_btn--proyectos flex justify-center mt-12 mb-4">
-                            <a href="#" target="_blank" class="mr-4 mb-4">
-                                <button class="btn_demo flex items-center custom-blue-bg text-white px-12 py-3 rounded-md">
-                                    <i class="fas fa-eye mr-2"></i> DEMO
-                                </button>
-                            </a>
-                            <a href="#" target="_blank" class="mb-4">
-                                <button class="btn_demo flex items-center custom-blue-border px-12 py-3 rounded-md"
-                                    style="height: 48px;">
-                                    <i class="fab fa-github mr-2"></i> REPO
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="#" id="show-projects-btn" class="btn_ver-todos-proyectos inline-block px-12 py-4 text-white font-semibold rounded-md mt-8">Ver todos mis proyectos</a>
-            </div>
-        </div>
-    </section>
-  
-    
 
-    <!-- Contacto -->
-    <section class="contacto flex justify-center items-center" id="contacto">
-        <div class="max-w-screen-xl mx-auto p-20">
-            <h1 class="title text-center mb-4" data-section="contacto" data-value="title" data-aos="fade-up">Contacto</h1>
-    
-            <div class="container_box--contacto flex justify-between" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-                <div class="container--contacto">
-                    <div class="container_text--contacto mb-4">
-                        <p data-section="contacto" data-value="text"> No dude en ponerse en contacto conmigo</p>
+                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
+                            data-aos="fade-up" data-aos-duration="900">
+                            <i class="fas fa-graduation-cap inline-block mb-2 text-3xl"></i>
+                            <!-- Centra el ícono verticalmente -->
+                            <p>Estudiar</p>
+                        </div>
+
+                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
+                            data-aos="fade-up" data-aos-duration="1100">
+                            <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i>
+                            <!-- Centra el ícono verticalmente -->
+                            <p>Hacer código</p>
+                        </div>
+
+                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
+                            data-aos="fade-up" data-aos-duration="500">
+                            <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i>
+                            <!-- Centra el ícono verticalmente -->
+                            <p>Jugar videojuegos</p>
+                        </div>
                     </div>
-                    <div class="container_text--contacto mb-4">
-                        <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.</p>
-                    </div>
-    
-                    <form id="form" class="form-contact" name="contacto-portafolio" netlify>
-                        <div class="form-row mb-4">
-                            <input id="nombre" type="text" name="name" placeholder="Nombre" required class="nombre-input w-full bg-gray-200 p-3 rounded">
-                        </div>
-                        <div class="form-row mb-4">
-                            <input id="email" type="email" name="email" placeholder="E-mail" required class="w-full bg-gray-200 p-3 rounded">
-                        </div>
-                        <div class="form-row mb-4">
-                            <input id="asunto" type="text" name="affair" placeholder="Asunto" required class="w-full bg-gray-200 p-3 rounded">
-                        </div>
-                        <div class="form-row mb-4">
-                            <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required class="w-full bg-gray-200 p-3 rounded"></textarea>
-                        </div>
-                        
-                        <div class="btn_form--contacto mb-4">
-                            <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">
-                                <i class="fas fa-paper-plane"></i> Enviar
-                            </button>
-                        </div>
-                    </form>
-                    
+
                 </div>
             </div>
-        </div>
-    </section>
-    
-    
+        </section>
+
+
+        <!-- Habilidades -->
+        <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades">
+            <h1 class="title text-center mx-24" data-section="habilidades" data-value="title" data-aos="fade-up">
+                Habilidades</h1>
+            <div>
+                <div class="flexjustify-between mt-12" id="menuhabilidades">
+                    <a href="#" class="mr-8 active" onclick="mostrarHabilidades('habilidades1', event)">Tecnicas</a>
+                    <a href="#" onclick="mostrarHabilidades('habilidades2', event)">Otras</a>
+                </div>
+                <div id="habilidades1" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12">
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/html.webp" alt="HTML">
+                        <p>HTML 5</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/css.webp" alt="CSS">
+                        <p>CSS 3</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/js.webp" alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/net.webp" alt="Net">
+                        <p>Asp.Net</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/laravel.webp" alt="Laravel">
+                        <p>Laravel</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/sqlserver.webp" alt="SqlServer">
+                        <p>Sql Server</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/mysql.webp" alt="MySQL">
+                        <p>My SQL</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/github.webp" alt="Github">
+                        <p>Git hub</p>
+                    </div>
+                </div>
+
+                <div id="habilidades2" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12"
+                    style="display:none;">
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/adobexd.webp" alt="Adobexd">
+                        <p>Adobe XD</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/inskape.webp" alt="Inskape">
+                        <p>Inskape</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/krita.webp" alt="Krita">
+                        <p>Krita</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/gimp.webp" alt="Gimp">
+                        <p>Gimp</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/aseprite.webp" alt="Aseprite">
+                        <p>Aseprite</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/notion.webp" alt="Notion">
+                        <p>Notion</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/trello.webp" alt="Trello">
+                        <p>Trello</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/scratch.webp" alt="Scratch">
+                        <p>Scratch</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Formación -->
+        <section class="formacion bg-gray-200 py-16" id="formacion">
+            <div class="max-w-screen-xl mx-auto p-8">
+                <h1 class="title text-center mb-12" data-section="formacion" data-value="title" data-aos="fade-up">
+                    Formación</h1>
+                <div class="flex justify-center">
+                    <div class="cards_container--formacion grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <!-- Card 1 -->
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80"
+                            data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                            <div class="card-content p-4">
+                                <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp"
+                                    alt="Logo - SENA">
+                                <div class="container_texto--formacion text-center">
+                                    <p data-section="formacion" data-value="formacion3">Tecnologo analisis y desarrollo
+                                        de Software</p>
+                                    <p>2022 - En curso</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80"
+                            data-aos="fade-up" data-aos-duration="500">
+                            <div class="card-content p-4">
+                                <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp"
+                                    alt="Logo - SENA">
+                                <div class="container_texto--formacion text-center">
+                                    <p data-section="formacion" data-value="formacion2">Técnico en diseño e integración
+                                        en multimedia</p>
+                                    <p data-section="formacion" data-value="tiempo-formacion2">2020 - 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80"
+                            data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                            <div class="card-content p-4">
+                                <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/logo-colegio.webp"
+                                    alt="Logo - colegio">
+                                <div class="container_texto--formacion text-center">
+                                    <p data-section="formacion" data-value="formacion3">Bachillerato Basico</p>
+                                    <p>2016 - 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiencia -->
+        <section class="experiencia py-16" id="experiencia">
+            <div class="max-w-screen-xl mx-auto p-8">
+                <h1 class="title text-center mb-12" data-section="experiencia" data-value="title" data-aos="fade-up">
+                    Experiencia</h1>
+                <div class="cards_container--experiencia flex flex-col justify-center items-center space-y-6">
+
+                    <!-- Primera experiencia -->
+                    <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6"
+                        data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                        <div class="container_texto--experiencia">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center space-x-2">
+                                    <p class="text-gray-800 text-lg">Area IT @</p>
+                                    <p class="text-gray-800 text-lg" data-section="experiencia"
+                                        data-value="experiencia">Hino Motors
+                                        Manufacturing Colombia SAS</p>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <p class="text-gray-800 text-lg">2024 - Presente</p>
+                                    <button class="toggle-button text-gray-800 focus:outline-none ml-2">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
+                        <p>Cota-Cundinamarca</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                            <div>
+                                <p class="text-gray-800 text-lg">Durante mi experiencia como aprendiz en tecnologías de
+                                    la información,
+                                    desarrollé habilidades en programación utilizando .NET y Laravel, así como en el
+                                    manejo de bases de
+                                    datos SQL Server. Participé en proyectos que incluyeron el desarrollo de
+                                    aplicaciones web, aprendí a
+                                    trabajar en equipo y a comunicarme efectivamente. Esta experiencia sentó una base
+                                    sólida para mi
+                                    carrera en tecnología de la información y estoy emocionado por seguir creciendo en
+                                    este campo.</p>
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <img src="assets/images/hino.webp" alt="Logo de Hino Motors" class="max-w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Segunda experiencia -->
+                    <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6"
+                        data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                        <div class="container_texto--experiencia">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center space-x-2">
+                                    <p class="text-gray-800 text-lg">Area IT @</p>
+                                    <p class="text-gray-800 text-lg" data-section="experiencia"
+                                        data-value="experiencia">Hino Motors
+                                        Manufacturing Colombia SAS</p>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <p class="text-gray-800 text-lg">2024 - Presente</p>
+                                    <button class="toggle-button text-gray-800 focus:outline-none ml-2">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
+                        <p class="text-gray-800 text-lg">Durante mi experiencia como aprendiz en tecnologías de la
+                            información,
+                            desarrollé habilidades en programación utilizando .NET y Laravel, así como en el manejo de
+                            bases de
+                            datos SQL Server. Participé en proyectos que incluyeron el desarrollo de aplicaciones web,
+                            aprendí a
+                            trabajar en equipo y a comunicarme efectivamente. Esta experiencia sentó una base sólida
+                            para mi
+                            carrera en tecnología de la información y estoy emocionado por seguir creciendo en este
+                            campo.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section class="proyectos bg-gray-200" id="proyectos">
+            <div class="max-w-screen-xl mx-auto p-8">
+                <h1 class="title text-center mb-12" data-section="proyectos" data-value="title" data-aos="fade-up">
+                    Proyectos</h1>
+                <div class="flex flex-wrap justify-center">
+                    <!-- Proyecto 1 -->
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <div class="cards--proyectos card_portafolio rounded-lg bg-white mb-4" data-aos="zoom-in-up"
+                            data-aos-anchor-placement="center-bottom">
+                            <div class="container_imgCard--proyectos">
+                                <img src="./assets/images/prueba2.png" alt="Proyecto: Portafolio" class="rounded-t-lg">
+                            </div>
+                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                <h2 data-section="proyectos" data-value="title-proyecto1">Portafolio web</h2>
+                                <p data-section="proyectos" data-value="info-proyecto1">Mi portafolio web personal,
+                                    donde se
+                                    encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un
+                                    poco sobre
+                                    mi formación.</p>
+                            </div>
+                            <div class="container_btn--proyectos flex justify-center mt-12 mb-4">
+                                <a href="#" target="_blank" class="mr-4 mb-4">
+                                    <button
+                                        class="btn_demo flex items-center custom-blue-bg text-white px-12 py-3 rounded-md">
+                                        <i class="fas fa-eye mr-2"></i> DEMO
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="mb-4">
+                                    <button class="btn_demo flex items-center custom-blue-border px-12 py-3 rounded-md"
+                                        style="height: 48px;">
+                                        <i class="fab fa-github mr-2"></i> REPO
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <div class="cards--proyectos card_portafolio bg-white rounded-lg" data-aos="zoom-in-up"
+                            data-aos-anchor-placement="center-bottom">
+                            <div class="container_imgCard--proyectos">
+                                <img src="./assets/images/prueba1.png" alt="Proyecto: Portafolio" class="rounded-t-lg">
+                            </div>
+                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                <h2 data-section="proyectos" data-value="title-proyecto2">Servisoft</h2>
+                                <p data-section="proyectos" data-value="info-proyecto2">Mi portafolio web personal,
+                                    donde se
+                                    encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un
+                                    poco sobre
+                                    mi formación.</p>
+                            </div>
+                            <div class="container_btn--proyectos flex justify-center mt-12 mb-4">
+                                <a href="#" target="_blank" class="mr-4 mb-4">
+                                    <button
+                                        class="btn_demo flex items-center custom-blue-bg text-white px-12 py-3 rounded-md">
+                                        <i class="fas fa-eye mr-2"></i> DEMO
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="mb-4">
+                                    <button class="btn_demo flex items-center custom-blue-border px-12 py-3 rounded-md"
+                                        style="height: 48px;">
+                                        <i class="fab fa-github mr-2"></i> REPO
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <div class="cards--proyectos card_portafolio bg-white rounded-lg" data-aos="zoom-in-up"
+                            data-aos-anchor-placement="center-bottom">
+                            <div class="container_imgCard--proyectos">
+                                <img src="./assets/images/prueba3.png" alt="Proyecto: Portafolio" class="rounded-t-lg">
+                            </div>
+                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                <h2 data-section="proyectos" data-value="title-proyecto3">Proyecto 3</h2>
+                                <p data-section="proyectos" data-value="info-proyecto3">Mi portafolio web personal,
+                                    donde se
+                                    encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un
+                                    poco sobre
+                                    mi formación.</p>
+                            </div>
+                            <div class="container_btn--proyectos flex justify-center mt-12 mb-4">
+                                <a href="#" target="_blank" class="mr-4 mb-4">
+                                    <button
+                                        class="btn_demo flex items-center custom-blue-bg text-white px-12 py-3 rounded-md">
+                                        <i class="fas fa-eye mr-2"></i> DEMO
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="mb-4">
+                                    <button class="btn_demo flex items-center custom-blue-border px-12 py-3 rounded-md"
+                                        style="height: 48px;">
+                                        <i class="fab fa-github mr-2"></i> REPO
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="./assets/html/proyectos.html" id="show-projects-btn"
+                        class="btn_ver-todos-proyectos inline-block px-12 py-4 text-white font-semibold rounded-md mt-8">Ver
+                        todos mis proyectos</a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contacto -->
+        <section class="contacto flex justify-center items-center" id="contacto">
+            <div class="max-w-screen-xl mx-auto p-20">
+                <h1 class="title text-center mb-4" data-section="contacto" data-value="title" data-aos="fade-up">
+                    Contacto</h1>
+
+                <div class="container_box--contacto flex justify-between" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
+                    <div class="container--contacto">
+                        <div class="container_text--contacto mb-4">
+                            <p data-section="contacto" data-value="text"> No dude en ponerse en contacto conmigo</p>
+                        </div>
+                        <div class="container_text--contacto mb-4">
+                            <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en
+                                contacto contigo lo antes posible.</p>
+                        </div>
+
+                        <form id="form" class="form-contact" name="contacto-portafolio" netlify>
+                            <div class="form-row mb-4">
+                                <input id="nombre" type="text" name="name" placeholder="Nombre" required
+                                    class="nombre-input w-full bg-gray-200 p-3 rounded">
+                            </div>
+                            <div class="form-row mb-4">
+                                <input id="email" type="email" name="email" placeholder="E-mail" required
+                                    class="w-full bg-gray-200 p-3 rounded">
+                            </div>
+                            <div class="form-row mb-4">
+                                <input id="asunto" type="text" name="affair" placeholder="Asunto" required
+                                    class="w-full bg-gray-200 p-3 rounded">
+                            </div>
+                            <div class="form-row mb-4">
+                                <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required
+                                    class="w-full bg-gray-200 p-3 rounded"></textarea>
+                            </div>
+
+                            <div class="btn_form--contacto mb-4">
+                                <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">
+                                    <i class="fas fa-paper-plane"></i> Enviar
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
-    <footer >
+    <footer>
         <div class="flex justify-center space-x-8">
             <!-- Icono de Instagram -->
             <div class="icon-circle mb-4 w-14 h-14">
@@ -581,31 +660,32 @@
             </div>
         </div>
 
-            <div class="text-center">
-                <!-- Texto del footer -->
-                <p class="text-gray-600">Copyright © | 2024
-                    <i class="fa fa-rocket text-blue-500"></i>
-                    Steven Guaman
-                </p>             
-            </div>
+        <div class="text-center">
+            <!-- Texto del footer -->
+            <p class="text-gray-600">Copyright © | 2024
+                <i class="fa fa-rocket text-blue-500"></i>
+                Steven Guaman
+            </p>
+        </div>
         </div>
     </footer>
 
-<div class="go-top-container">
-    <div class="go-top-button">
-        <i class="fas fa-chevron-up"></i>
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <i class="fas fa-chevron-up"></i>
+        </div>
     </div>
-</div>
 
-<!-- Archivo Js -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Archivo Js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<!-- Librería de animaciones -->
-<script>
-    AOS.init();
-</script>
+    <!-- Librería de animaciones -->
+    <script>
+        AOS.init();
+    </script>
 
-<!-- Mi script -->
-<script src="assets/js/index.js"></script>
+    <!-- Mi script -->
+    <script src="assets/js/index.js"></script>
 </body>
+
 </html>

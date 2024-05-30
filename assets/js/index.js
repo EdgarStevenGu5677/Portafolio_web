@@ -37,7 +37,6 @@ Document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", updateActiveLink);
 });
 
-
 //Codigo para mostrar menu en dispositivos pequeños y ocultarlo
 function mostrarOcultarMenu() {
     var nav = document.getElementById("nav");
@@ -187,6 +186,16 @@ const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de S
             habilidades2Container.style.display = 'grid';
         }
     }
-    
-
-  
+      //Script de experiencia
+    document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const extraInfo = this.closest('.cards--experiencia').nextElementSibling;
+            if (extraInfo.classList.contains('hidden-card')) {
+                extraInfo.classList.remove('hidden-card');
+                this.innerHTML = '<i class="fas fa-minus"></i>';
+            } else {
+                extraInfo.classList.add('hidden-card');
+                this.innerHTML = '<i class="fas fa-plus"></i>';
+            }
+        });
+    });
