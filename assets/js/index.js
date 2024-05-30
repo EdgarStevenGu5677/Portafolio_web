@@ -3,24 +3,39 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateActiveLink() {
         var scrollPosition = window.scrollY;
         var menuLinks = document.querySelectorAll("#menuList a");
+        var sections = [];
+        
         menuLinks.forEach(function (link) {
             var sectionId = link.getAttribute("href").substring(1);
             var section = document.getElementById(sectionId);
             if (section) {
-                var sectionTop = section.offsetTop;
-                if (scrollPosition >= sectionTop) {
-                    menuLinks.forEach(function (link) {
-                        link.classList.remove("active");
-                    });
-                    link.classList.add("active");
-                }
+                sections.push({link: link, section: section});
             }
         });
+
+        var currentActiveLink = null;
+        
+        sections.forEach(function (item) {
+            var sectionTop = item.section.offsetTop;
+            var sectionHeight = item.section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop - 1 && scrollPosition < sectionTop + sectionHeight - 1) {
+                currentActiveLink = item.link;
+            }
+        });
+
+        menuLinks.forEach(function (link) {
+            link.classList.remove("active");
+        });
+        
+        if (currentActiveLink) {
+            currentActiveLink.classList.add("active");
+        }
     }
+
     updateActiveLink();
     window.addEventListener("scroll", updateActiveLink);
 });
-
 
 //Codigo para mostrar menu en dispositivos pequeños y ocultarlo
 function mostrarOcultarMenu() {
@@ -172,41 +187,17 @@ const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de S
         }
     }
     
-   // Abrir pagina de proyectos
-    document.addEventListener('DOMContentLoaded', function() {
-        // Función para cargar los proyectos desde otro archivo HTML
-function cargarProyectos() {
-    var mainContent = document.getElementById('mainContent');
-    var proyectosContainer = document.getElementById('projects-container');
 
-    // Oculta el contenido principal
-    mainContent.style.display = 'none';
-
-    // Carga el contenido de proyectos desde el archivo externo
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                // Inserta el contenido en el contenedor de proyectos
-                proyectosContainer.innerHTML = xhr.responseText;
+    //Script de experiencia
+    document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const extraInfo = this.closest('.cards--experiencia').nextElementSibling;
+            if (extraInfo.classList.contains('hidden-card')) {
+                extraInfo.classList.remove('hidden-card');
+                this.innerHTML = '<i class="fas fa-minus"></i>';
             } else {
-                console.error('Error al cargar los proyectos:', xhr.status);
+                extraInfo.classList.add('hidden-card');
+                this.innerHTML = '<i class="fas fa-plus"></i>';
             }
-        }
-    };
-    xhr.open('GET', 'assets\html\proyectos.html', true);
-    xhr.send();
-}
-
-// Función para manejar el clic en el botón "Ver todos mis proyectos"
-function manejarClicMostrarProyectos() {
-    cargarProyectos();
-}
-
-// Agrega un controlador de eventos al botón "Ver todos mis proyectos"
-var showProjectsBtn = document.getElementById('show-projects-btn');
-showProjectsBtn.addEventListener('click', manejarClicMostrarProyectos);
-
+        });
     });
-    
-  

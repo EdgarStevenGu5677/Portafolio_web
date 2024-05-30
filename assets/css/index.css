@@ -167,6 +167,7 @@ main {
   
  /*Proyectos*/
  .custom-blue-bg {
+    border: 3px solid #25b5ea;
     background-color: #1CB0E8;
 }
 
