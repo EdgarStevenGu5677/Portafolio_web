@@ -1,5 +1,5 @@
 // Funcion para el enlace en el menu.
-document.addEventListener("DOMContentLoaded", function () {
+Document.addEventListener("DOMContentLoaded", function () {
     function updateActiveLink() {
         var scrollPosition = window.scrollY;
         var menuLinks = document.querySelectorAll("#menuList a");
@@ -128,7 +128,7 @@ menuList.classList.remove("text-center");
 const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de Software", "Diseñador UX/UI"];
     let index = 0;
     let isDeleting = false;
-    let typingSpeed = 100; // Velocidad de escritura en milisegundos
+    let typingSpeed = 500; // Velocidad de escritura en milisegundos
 
     function type() {
         const word = words[index];
@@ -186,9 +186,7 @@ const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de S
             habilidades2Container.style.display = 'grid';
         }
     }
-    
-
-    //Script de experiencia
+      //Script de experiencia
     document.querySelectorAll('.toggle-button').forEach(button => {
         button.addEventListener('click', function() {
             const extraInfo = this.closest('.cards--experiencia').nextElementSibling;
