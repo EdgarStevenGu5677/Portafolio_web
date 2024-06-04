@@ -1,9 +1,3 @@
- 
-/* Estilo para el relleno superior en el contenido principal */
-main {
-    padding-top: 80px; /* Ajusta este valor según la altura de tu barra de navegación */
-}
-
 /* Estilo para el enlace activo y hover */
 #menuList a.active,
 #menuList a:hover {

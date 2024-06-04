@@ -77,70 +77,59 @@
 
         <!-- SECCION INICIO -->
         <section class="home items-center h-screen flex justify-center">
-            <!-- Agrega clases para centrar verticalmente -->
-            <div class="flex justify-center">
-                <div class="lg:col-span-1 lg:w-10 border-r border-gray-300 mx-6 mt-80">
-                    <!-- Añade margen horizontal y vertical a la columna -->
-                    <!-- Contenido de la primera columna -->
-                    <div class="icon-circle mb-4"> <!-- Añade margen inferior -->
+            <!-- Contenedor principal -->
+            <div class="flex flex-col justify-center w-full h-full lg:flex lg:flex-row">
+                <!-- Primera columna con iconos sociales -->
+                <div class="flex flex-col justify-end lg:w-1/12 mx-6 mb-4">
+                    <div class="icon-circle mb-4">
                         <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                             <i class="fab fa-instagram icon"></i>
                         </a>
                     </div>
-                    <div class="icon-circle mb-4"> <!-- Añade margen inferior -->
+                    <div class="icon-circle mb-4">
                         <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                             <i class="fab fa-linkedin icon"></i>
                         </a>
                     </div>
-                    <div class="icon-circle mb-4"> <!-- Añade margen inferior -->
+                    <div class="icon-circle mb-4">
                         <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                             <i class="fab fa-github icon"></i>
                         </a>
                     </div>
-                    <div class="icon-circle"> <!-- Sin margen inferior en el último -->
+                    <div class="icon-circle mb-4">
                         <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                             <i class="fab fa-discord icon"></i>
                         </a>
                     </div>
                 </div>
-                <!-- Segunda columna para el resto de los elementos -->
-                <div class="lg:w-65 border-r border-gray-300 mx-10"> <!-- Añade bordes a la izquierda de la columna -->
-                    <!-- Información -->
-                    <div class="container_text-info">
-                        <p class="inicio_text-1" data-section="home" data-value="home_text-1">Hola!🫡 Soy</p>
-
-                        <p class="inicio_text-2">Steven Guaman</p>
+        
+                <!-- Columna principal -->
+                <div class="lg:w-2/3 border-gray-300 mx-10 flex flex-col justify-center lg:mt-10">
+                    <div class="container_text-info text-center lg:text-left">
+                        <p class="inicio_text-1 text-2xl lg:text-2xl" data-section="home" data-value="home_text-1">Hola!🫡 Soy</p>
+                        <p class="inicio_text-2 text-5xl lg:text-6xl">Steven Guaman</p>
                     </div>
-                    <div>
-                        <p id="typingEffect" class="home_text-3 text-type" data-section="inicio"
-                            data-value="home_text-3"></p>
+                    <div class="text-center lg:text-left">
+                        <p id="typingEffect" class="home_text-3 text-type text-lg" data-section="inicio" data-value="home_text-3"></p>
                     </div>
-
-                    <div class="container_parrafo-info">
-                        <p class="parrafo-info" data-section="home" data-value="parrafo-info">Estudiante de programación
-                            con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y
-                            atractivo para proporcionar la mejor experiencia al usuario.</p>
+                    <div class="container_parrafo-info text-center lg:text-left">
+                        <p class="parrafo-info text-lg" data-section="home" data-value="parrafo-info">Estudiante de programación con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y atractivo para proporcionar la mejor experiencia al usuario.</p>
                     </div>
-
                     <!-- Contenedor para los botones -->
-                    <div class="container_button mt-6 flex gap-4"> <!-- Utiliza flexbox para distribuir los botones -->
+                    <div class="container_button mt-6 flex flex-col lg:flex-row justify-center lg:justify-start gap-4">
                         <a href="assets/pdf/curriculum.pdf" download="curriculum.pdf" target="_blank">
-                            <button class="cv_button" data-section="home" data-value="cv_button">Descargar CV <i
-                                    class="fas fa-download"></i></button>
+                            <button class="cv_button" data-section="home" data-value="cv_button">Descargar CV <i class="fas fa-download"></i></button>
                         </a>
-
-
                         <a href="#contacto">
-                            <button class="contact_button" data-section="home"
-                                data-value="contact_button">Contacto</button>
+                            <button class="contact_button" data-section="home" data-value="contact_button">Contacto</button>
                         </a>
                     </div>
                 </div>
-                <!-- Imagen -->
-                <div class="lg:w-25 border-r border-gray-300 ml-auto mr-52"> <!-- Añade margen horizontal al div -->
+        
+                <!-- Tercera columna con imagen -->
+                <div class="lg:w-1/3 ml-auto mr-10 lg:mr-52 flex items-center lg:mt-10">
                     <picture class="contenedor_image-inicio" data-aos="zoom-in">
-                        <img class="image_home" src="./assets/images/fotosteven.png" alt="Ilustración programador"
-                            style="width: 650px; height: 400px;">
+                        <img class="image_home" src="./assets/images/fotosteven.png" alt="Ilustración programador" style="max-width: 100%; height: auto; max-height: 400px;">
                     </picture>
                 </div>
             </div>
