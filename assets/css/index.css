@@ -13,12 +13,21 @@
     background-color: #1CB0E8; /* Color de la línea */
     margin-top: 2px; /* Espacio entre el texto y la línea */
 }
-#mobileNav {
-    align-items: center; /* Centra verticalmente el contenido */
+
+/* Estilo para el enlace activo y hover */
+#mobileNav a.active,
+#mobileNav a:hover {
+    color: #1CB0E8; /* Color de texto azul */
 }
 
-#mobileNav > div {
-    width: 100%; /* Ajusta el ancho del contenido al 100% */
+/* Estilo para la línea debajo del enlace activo */
+#mobileNav a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    background-color: #1CB0E8; /* Color de la línea */
+    margin-top: 2px; /* Espacio entre el texto y la línea */
 }
 
 
