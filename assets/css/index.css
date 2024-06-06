@@ -1,34 +1,21 @@
-/* Estilo para el enlace activo y hover */
-#menuList a.active,
-#menuList a:hover {
-    color: #1CB0E8; /* Color de texto azul */
-}
+ /* Estilo para el enlace activo y hover del Menu*/
+ #menuList a.active,
+ #menuList a:hover,
+ #mobileNav a.active,
+ #mobileNav a:hover {
+     color: #1CB0E8; 
+ }
 
-/* Estilo para la línea debajo del enlace activo */
-#menuList a.active::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px; /* Grosor de la línea */
-    background-color: #1CB0E8; /* Color de la línea */
-    margin-top: 2px; /* Espacio entre el texto y la línea */
-}
-
-/* Estilo para el enlace activo y hover */
-#mobileNav a.active,
-#mobileNav a:hover {
-    color: #1CB0E8; /* Color de texto azul */
-}
-
-/* Estilo para la línea debajo del enlace activo */
-#mobileNav a.active::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px; /* Grosor de la línea */
-    background-color: #1CB0E8; /* Color de la línea */
-    margin-top: 2px; /* Espacio entre el texto y la línea */
-}
+ /* Estilo para la línea debajo del enlace activo del Menu*/
+ #menuList a.active::after,
+ #mobileNav a.active::after {
+     content: '';
+     display: block;
+     width: 100%;
+     height: 2px; /* Grosor de la línea */
+     background-color: #1CB0E8; /* Color de la línea */
+     margin-top: 2px; /* Espacio entre el texto y la línea */
+ }
 
 
 /* Home */

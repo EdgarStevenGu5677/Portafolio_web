@@ -1,3 +1,4 @@
+//Inicio del menu
 // Funcion para mostrar y ocultar menu
 function mostrarOcultarMenu() {
     const mobileNav = document.getElementById('mobileNav');
@@ -14,38 +15,48 @@ function mostrarOcultarMenu() {
         xPath.classList.add('hidden');
     }
 }
+ // Obtener todas las secciones
+ const sections = document.querySelectorAll('section');
 
-// Funcion para el enlace en el menu.
+// Función para actualizar el enlace activo
 function updateActiveLink() {
-    var scrollPosition = window.scrollY;
-    var menuLinks = document.querySelectorAll("#menuList a");
-    var sections = [];
-    menuLinks.forEach(function (link) {
-        var sectionId = link.getAttribute("href").substring(1);
-        var section = document.getElementById(sectionId);
-        if (section) {
-            sections.push({ link: link, section: section });
-        }
-    });
-    var currentActiveLink = null;
-    sections.forEach(function (item) {
-        var sectionTop = item.section.offsetTop;
-        var sectionHeight = item.section.offsetHeight;
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentActiveLink = item.link;
-        }
-    });
-    menuLinks.forEach(function (link) {
-        link.classList.remove("active");
-    });
-    if (currentActiveLink) {
-        currentActiveLink.classList.add("active");
+let index = sections.length;
+
+while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+sections.forEach((section, i) => {
+    const link = document.querySelector(`#menuList li:nth-child(${i + 1}) a`);
+
+    if (index === i) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
     }
+});
 }
+
+// Llamada inicial a la función para establecer el estado inicial
 updateActiveLink();
-window.addEventListener("scroll", updateActiveLink);
+
+// Agregar un evento de desplazamiento
+window.addEventListener('scroll', updateActiveLink);
 
 
+window.addEventListener('scroll', function () {
+    var header = document.getElementById('header');
+    var headerContainer = document.getElementById('headerContainer');
+    if (window.scrollY > 0) {
+        headerContainer.classList.add('shadow-lg');
+        header.classList.add('bg-opacity-90');
+        header.classList.remove('bg-opacity-100');
+    } else {
+        headerContainer.classList.remove('shadow-lg');
+        header.classList.remove('bg-opacity-90');
+        header.classList.add('bg-opacity-100');
+    }
+});
+
+//Fin del menu
 
 const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de Software", "Diseñador UX/UI"];
     let index = 0;

@@ -20,9 +20,9 @@
 </head>
 
 <body id="inicio" class="bg-gray-100">
-    <!-- MENU ENCABEZADO -->
-    <div class="container-header fixed top-0 w-full bg-white shadow-lg z-50">
-        <header class="flex justify-between items-center py-4">
+    <div id="headerContainer" class="container-header fixed top-0 w-full bg-white z-50">
+        <header id="header"
+            class="flex justify-between items-center py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
             <div class="logo md:min-w-0">
                 <a href="#inicio">
                     <img src="assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
@@ -47,7 +47,7 @@
                     </div>
                 </ul>
             </nav>
-    
+
             <div class="lg:hidden ml-4">
                 <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12">
                     <svg id="menuIcon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
@@ -62,32 +62,30 @@
             </div>
         </header>
         <!-- Menú móvil -->
-        <div id="mobileNav"
-    class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50">
-    <ul class="flex flex-col items-center space-y-4 w-full py-4">
-        <li><a href="#inicio" class="menu-link">Inicio</a></li>
-        <li><a href="#sobreMi" class="menu-link">Sobre mí</a></li>
-        <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
-        <li><a href="#formacion" class="menu-link">Formación</a></li>
-        <li><a href="#experiencia" class="menu-link">Experiencia</a></li>
-        <li><a href="#proyectos" class="menu-link">Proyectos</a></li>
-        <li><a href="#contacto" class="menu-link">Contacto</a></li>
-        <div class="flex items-center space-x-8 mt-8"> <!-- Reducido el espacio entre botones -->
-            <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
-                <i class="fas fa-language"></i>
-            </button>
+        <div id="mobileNav" class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50"
+            style="background-color: #f3f4f6;">
+            <ul class="flex flex-col items-center space-y-4 w-full py-4">
+                <li><a href="#inicio" class="menu-link"  onclick="mostrarOcultarMenu()" >Inicio</a></li>
+                <li><a href="#sobreMi" class="menu-link"  onclick="mostrarOcultarMenu()" >Sobre mí</a></li>
+                <li><a href="#habilidades" class="menu-link"  onclick="mostrarOcultarMenu()" >Habilidades</a></li>
+                <li><a href="#formacion" class="menu-link"  onclick="mostrarOcultarMenu()" >Formación</a></li>
+                <li><a href="#experiencia" class="menu-link"  onclick="mostrarOcultarMenu()" >Experiencia</a></li>
+                <li><a href="#proyectos" class="menu-link"  onclick="mostrarOcultarMenu()" >Proyectos</a></li>
+                <li><a href="#contacto" class="menu-link"  onclick="mostrarOcultarMenu()" >Contacto</a></li>
+                <div class="flex items-center space-x-8 mt-8"> <!-- Reducido el espacio entre botones -->
+                    <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-language"></i>
+                    </button>
+                </div>
+            </ul>
         </div>
-    </ul>
-</div>
-
     </div>
 
     <main id="mainContent">
-        <!-- SECCION INICIO -->
-        <section class="home items-center h-screen flex justify-center">
+        <section class="home items-center h-screen flex justify-center bg-gray-100">
             <!-- Contenedor principal -->
             <div class="flex flex-col justify-center w-full h-full lg:flex lg:flex-row">
                 <!-- Primera columna con iconos sociales -->
@@ -688,6 +686,7 @@
 
     <!-- Mi script -->
     <script src="assets/js/index.js"></script>
+    
 </body>
 
 </html>
