@@ -34,13 +34,10 @@ sections.forEach((section, i) => {
     }
 });
 }
-
 // Llamada inicial a la función para establecer el estado inicial
 updateActiveLink();
-
 // Agregar un evento de desplazamiento
 window.addEventListener('scroll', updateActiveLink);
-
 
 window.addEventListener('scroll', function () {
     var header = document.getElementById('header');
@@ -58,10 +55,10 @@ window.addEventListener('scroll', function () {
 
 //Fin del menu
 
-const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de Software", "Diseñador UX/UI"];
+const words = ["Desarrollador de Software", "Desarrollador Full-Stack", "Ingeniero de Software"];
     let index = 0;
     let isDeleting = false;
-    let typingSpeed = 500; // Velocidad de escritura en milisegundos
+    let typingSpeed = 200; // Velocidad de escritura en milisegundos
 
     function type() {
         const word = words[index];
@@ -74,7 +71,7 @@ const words = ["Desarrollador de Software", "Desarrollador Web", "Ingeniero de S
 
         if (!isDeleting && text.textContent === word) {
             isDeleting = true;
-            typingSpeed = 500; // Espera antes de borrar
+            typingSpeed = 200; // Espera antes de borrar
         } else if (isDeleting && text.textContent === "") {
             isDeleting = false;
             index = (index + 1) % words.length;

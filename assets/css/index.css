@@ -40,12 +40,18 @@
     display: inline-flex; /* Utilizar flexbox para centrar verticalmente el contenido */
     align-items: center; /* Centrar verticalmente el contenido */
     justify-content: center; /* Centrar horizontalmente el contenido */
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #0e8eac;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
 }
 
 .cv_button:hover {
-    background-color: transparent; /* Eliminar fondo al pasar sobre el botón */
-    color: #1CB0E8; /* Cambiar color del texto al pasar sobre el botón */
-    border-color: #1CB0E8; /* Cambiar color del borde al pasar sobre el botón */
+  
+    box-shadow: inset 400px 0 0 0 #1CB0E8;
+    color: #fff;
 }
 
 .contact_button {
