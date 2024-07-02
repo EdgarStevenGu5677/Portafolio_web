@@ -63,7 +63,7 @@
     cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
     transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
     width: 200px; /* Ancho fijo para ambos botones */
-    height: 30px;
+    height: 34px;
     display: inline-flex; /* Utilizar flexbox para centrar verticalmente el contenido */
     align-items: center; /* Centrar verticalmente el contenido */
     justify-content: center; /* Centrar horizontalmente el contenido */
