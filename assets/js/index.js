@@ -1,4 +1,19 @@
 //Inicio del menu
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('menuInicio').addEventListener('click', function(e) {
+        e.preventDefault(); // Evita el comportamiento por defecto del enlace
+  
+        // Selecciona el elemento al que quieres hacer scroll
+        const target = document.querySelector('#inicio');
+  
+        // Realiza el scroll suave con el margen superior
+        window.scrollTo({
+            top: target.offsetTop - 80, // 80px en lugar de 5rem para ajustarse a la mayoría de los dispositivos móviles
+            behavior: 'smooth'
+        });
+    });
+  });
+  
 // Funcion para mostrar y ocultar menu
 function mostrarOcultarMenu() {
     const mobileNav = document.getElementById('mobileNav');
