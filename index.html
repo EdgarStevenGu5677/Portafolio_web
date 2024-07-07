@@ -200,26 +200,23 @@
             </div>
         </section>
 
-
-
         <!-- SECCION SOBRE MI -->
         <section class="sobreMi items-center flex justify-center bg-gray-200 h-full py-16" id="sobreMi">
-            <div class="max-w-screen-xl w-full mx-auto p-8"> <!-- Agrega my-8 para margen vertical -->
-                <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden"
+            <div class="max-w-screen-xl w-full mx-auto p-8">
+                <!-- Título -->
+                <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                     data-section="sobre-mi" data-value="title" data-aos="fade-up">
                     Sobre mí
                 </h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Primera columna (imagen) -->
-                    <div class="container_image-sobreMi">
-                        <picture>
-                            <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
-                        </picture>
-                    </div>
 
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 lg:mt-12">
                     <!-- Segunda columna (texto) -->
-                    <div class="container_texto-sobreMi mt-12">
-                        <span class="title_sobreMi">Steven Guaman<br></span>
+                    <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2">
+                        <span class="title_sobreMi block mb-2 text-center lg:text-left text-2xl lg:text-3xl font-bold"
+                            style="color:#1CB0E8 ;">
+                            Steven Guaman<br>
+                        </span>
+
                         <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy desarrollador
                             de software con
                             conocimientos en diseño e integración en multimedia. Aspiro a obtener empleo en el campo del
@@ -234,61 +231,60 @@
                             responsabilidad y proactividad. Disfruto aprendiendo de otros y superándome
                             constantemente.</span>
                     </div>
+
+                    <!-- Primera columna (imagen) -->
+                    <div class="container_image-sobreMi flex justify-center order-2 lg:order-1">
+                        <picture>
+                            <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
+                        </picture>
+                    </div>
                 </div>
 
-                <h1 class="title text-center my-24" data-section="lo-que-me-gusta" data-value="title"
-                    data-aos="fade-up">¿Lo que me gusta?</h1>
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 break-words mt-12 md:mt-16 lg:mt-16 xl:mt-24"
+                    data-section="lo-que-me-gusta" data-value="title" data-aos="fade-up">¿Lo que me gusta?</h1>
+
                 <div class="cards_container--habilidades flex flex-wrap justify-center">
-                    <!-- Cambia la disposición a fila -->
-                    <div class="cards_container--habilidades flex flex-wrap justify-center">
-                        <!-- Cambia la disposición a fila -->
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
-                            <!-- Centra el ícono verticalmente -->
-                            <p>Leer libros</p>
-                        </div>
-
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
-                            data-aos="fade-up" data-aos-duration="700">
-                            <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i>
-                            <!-- Centra el ícono verticalmente -->
-                            <p>Dibujar</p>
-                        </div>
-
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
-                            data-aos="fade-up" data-aos-duration="900">
-                            <i class="fas fa-graduation-cap inline-block mb-2 text-3xl"></i>
-                            <!-- Centra el ícono verticalmente -->
-                            <p>Estudiar</p>
-                        </div>
-
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
-                            data-aos="fade-up" data-aos-duration="1100">
-                            <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i>
-                            <!-- Centra el ícono verticalmente -->
-                            <p>Hacer código</p>
-                        </div>
-
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i>
-                            <!-- Centra el ícono verticalmente -->
-                            <p>Jugar videojuegos</p>
-                        </div>
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up"
+                        data-aos-duration="500">
+                        <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
+                        <p>Leer libros</p>
                     </div>
 
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up"
+                        data-aos-duration="700">
+                        <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i>
+                        <p>Dibujar</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up"
+                        data-aos-duration="900">
+                        <i class="fas fa-graduation-cap inline-block mb-2 text-3xl"></i>
+                        <p>Estudiar</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up"
+                        data-aos-duration="1100">
+                        <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i>
+                        <p>Hacer código</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center" data-aos="fade-up"
+                        data-aos-duration="500">
+                        <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i>
+                        <p>Jugar videojuegos</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-
         <!-- Habilidades -->
         <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades">
-            <h1 class="title text-center mx-24" data-section="habilidades" data-value="title" data-aos="fade-up">
-                Habilidades</h1>
+            <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                data-section="habilidades" data-value="title" data-aos="fade-up">
+                Habilidades
+            </h1>
             <div>
-                <div class="flexjustify-between mt-12" id="menuhabilidades">
+                <div class="flexjustify-between " id="menuhabilidades">
                     <a href="#" class="mr-8 active" onclick="mostrarHabilidades('habilidades1', event)">Tecnicas</a>
                     <a href="#" onclick="mostrarHabilidades('habilidades2', event)">Otras</a>
                 </div>
@@ -399,44 +395,46 @@
         <!-- Formación -->
         <section class="formacion bg-gray-200 py-16" id="formacion">
             <div class="max-w-screen-xl mx-auto p-8">
-                <h1 class="title text-center mb-12" data-section="formacion" data-value="title" data-aos="fade-up">
-                    Formación</h1>
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="formacion" data-value="title" data-aos="fade-up">
+                    Formación
+                </h1>
                 <div class="flex justify-center">
-                    <div class="cards_container--formacion grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="cards_container--formacion grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
                         <!-- Card 1 -->
-                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80"
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full"
                             data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
                             <div class="card-content p-4">
                                 <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp"
                                     alt="Logo - SENA">
                                 <div class="container_texto--formacion text-center">
-                                    <p data-section="formacion" data-value="formacion3">Tecnologo analisis y desarrollo
-                                        de Software</p>
+                                    <p data-section="formacion" data-value="formacion3">Tecnólogo en Análisis y
+                                        Desarrollo de Software</p>
                                     <p>2022 - En curso</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 2 -->
-                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80"
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full"
                             data-aos="fade-up" data-aos-duration="500">
                             <div class="card-content p-4">
                                 <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp"
                                     alt="Logo - SENA">
                                 <div class="container_texto--formacion text-center">
-                                    <p data-section="formacion" data-value="formacion2">Técnico en diseño e integración
-                                        en multimedia</p>
+                                    <p data-section="formacion" data-value="formacion2">Técnico en Diseño e Integración
+                                        en Multimedia</p>
                                     <p data-section="formacion" data-value="tiempo-formacion2">2020 - 2021</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Card 3 -->
-                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full md:w-80"
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full"
                             data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
                             <div class="card-content p-4">
                                 <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/logo-colegio.webp"
-                                    alt="Logo - colegio">
+                                    alt="Logo - Colegio">
                                 <div class="container_texto--formacion text-center">
-                                    <p data-section="formacion" data-value="formacion3">Bachillerato Basico</p>
+                                    <p data-section="formacion" data-value="formacion3">Bachillerato Básico</p>
                                     <p>2016 - 2021</p>
                                 </div>
                             </div>
@@ -449,28 +447,42 @@
         <!-- Experiencia -->
         <section class="experiencia py-16" id="experiencia">
             <div class="max-w-screen-xl mx-auto p-8">
-                <h1 class="title text-center mb-12" data-section="experiencia" data-value="title" data-aos="fade-up">
-                    Experiencia</h1>
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="experiencia" data-value="title" data-aos="fade-up">
+                    Experiencia
+                </h1>
                 <div class="cards_container--experiencia flex flex-col justify-center items-center space-y-6">
 
                     <!-- Primera experiencia -->
-                    <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6"
-                        data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                    <div
+                        class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
                         <div class="container_texto--experiencia">
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center space-x-2">
-                                    <p class="text-gray-800 text-lg">Area IT @</p>
-                                    <p class="text-gray-800 text-lg" data-section="experiencia"
-                                        data-value="experiencia">Hino Motors
-                                        Manufacturing Colombia SAS</p>
+                            <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
+                                <div class="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
+                                    <p class="text-gray-800 text-base sm:text-lg">Area IT</p>
+                                    <p class="text-gray-800 text-base sm:text-lg hidden sm:block"
+                                        data-section="experiencia" data-value="experiencia">
+                                        @ Hino Motors Manufacturing Colombia SAS
+                                    </p>
+                                    <p class="text-gray-800 text-base sm:text-lg block sm:hidden"
+                                        data-section="experiencia" data-value="experiencia">
+                                        @ HMMC
+                                    </p>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <p class="text-gray-800 text-lg">2024 - Presente</p>
-                                    <button class="toggle-button text-gray-800 focus:outline-none ml-2">
+                                    <p class="text-gray-800 text-base sm:text-lg">2024 - Presente</p>
+                                    <!-- El botón se muestra en pantallas grandes -->
+                                    <button
+                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
+                            <!-- El botón se muestra en móviles centrado y debajo del contenido -->
+                            <button
+                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mx-auto mt-4">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
@@ -495,23 +507,31 @@
                         </div>
                     </div>
                     <!-- Segunda experiencia -->
-                    <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6"
-                        data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                    <div
+                        class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
                         <div class="container_texto--experiencia">
-                            <div class="flex justify-between items-center">
-                                <div class="flex items-center space-x-2">
-                                    <p class="text-gray-800 text-lg">Area IT @</p>
-                                    <p class="text-gray-800 text-lg" data-section="experiencia"
-                                        data-value="experiencia">Hino Motors
-                                        Manufacturing Colombia SAS</p>
+                            <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
+                                <div class="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
+                                    <p class="text-gray-800 text-base sm:text-lg">Proyectos</p>
+                                    <p class="text-gray-800 text-base sm:text-lg" data-section="experiencia"
+                                        data-value="experiencia">
+                                        @ Frelance
+                                    </p>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <p class="text-gray-800 text-lg">2024 - Presente</p>
-                                    <button class="toggle-button text-gray-800 focus:outline-none ml-2">
+                                    <p class="text-gray-800 text-base sm:text-lg">2024 - Presente</p>
+                                    <!-- El botón se muestra en pantallas grandes -->
+                                    <button
+                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
+                            <!-- El botón se muestra en móviles centrado y debajo del contenido -->
+                            <button
+                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mx-auto mt-4">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
