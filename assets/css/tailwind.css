@@ -1,0 +1,22 @@
+@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
+
+.btn-custom {
+  background-color: #06b6d4 !important;
+  border: 2px solid #06b6d4 !important;
+  color: white !important;
+}
+
+.btn-custom:hover {
+  background-color: #0891b2 !important;
+  border-color: #0891b2 !important;
+}
+
+.btn-custom-outline {
+  border: 2px solid #06b6d4 !important;
+  color: #06b6d4 !important;
+}
+
+.btn-custom-outline:hover {
+  background-color: #06b6d4 !important;
+  color: white !important;
+}
