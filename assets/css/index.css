@@ -221,30 +221,3 @@ textarea:focus {
     background-color: #D1EAF8;
     /* Establece el color de fondo cuando está enfocado */
 }
-
-#btn-enviar {
-    background-color: #1CB0E8;
-    /* Color de fondo azul */
-    color: white;
-    /* Color del texto blanco */
-    padding: 10px 20px;
-    /* Espaciado interno del botón */
-    border: none;
-    /* Quita el borde */
-    width: 200px;
-    border-radius: 5px;
-    /* Borde redondeado */
-    cursor: pointer;
-    /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s ease;
-    /* Transición suave del color de fondo */
-}
-
-/* Estilo para el botón cuando se pasa el mouse sobre él */
-#btn-enviar:hover {
-    background-color: #13789e;
-    /* Color de fondo más oscuro al pasar el mouse */
-}
-
-
-/*Footer*/
