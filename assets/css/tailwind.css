@@ -21,6 +21,14 @@
   color: white !important;
 }
 
-.text-iconproyect{
-  color: #06b6d4 !important;
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+
+.text-iconproyect {
+  color: #1CB0E8 !important;
+}
+
+.border-iconproyect {
+  border-color: #1CB0E8 !important;
 }

@@ -1,51 +1,76 @@
 {
     "menu": {
+        "item1": "Inicio",
         "item2": "Sobre mí",
         "item3": "Habilidades",
         "item4": "Formación",
-        "item5": "Proyectos",
-        "item6": "Contacto"
+        "item5": "Experiencia",
+        "item6": "Proyectos",
+        "item7": "Contacto"
     },
-
     "home": {
         "home_text-1": "Hola! Soy",
         "home_text-3": "Desarrolladora web Front-End",
-        "parrafo-info": "Estudiante de Estadistica y programación enfocada al Desarrollo Web Frontend. Como persona amante a los diseños intuitivos y estéticamente agradables busco crear proyectos que brinden la mejor experiencia para el usuario.",
+        "paragraph-info": "Estudiante de programación con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y atractivo para proporcionar la mejor experiencia al usuario",
         "cv_button": "Descargar CV",
         "contact_button": "Contacto"
     },
-
-    "sobre-mi": {
+    "about me": {
         "title": "Sobre mí",
-        "texto_sobreMi": "Soy estudiante del pregrado de Estadística y estudiante autodidacta de Desarrollo Web enfocado en programación Frontend.<br>Aspiro conseguir empleo en el mundo del Desarrollo Web, adquirir experiencia, nuevos conocimientos y fortalecer mi vida profesional.<br><br>Soy una persona empática y entusiasta, con competencias enfocadas en el trabajo en equipo, comunicación asertiva, resolución de problemas, responsable y proactiva, me gusta aprender de los demás y superarme continuamente."
+        "texto_about me": "Soy desarrollador de software con conocimientos en diseño e integración en multimedia. Aspiro a obtener empleo en el campo del desarrollo, donde pueda aplicar mis habilidades técnicas y creativas para crear soluciones innovadoras. Busco oportunidades para adquirir experiencia, ampliar mis conocimientos y fortalecer mi trayectoria profesional en este emocionante campo. <br><br> Soy empático, entusiasta y competente en trabajo en equipo, comunicación, resolución de problemas, responsabilidad y proactividad. Disfruto aprendiendo de otros y superándome constantemente.",
+        "title_2": "¿Lo que me gusta?",
+        "card1": "Leer libros",
+        "card2": "Dibujar",
+        "card3": "Estudiar",
+        "card4": "Hacer código",
+        "card5": "Jugar videojuegos"
     },
-
-    "habilidades": {
-        "title": "Habilidades"
+    "skills": {
+        "title": "Habilidades",
+        "skills_item1": "Tecnicas",
+        "skills_item2": "Otras"
     },
-
-    "formacion": {
+    "training": {
         "title": "Formación",
-        "formacion1": "Estadística",
-        "tiempo-formacion1": "2019 - En curso",
-        "formacion2": "Desarrolladora Full-Stack",
-        "tiempo-formacion2": "2022 - En curso",
-        "formacion3": "Contabilización de Operaciones Comerciales y Financieras"
+        "training1": "Bachillerato Básico",
+        "time-training1": "2024 - En curso",
+        "training2": "Tecnólogo en Análisis y Desarrollo de Software",
+        "time-training2": "2022 - 2024",
+        "training3": "Técnico en Diseño e Integración en Multimedia",
+        "time-training3": "2020 - 2021"
     },
+    "experience": {
+        "title": "Experiencia",
+        "post1": "Area IT",
+        "experience1": "Durante mi experiencia como aprendiz en tecnologías de la información, desarrollé habilidades en programación utilizando .NET y Laravel, así como en el manejo de bases de datos SQL Server. Participé en proyectos que incluyeron el desarrollo de aplicaciones web, aprendí a trabajar en equipo y a comunicarme efectivamente. Esta experiencia sentó una base sólida para mi carrera en tecnología de la información y estoy emocionado por seguir creciendo en este campo.",
+        "tiempo-experience1": "2024 - Presente",
+        "post2": "falta",
+        "experience2": "falta",
+        "tiempo-experience2": "2022 - 2023"
 
-    "proyectos": {
+    },
+    "projects": {
         "title": "Proyectos",
-        "title-proyecto1": "Juego del Ahorcado",
-        "info-proyecto1": "Un juego donde el usuario debe adivinar la palabra secreta con un cierto número de oportunidades. La palabra se escoge de forma aleatoria por el programa y el usuario perderá en el momento en que la horca se complete.",
-        "title-proyecto2": "Portafolio",
-        "info-proyecto2": "Mi portafolio web personal, donde se encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre mi formación.",
-        "title-proyecto3": "Encriptador de Texto",
-        "info-proyecto3": "Un ecriptador donde el usuario puede escribir un texto y el encriptador lo codifica con llaves ya programadas. El encriptador también permite desencriptar el texto."
+        "title-project1": "Portafolio web",
+        "info-project1": "Mi portafolio web personal, donde se encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre mi formación.",
+        "title-project2": "Servisoft",
+        "info-project2": "falta",
+        "title-project3": "falta",
+        "info-project3": "falta",
+        "title-project4": "falta",
+        "info-project4": "falta",
+        "title-project5": "falta",
+        "info-project5": "falta",
+        "btn-project": "Ver todos mis proyectos"
     },
-
-    "contacto": {
+    "contact": {
         "title": "Contacto",
-        "text": "Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.",
+        "text": "No dude en ponerse en contacto conmigo",
+        "text1": "Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.",
+        "input1": "Nombre",
+        "input2": "E-mail",
+        "input3": "Asunto",
+        "input4": "Mensaje",
         "btn-enviar": "Enviar"
     }
 }
