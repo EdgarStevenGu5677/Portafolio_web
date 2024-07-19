@@ -12,66 +12,31 @@
 
     <!-- Librerías Objetos movimiento -->
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-    
+
     <!-- Fuentes -->
     <link href="./assets/css/tailwind.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    
-    <body class="bg-gray-100 overflow-x-hidden">
-        <div id="headerContainer" class="container-header fixed top-0 w-full bg-white z-50 bg-gray-100">
-            <header id="header"
-                class="flex justify-between items-center py-2 md:py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
-                <div class="logo md:min-w-0">
-                    <a href="#inicio">
-                        <img src="assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
-                    </a>
-                </div>
-                <nav id="nav" class="hidden lg:flex lg:flex-row lg:items-center lg:justify-end lg:mr-12">
-                    <ul id="menuList" class="flex space-x-12">
-                        <li><a href="#inicio" class="menu-link">Inicio</a></li>
-                        <li><a href="#sobreMi" class="menu-link">Sobre mí</a></li>
-                        <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
-                        <li><a href="#formacion" class="menu-link">Formación</a></li>
-                        <li><a href="#experiencia" class="menu-link">Experiencia</a></li>
-                        <li><a href="#proyectos" class="menu-link">Proyectos</a></li>
-                        <li><a href="#contacto" class="menu-link">Contacto</a></li>
-                        <div class="flex items-center space-x-8 ml-12">
-                            <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
-                                <i class="fas fa-moon"></i>
-                            </button>
-                            <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
-                                <i class="fas fa-language"></i>
-                            </button>
-                        </div>
-                    </ul>
-                </nav>
-    
-                <div class="lg:hidden ml-4">
-                    <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12">
-                        <svg id="menuIcon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Definir los dos estados del ícono: menú y "x" -->
-                            <path id="menuPath" class="menu-icon" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                            <path id="xPath" class="x-icon hidden" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </header>
-            <!-- Menú móvil -->
-            <div id="mobileNav"
-                class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden">
-                <ul class="flex flex-col items-center space-y-4 w-full py-4">
-                    <li><a href="#inicio" id="menuInicio" class="menu-link" onclick="mostrarOcultarMenu()">Inicio</a></li>
-                    <li><a href="#sobreMi" class="menu-link" onclick="mostrarOcultarMenu()">Sobre mí</a></li>
-                    <li><a href="#habilidades" class="menu-link" onclick="mostrarOcultarMenu()">Habilidades</a></li>
-                    <li><a href="#formacion" class="menu-link" onclick="mostrarOcultarMenu()">Formación</a></li>
-                    <li><a href="#experiencia" class="menu-link" onclick="mostrarOcultarMenu()">Experiencia</a></li>
-                    <li><a href="#proyectos" class="menu-link" onclick="mostrarOcultarMenu()">Proyectos</a></li>
-                    <li><a href="#contacto" class="menu-link" onclick="mostrarOcultarMenu()">Contacto</a></li>
-                    <div class="flex items-center space-x-8 mt-8"> <!-- Reducido el espacio entre botones -->
+</head>
+
+<body class="bg-gray-100 overflow-x-hidden">
+    <div id="headerContainer" class="container-header fixed top-0 w-full bg-white z-50 bg-gray-100">
+        <header id="header"
+            class="flex justify-between items-center py-2 md:py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
+            <div class="logo md:min-w-0">
+                <a href="#inicio">
+                    <img src="assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
+                </a>
+            </div>
+            <nav id="nav" class="hidden lg:flex lg:flex-row lg:items-center lg:justify-end lg:mr-12">
+                <ul id="menuList" class="flex space-x-12">
+                    <li><a href="#inicio" class="menu-link">Inicio</a></li>
+                    <li><a href="#sobreMi" class="menu-link">Sobre mí</a></li>
+                    <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
+                    <li><a href="#formacion" class="menu-link">Formación</a></li>
+                    <li><a href="#experiencia" class="menu-link">Experiencia</a></li>
+                    <li><a href="#proyectos" class="menu-link">Proyectos</a></li>
+                    <li><a href="#contacto" class="menu-link">Contacto</a></li>
+                    <div class="flex items-center space-x-8 ml-12">
                         <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                             <i class="fas fa-moon"></i>
                         </button>
@@ -80,427 +45,505 @@
                         </button>
                     </div>
                 </ul>
+            </nav>
+
+            <div class="lg:hidden ml-4">
+                <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12">
+                    <svg id="menuIcon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Definir los dos estados del ícono: menú y "x" -->
+                        <path id="menuPath" class="menu-icon" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <path id="xPath" class="x-icon hidden" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
+        </header>
+        <!-- Menú móvil -->
+        <div id="mobileNav"
+            class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden">
+            <ul class="flex flex-col items-center space-y-4 w-full py-4">
+                <li><a href="#inicio" id="menuInicio" class="menu-link" onclick="mostrarOcultarMenu()">Inicio</a></li>
+                <li><a href="#sobreMi" class="menu-link" onclick="mostrarOcultarMenu()">Sobre mí</a></li>
+                <li><a href="#habilidades" class="menu-link" onclick="mostrarOcultarMenu()">Habilidades</a></li>
+                <li><a href="#formacion" class="menu-link" onclick="mostrarOcultarMenu()">Formación</a></li>
+                <li><a href="#experiencia" class="menu-link" onclick="mostrarOcultarMenu()">Experiencia</a></li>
+                <li><a href="#proyectos" class="menu-link" onclick="mostrarOcultarMenu()">Proyectos</a></li>
+                <li><a href="#contacto" class="menu-link" onclick="mostrarOcultarMenu()">Contacto</a></li>
+                <div class="flex items-center space-x-8 mt-8"> <!-- Reducido el espacio entre botones -->
+                    <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-language"></i>
+                    </button>
+                </div>
+            </ul>
         </div>
-    
-        <main id="mainContent">
-            <!-- Inicio -->
-            <section id="inicio"
-                class="home flex justify-center bg-gray-100 px-4 lg:px-0 mt-4 md:mt-8 lg:mt-0 overflow-hidden min-h-screen">
-                <!-- Contenido aquí -->
-                <!-- Contenedor principal -->
-                <div class="flex flex-col justify-center w-full lg:flex lg:flex-row">
-                    <!-- Columna principal -->
-                    <div
-                        class="lg:w-2/3 border-gray-300 mx-4 lg:mx-10 flex flex-col justify-center lg:mt-10 text-center lg:text-left order-2 lg:order-2">
-                        <div class="container_text-info">
-                            <p class="inicio_text-1 text-xl md:text-3xl lg:text-3xl inline-flex items-center space-x-2 mx-auto"
-                                data-section="home" data-value="home_text-1">
-                                Hola!
-                                <img src="./assets/images/saludo.webp" alt="Military Salute Emoji"
-                                    class="w-5 h-5 md:w-8 md:h-8 lg:w-8 lg:h-8" />
-                                <span class="ml-2">Soy</span>
-                            </p>
-    
-                            <p class="inicio_text-2 text-4xl md:text-6xl lg:text-5xl mb-2 font-semibold">Steven Guaman</p>
-                        </div>
-                        <div>
-                            <p id="typingEffect" class="home_text-3 text-lg md:text-3xl lg:text-3xl" data-section="inicio"
-                                data-value="home_text-3"></p>
-                        </div><!-- Parrafo info oculto en móviles -->
-                        <div class="container_parrafo-info hidden lg:block">
-                            <p class="parrafo-info text-base md:text-xl lg:text-xl" data-section="home" data-value="parrafo-info">Desarrollador
-                                de software. Apasionado por crear proyectos con diseño intuitivo y atractivo para proporcionar la mejor
-                                experiencia al usuario.</p>
-                        </div>
-                        <!-- Contenedor para los botones -->
-                        <div class="container_button mt-6 flex flex-col md:flex-row justify-center lg:justify-start gap-4">
-                            <a href="assets/pdf/curriculum.pdf" download="curriculum.pdf" target="_blank">
-                                <button
-                                    class="cv_button text-sm md:text-lg lg:text-base px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4"
-                                    data-section="home" data-value="cv_button">
-                                    Descargar CV <i class="fas fa-download"></i>
-                                </button>
-                            </a>
-    
-                            <!-- Botón de contacto oculto en móviles -->
-                            <a href="#contacto" class="hidden lg:inline-block">
-                                <button
-                                    class="contact_button text-sm md:text-lg lg:text-lg px-4 py-2 md:px-6 md:py-3 lg:px-10 lg:py-4"
-                                    data-section="home" data-value="contact_button">
-                                    Contacto
-                                </button>
-                            </a>
-    
-                        </div>
-    
-                        <!-- Iconos sociales en móviles -->
-                        <div class="flex justify-center lg:hidden mt-6">
-                            <div
-                                class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-x4 transition-shadow duration-300 ease-in-out">
-                                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                                    <i class="fab fa-instagram icon"></i>
-                                </a>
-                            </div>
-                            <div
-                                class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                                    <i class="fab fa-linkedin icon"></i>
-                                </a>
-                            </div>
-                            <div
-                                class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                                    <i class="fab fa-github icon"></i>
-                                </a>
-                            </div>
-                            <div
-                                class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                                    <i class="fab fa-discord icon"></i>
-                                </a>
-                            </div>
-                        </div>
+    </div>
+
+    <main id="mainContent">
+        <!-- Inicio -->
+        <section id="inicio"
+            class="home flex justify-center bg-gray-100 px-4 lg:px-0 mt-4 md:mt-8 lg:mt-0 overflow-hidden min-h-screen">
+            <!-- Contenido aquí -->
+            <!-- Contenedor principal -->
+            <div class="flex flex-col justify-center w-full lg:flex lg:flex-row">
+                <!-- Columna principal -->
+                <div
+                    class="lg:w-2/3 border-gray-300 mx-4 lg:mx-10 flex flex-col justify-center lg:mt-10 text-center lg:text-left order-2 lg:order-2">
+                    <div class="container_text-info">
+                        <p class="inicio_text-1 text-xl md:text-3xl lg:text-3xl inline-flex items-center space-x-2 mx-auto"
+                            data-section="home" data-value="home_text-1">
+                            Hola!
+                            <img src="./assets/images/saludo.webp" alt="Military Salute Emoji"
+                                class="w-5 h-5 md:w-8 md:h-8 lg:w-8 lg:h-8" />
+                            <span class="ml-2">Soy</span>
+                        </p>
+
+                        <p class="inicio_text-2 text-4xl md:text-6xl lg:text-5xl mb-2 font-semibold">Steven Guaman</p>
                     </div>
-                    <!-- Columna secundaria -->
-                    <div
-                        class="lg:w-1/3 mx-auto lg:mx-0 lg:mr-52 flex items-center justify-center lg:justify-end order-1 lg:order-3 mb-4">
-                        <picture class="contenedor_image-inicio" data-aos="zoom-in">
-                            <source media="(min-width: 768px)" srcset="./assets/images/logop1.png">
-                            <img class="image_home w-48 md:w-72 lg:w-full max-w-full h-auto mx-auto"
-                                src="./assets/images/logop1.png" alt="Ilustración programador">
-                        </picture>
+                    <div>
+                        <p id="typingEffect" class="home_text-3 text-lg md:text-3xl lg:text-3xl" data-section="inicio"
+                            data-value="home_text-3"></p>
+                    </div><!-- Parrafo info oculto en móviles -->
+                    <div class="container_parrafo-info hidden lg:block">
+                        <p class="parrafo-info text-base md:text-xl lg:text-xl" data-section="home"
+                            data-value="parrafo-info">Desarrollador de software apasionado por crear proyectos
+                            con diseño intuitivo, atractivo, escalable y funcional
+                            para proporcionar la mejor experiencia al usuario.</p>
                     </div>
-    
-                    <!-- Primera columna con iconos sociales en pantallas grandes -->
-                    <div class="flex flex-col justify-end lg:w-1/12 mx-6 mb-4 order-3 lg:order-1 hidden lg:flex">
-                        <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    <!-- Contenedor para los botones -->
+                    <div class="container_button mt-6 flex flex-col md:flex-row justify-center lg:justify-start gap-4">
+                        <a href="assets/pdf/curriculum.pdf" download="curriculum.pdf" target="_blank">
+                            <button
+                                class="cv_button text-sm md:text-lg lg:text-base px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4"
+                                data-section="home" data-value="cv_button">
+                                Descargar CV <i class="fas fa-download"></i>
+                            </button>
+                        </a>
+
+                        <!-- Botón de contacto oculto en móviles -->
+                        <a href="#contacto" class="hidden lg:inline-block">
+                            <button
+                                class="contact_button text-sm md:text-lg lg:text-lg px-4 py-2 md:px-6 md:py-3 lg:px-10 lg:py-4"
+                                data-section="home" data-value="contact_button">
+                                Contacto
+                            </button>
+                        </a>
+
+                    </div>
+
+                    <!-- Iconos sociales en móviles -->
+                    <div class="flex justify-center lg:hidden mt-6">
+                        <div
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-x4 transition-shadow duration-300 ease-in-out">
                             <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                                 <i class="fab fa-instagram icon"></i>
                             </a>
                         </div>
-                        <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <div
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
                             <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                                 <i class="fab fa-linkedin icon"></i>
                             </a>
                         </div>
-                        <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <div
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
                             <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                                 <i class="fab fa-github icon"></i>
                             </a>
                         </div>
-                        <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <div
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
                             <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
                                 <i class="fab fa-discord icon"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-            </section>
-    
-            <!-- SECCION SOBRE MI -->
-            <section class="sobreMi items-center flex justify-center bg-gray-200 h-full py-16" id="sobreMi">
-                <div class="max-w-screen-xl w-full mx-auto p-8">
-                    <!-- Título -->
-                    <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                        data-section="sobre-mi" data-value="title" data-aos="fade-up">
-                        Sobre mí
-                    </h1>
-    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 lg:mt-12">
-                        <!-- Segunda columna (texto) -->
-                        <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2">
-                            <span class="title_sobreMi block mb-2 text-center lg:text-left text-2xl lg:text-3xl font-bold"
-                                style="color:#1CB0E8 ;">
-                                Steven Guaman<br>
-                            </span>
-    
-                            <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy desarrollador
-                                de software con
-                                conocimientos en diseño e integración en multimedia. Aspiro a obtener empleo en el campo del
-                                desarrollo, donde
-                                pueda aplicar mis habilidades técnicas y creativas para crear soluciones innovadoras. Busco
-                                oportunidades para
-                                adquirir experiencia, ampliar mis conocimientos y fortalecer mi trayectoria profesional en
-                                este emocionante
-                                campo. <br><br>
-                                Soy empático, entusiasta y competente en trabajo en equipo, comunicación, resolución de
-                                problemas,
-                                responsabilidad y proactividad. Disfruto aprendiendo de otros y superándome
-                                constantemente.</span>
-                        </div>
-    
-                        <!-- Primera columna (imagen) -->
-                        <div class="container_image-sobreMi flex justify-center order-2 lg:order-1">
-                            <picture>
-                                <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
-                            </picture>
-                        </div>
-                    </div>
-    
-                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 break-words mt-12 md:mt-16 lg:mt-16 xl:mt-24"
-                        data-section="lo-que-me-gusta" data-value="title" data-aos="fade-up">¿Lo que me gusta?</h1>
-    
-                    <div class="cards_container--habilidades flex flex-wrap justify-center">
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2" data-aos="fade-up"
-                            data-aos-duration="500">
-                            <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
-                            <p>Leer libros</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2" data-aos="fade-up"
-                            data-aos-duration="700">
-                            <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i>
-                            <p>Dibujar</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2" data-aos="fade-up"
-                            data-aos-duration="900">
-                            <i class="fas fa-graduation-cap inline-block mb-2 text-3xl"></i>
-                            <p>Estudiar</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2" data-aos="fade-up"
-                            data-aos-duration="1100">
-                            <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i>
-                            <p>Hacer código</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-1" data-aos="fade-up"
-                            data-aos-duration="500">
-                            <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i>
-                            <p>Jugar videojuegos</p>
-                        </div>
-                    </div>
+                <!-- Columna secundaria -->
+                <div
+                    class="lg:w-1/3 mx-auto lg:mx-0 lg:mr-52 flex items-center justify-center lg:justify-end order-1 lg:order-3 mb-4">
+                    <picture class="contenedor_image-inicio" data-aos="zoom-in">
+                        <source media="(min-width: 768px)" srcset="./assets/images/logop1.png">
+                        <img class="image_home w-48 md:w-72 lg:w-full max-w-full h-auto mx-auto"
+                            src="./assets/images/logop1.png" alt="Ilustración programador">
+                    </picture>
                 </div>
-            </section>
-    
-            <!-- Habilidades -->
-            <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades">
-                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                    data-section="habilidades" data-value="title" data-aos="fade-up">
-                    Habilidades
-                </h1>
-                <div>
-                    <div class="flexjustify-between " id="menuhabilidades">
-                        <a href="#" class="mr-8 active" onclick="mostrarHabilidades('habilidades1', event)">Tecnicas</a>
-                        <a href="#" onclick="mostrarHabilidades('habilidades2', event)">Otras</a>
-                    </div>
-                    <div id="habilidades1" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12">
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/html.webp" alt="HTML">
-                            <p>HTML 5</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/css.webp" alt="CSS">
-                            <p>CSS 3</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/js.webp" alt="JavaScript">
-                            <p>JavaScript</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2" 
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/net.webp" alt="Net">
-                            <p>Asp.Net</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/laravel.webp" alt="Laravel">
-                            <p>Laravel</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/sqlserver.webp" alt="SqlServer">
-                            <p>Sql Server</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/mysql.webp" alt="MySQL">
-                            <p>My SQL</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/github.webp" alt="Github">
-                            <p>Git hub</p>
-                        </div>
-                    </div>
-    
-                    <div id="habilidades2" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12"
-                        style="display:none;">
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/adobexd.webp" alt="Adobexd">
-                            <p>Adobe XD</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/inskape.webp" alt="Inskape">
-                            <p>Inskape</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/krita.webp" alt="Krita">
-                            <p>Krita</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/gimp.webp" alt="Gimp">
-                            <p>Gimp</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/aseprite.webp" alt="Aseprite">
-                            <p>Aseprite</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/notion.webp" alt="Notion">
-                            <p>Notion</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/trello.webp" alt="Trello">
-                            <p>Trello</p>
-                        </div>
-    
-                        <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <img src="./assets/images/scratch.webp" alt="Scratch">
-                            <p>Scratch</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Formación -->
-            <section class="formacion bg-gray-200 py-16" id="formacion">
-                <div class="max-w-screen-xl mx-auto p-8">
-                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                        data-section="formacion" data-value="title" data-aos="fade-up">
-                        Formación
-                    </h1>
-                    <div class="flex justify-center">
-                        <div class="cards_container--formacion grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-                             <!-- Card 1 -->
-                            <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
-                                data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                                <div class="card-content p-4">
-                                    <img class="logo-universidad w-32 mx-auto mb-4" src="./assets/images/iberoamericana.png" alt="Logo - universidad">
-                                    <div class="container_texto--formacion text-center">
-                                        <p data-section="formacion" data-value="formacion3">Ingenieria de Software</p>
-                                        <p>2024 - En curso</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Card 2 -->
-                            <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
-                                data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                                <div class="card-content p-4">
-                                    <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp"
-                                        alt="Logo - SENA">
-                                    <div class="container_texto--formacion text-center">
-                                        <p data-section="formacion" data-value="formacion3">Tecnólogo en Análisis y
-                                            Desarrollo de Software</p>
-                                        <p>2022 - 2024</p>
-                                    </div>
+                <!-- Primera columna con iconos sociales en pantallas grandes -->
+                <div class="flex flex-col justify-end lg:w-1/12 mx-6 mb-4 order-3 lg:order-1 hidden lg:flex">
+                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            <i class="fab fa-instagram icon"></i>
+                        </a>
+                    </div>
+                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            <i class="fab fa-linkedin icon"></i>
+                        </a>
+                    </div>
+                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            <i class="fab fa-github icon"></i>
+                        </a>
+                    </div>
+                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            <i class="fab fa-discord icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION SOBRE MI -->
+        <section class="sobreMi items-center flex justify-center bg-gray-200 h-full py-16" id="sobreMi">
+            <div class="max-w-screen-xl w-full mx-auto p-8">
+                <!-- Título -->
+                <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="sobre-mi" data-value="title" data-aos="fade-up">
+                    Sobre mí
+                </h1>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 lg:mt-12">
+                    <!-- Segunda columna (texto) -->
+                    <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2">
+                        <span class="title_sobreMi block mb-2 text-center lg:text-left text-2xl lg:text-3xl font-bold"
+                            style="color:#1CB0E8 ;">
+                            Steven Guaman<br>
+                        </span>
+
+                        <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy un
+                            profesional en el desarrollo de
+                            software,
+                            con una sólida experiencia en la creación de aplicaciones
+                            y soluciones robustas. Además, tengo conocimientos en el ámbito
+                            multimedia, lo que me permite integrar de manera efectiva elementos
+                            gráficos en los proyectos que desarrollo. <br><br>
+                            Mi enfoque se centra en desarrollar soluciones innovadoras
+                            y funcionales que satisfagan las necesidades específicas de
+                            clientes y usuarios. Me considero empático, entusiasta y
+                            competente en trabajo en equipo, comunicación, resolución
+                            de problemas, responsabilidad y proactividad. Disfruto
+                            aprendiendo de otros y siempre busco superarme.</span>
+                    </div>
+                    <!-- Primera columna (imagen) -->
+                    <div class="container_image-sobreMi flex justify-center order-2 lg:order-1">
+                        <picture>
+                            <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
+                        </picture>
+                    </div>
+                </div>
+
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 break-words mt-12 md:mt-16 lg:mt-16 xl:mt-24"
+                    data-section="lo-que-me-gusta" data-value="title" data-aos="fade-up">¿Lo que me gusta?</h1>
+
+                <div class="cards_container--habilidades flex flex-wrap justify-center">
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
+                        <p>Leer libros</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                        data-aos="fade-up" data-aos-duration="700">
+                        <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i>
+                        <p>Dibujar</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                        data-aos="fade-up" data-aos-duration="900">
+                        <i class="fas fa-plane inline-block mb-2 text-3xl"></i>
+                        <p>Viajar</p>
+                    </div>
+
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                        data-aos="fade-up" data-aos-duration="1100">
+                        <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i>
+                        <p>Hacer código</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i>
+                        <p>Jugar videojuegos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades">
+            <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                data-section="habilidades" data-value="title" data-aos="fade-up">
+                Habilidades
+            </h1>
+            <div>
+                <div class="flexjustify-between " id="menuhabilidades">
+                    <a href="#" class="mr-8 active" onclick="mostrarHabilidades('habilidades1', event)">Tecnicas</a>
+                    <a href="#" onclick="mostrarHabilidades('habilidades2', event)">Otras</a>
+                </div>
+                <div id="habilidades1" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12">
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/html.webp" alt="HTML">
+                        <p>HTML 5</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/css.webp" alt="CSS">
+                        <p>CSS 3</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/js.webp" alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/net.webp" alt="Net">
+                        <p>Asp.Net</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/laravel.webp" alt="Laravel">
+                        <p>Laravel</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/sqlserver.webp" alt="SqlServer">
+                        <p>Sql Server</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/mysql.webp" alt="MySQL">
+                        <p>My SQL</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/github.webp" alt="Github">
+                        <p>Git hub</p>
+                    </div>
+                </div>
+
+                <div id="habilidades2" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12"
+                    style="display:none;">
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/adobexd.webp" alt="Adobexd">
+                        <p>Adobe XD</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/inskape.webp" alt="Inskape">
+                        <p>Inskape</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/krita.webp" alt="Krita">
+                        <p>Krita</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/gimp.webp" alt="Gimp">
+                        <p>Gimp</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/aseprite.webp" alt="Aseprite">
+                        <p>Aseprite</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/notion.webp" alt="Notion">
+                        <p>Notion</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/trello.webp" alt="Trello">
+                        <p>Trello</p>
+                    </div>
+
+                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <img src="./assets/images/scratch.webp" alt="Scratch">
+                        <p>Scratch</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formación -->
+        <section class="formacion bg-gray-200 py-16" id="formacion">
+            <div class="max-w-screen-xl mx-auto p-8">
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="formacion" data-value="title" data-aos="fade-up">
+                    Formación
+                </h1>
+                <div class="flex justify-center">
+                    <div class="cards_container--formacion grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                        <!-- Card 1 -->
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
+                            data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                            <div class="card-content p-4">
+                                <img class="logo-universidad w-32 mx-auto mb-4" src="./assets/images/iberoamericana.png"
+                                    alt="Logo - universidad">
+                                <div class="container_texto--formacion text-center">
+                                    <p data-section="formacion" data-value="formacion3">Ingenieria de Software</p>
+                                    <p>2024 - En curso</p>
                                 </div>
                             </div>
-                            <!-- Card 3 -->
-                            <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
-                                data-aos="fade-up" data-aos-duration="500">
-                                <div class="card-content p-4">
-                                    <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp"
-                                        alt="Logo - SENA">
-                                    <div class="container_texto--formacion text-center">
-                                        <p data-section="formacion" data-value="formacion2">Técnico en Diseño e Integración
-                                            en Multimedia</p>
-                                        <p data-section="formacion" data-value="tiempo-formacion2">2020 - 2021</p>
-                                    </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
+                            data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                            <div class="card-content p-4">
+                                <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp"
+                                    alt="Logo - SENA">
+                                <div class="container_texto--formacion text-center">
+                                    <p data-section="formacion" data-value="formacion3">Tecnólogo en Análisis y
+                                        Desarrollo de Software</p>
+                                    <p>2022 - 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
+                            data-aos="fade-up" data-aos-duration="500">
+                            <div class="card-content p-4">
+                                <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp"
+                                    alt="Logo - SENA">
+                                <div class="container_texto--formacion text-center">
+                                    <p data-section="formacion" data-value="formacion2">Técnico en Diseño e Integración
+                                        en Multimedia</p>
+                                    <p data-section="formacion" data-value="tiempo-formacion2">2020 - 2021</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-    
-            <!-- Experiencia -->
-            <section class="experiencia py-16" id="experiencia">
-                <div class="max-w-screen-xl mx-auto p-8">
-                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                        data-section="experiencia" data-value="title" data-aos="fade-up">
-                        Experiencia
-                    </h1>
-                    <div class="cards_container--experiencia flex flex-col justify-center items-center space-y-6">
-    
-                        <!-- Primera experiencia -->
-                        <div
-                            class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
-                            <div class="container_texto--experiencia">
-                                <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
-                                    <div class="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
-                                        <p class="text-gray-800 text-base sm:text-lg">Aprendiz IT</p>
-                                        <p class="text-gray-800 text-base sm:text-lg hidden sm:block"
-                                            data-section="experiencia" data-value="experiencia">
-                                            @Hino Motors Manufacturing Colombia SAS
-                                        </p>
-                                        <p class="text-gray-800 text-base sm:text-lg block sm:hidden"
-                                            data-section="experiencia" data-value="experiencia">
-                                            @ HMMC
-                                        </p>
-                                    </div>
-                                    <div class="flex items-center space-x-4">
-                                        <p class="text-gray-800 text-base sm:text-lg">2024 - Presente</p>
-                                        <!-- El botón se muestra en pantallas grandes -->
-                                        <button
-                                            class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
+            </div>
+        </section>
+
+        <!-- Experiencia -->
+        <section class="experiencia py-16" id="experiencia">
+            <div class="max-w-screen-xl mx-auto p-8">
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="experiencia" data-value="title" data-aos="fade-up">
+                    Experiencia
+                </h1>
+                <div class="cards_container--experiencia flex flex-col justify-center items-center space-y-6">
+
+                    <!-- Primera experiencia -->
+                    <div
+                        class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
+                        <div class="container_texto--experiencia">
+                            <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
+                                <div class="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
+                                    <p class="text-gray-800 text-base sm:text-lg">Aprendiz IT</p>
+                                    <p class="text-gray-800 text-base sm:text-lg hidden sm:block"
+                                        data-section="experiencia" data-value="experiencia">
+                                        @Hino Motors Manufacturing Colombia SAS
+                                    </p>
+                                    <p class="text-gray-800 text-base sm:text-lg block sm:hidden"
+                                        data-section="experiencia" data-value="experiencia">
+                                        @ HMMC
+                                    </p>
                                 </div>
-                                <!-- El botón se muestra en móviles centrado y debajo del contenido -->
-                                <button
-                                    class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mx-auto mt-4">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
-                            <p class="font-bold">Cota-Cundinamarca</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    
-                                <div>
-                                    <p class="text-gray-700 text-base">- Participación activa en la documentación de proyectos y asistencia en reuniones con clientes para la definición de nuevos proyectos. <br><br>
-                                        - Soporte continuo y mantenimiento de proyectos existentes, asegurando la funcionalidad y optimización. <br><br>
-                                        - Colaboración en proyectos utilizando  C# .NET y Laravel para el desarrollo de aplicaciones robustas y escalables. <br><br>
-                                        - Elaboración de mockups y participación en reuniones para la definición de requerimientos y flujos de proyectos. <br><br>
-                                        - Diseño y definición de estructuras de bases de datos SQL, incluyendo la creación de tablas, relaciones y consultas optimizadas para mejorar la eficiencia y el rendimiento de las aplicaciones.<br><br>
-                                        - Uso activo de Git (GitHub) y Team Explorer para la gestión de versiones, facilitando la colaboración en equipo y el control eficiente de cambios en los proyectos.</p>
-                                </div>
-                                <div class="flex justify-center items-center">
-                                    <img src="assets/images/hino.webp" alt="Logo de Hino Motors" class="max-w-full h-auto">
+                                <div class="flex items-center space-x-4">
+                                    <p class="text-gray-800 text-base sm:text-lg">2024 - Presente</p>
+                                    <!-- El botón se muestra en pantallas grandes -->
+                                    <button
+                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 duration-300 ease-in-out">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
                                 </div>
                             </div>
+                            <!-- El botón se muestra en móviles centrado y debajo del contenido -->
+                            <button
+                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 duration-300 ease-in-out mx-auto mt-4">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </div>
-                        <!-- Segunda experiencia -->
-                        <div
+                    </div>
+                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
+                        <p class="font-bold text-lg text-gray-800">Cota-Cundinamarca</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="p-6">
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-file-alt text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Participación activa en la documentación de proyectos y asistencia en
+                                            reuniones con clientes para la definición de nuevos proyectos.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-tools text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Soporte continuo y mantenimiento de proyectos existentes, asegurando la
+                                            funcionalidad y optimización.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-code text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Colaboración en proyectos utilizando C# .NET y Laravel para el desarrollo de
+                                            aplicaciones robustas y escalables.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-pencil-ruler text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Elaboración de mockups y participación en reuniones para la definición de
+                                            requerimientos y flujos de proyectos.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-database text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Diseño y definición de estructuras de bases de datos SQL, incluyendo la
+                                            creación de tablas, relaciones y consultas optimizadas para mejorar la
+                                            eficiencia y el rendimiento de las aplicaciones.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-code-branch text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Uso activo de Git (GitHub) y Team Explorer para la gestión de versiones,
+                                            facilitando la colaboración en equipo y el control eficiente de cambios en
+                                            los proyectos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <img src="assets/images/hino.webp" alt="Logo de Hino Motors" class="max-w-full h-auto">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Segunda experiencia -->
+                    <div
                         class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
                         <div class="container_texto--experiencia">
                             <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
@@ -519,283 +562,337 @@
                                     <p class="text-gray-800 text-base sm:text-lg">2022 - 2023</p>
                                     <!-- El botón se muestra en pantallas grandes -->
                                     <button
-                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 duration-300 ease-in-out">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
                             <!-- El botón se muestra en móviles centrado y debajo del contenido -->
                             <button
-                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out mx-auto mt-4">
+                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 duration-300 ease-in-out mx-auto mt-4">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
                     <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                            <div>
-                                <p class="text-gray-700 text-base">- Desarrollé una variedad de aplicaciones de escritorio en Java, enfocándome en la usabilidad y la eficiencia del código. <br><br>
-                                    - Diseñé y desarrollé sitios web dinámicos utilizando C# ASP.NET, asegurando funcionalidades avanzadas y una experiencia de usuario intuitiva.<br><br>
-                                    - Gestioné y optimicé bases de datos SQL, implementando consultas complejas para garantizar la integridad y el rendimiento de los datos.<br><br>
-                                    - Utilicé GitHub para el control de versiones, facilitando la colaboración eficiente y la gestión de cambios en los proyectos.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="p-6">
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-desktop text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Desarrollé una variedad de aplicaciones de escritorio en Java, enfocándome
+                                            en la usabilidad y la eficiencia del código.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-laptop-code text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Diseñé y desarrollé sitios web dinámicos utilizando C# ASP.NET, asegurando
+                                            funcionalidades avanzadas y una experiencia de usuario intuitiva.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-database text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Gestioné y optimicé bases de datos SQL, implementando consultas complejas
+                                            para garantizar la integridad y el rendimiento de los datos.
+                                        </p>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-code-branch text-iconproyect text-xl mr-3"></i>
+                                        <p class="text-gray-700 text-base">
+                                            Utilicé GitHub para el control de versiones, facilitando la colaboración
+                                            eficiente y la gestión de cambios en los proyectos.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="flex justify-center items-center">
-                                <img src="assets/images/hino.webp" alt="Logo de Freelance" class="max-w-full h-auto">
+                                <img src="assets/images/logo.webp" alt="Logo de Freelance" class="max-w-full h-auto">
                             </div>
                         </div>
-                    </div>
-    
                     </div>
                 </div>
-            </section>
-    
-            <!-- Proyectos -->
-            <section class="proyectos bg-gray-200 py-16" id="proyectos">
-                <div class="max-w-screen-xl mx-auto p-4">
-                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                        data-section="proyectos" data-value="title" data-aos="fade-up">
-                        Proyectos
-                    </h1>
-                    <div class="flex flex-wrap justify-center">
-                        <!-- Proyecto 1 -->
-                        <div class="w-full md:w-1/3 px-2 mb-4">
-                            <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 group hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
-                                data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                                <div class="container_imgCard--proyectos relative">
-                                    <img src="./assets/images/prueba2.png" alt="Proyecto: Portafolio"
-                                        class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
-                                </div>
-                                <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                    <h2 data-section="proyectos" data-value="title-proyecto1"
-                                        class="text-iconproyect font-bold">
-                                        Portafolio web</h2>
-                                    <p data-section="proyectos" data-value="info-proyecto1">Mi portafolio web personal,
-                                        donde se
-                                        encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un
-                                        poco sobre
-                                        mi formación.</p>
-                                </div>
-                                <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
-                                    <div class="flex flex-wrap gap-4 text-iconproyect">
-                                        <i class="fab fa-html5 text-xl"></i>
-                                        <i class="fab fa-css3-alt text-xl"></i>
-                                        <i class="fab fa-js text-xl"></i>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section class="proyectos bg-gray-200 py-16" id="proyectos">
+            <div class="max-w-screen-xl mx-auto p-4">
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="proyectos" data-value="title" data-aos="fade-up">
+                    Proyectos
+                </h1>
+                <div class="flex flex-wrap justify-center">
+                    <!-- Proyecto 1 -->
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
+                            data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
+                            <div class="container_imgCard--proyectos relative">
+                                <img src="./assets/images/prueba2.png" alt="Proyecto: Servisoft"
+                                    class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
+                            </div>
+                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                <h2 data-section="proyectos" data-value="title-proyecto2"
+                                    class="text-iconproyect font-bold">
+                                    Portafolio web
+                                </h2>
+                                <div class="relative">
+                                    <p
+                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                        Mi portafolio web personal, aquí podrás explorar algunos de mis proyectos
+                                        destacados, tambien conoceras mis habilidades técnicas y descubrir un poco
+                                        más sobre mi trayectoria y formación.
+                                    </p>
+                                    <div
+                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none">
                                     </div>
                                 </div>
-                                <div
-                                    class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                    <a href="#" target="_blank" class="col-span-1">
-                                        <button
-                                            class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
-                                            <i class="fas fa-eye mr-2"></i> DEMO
-                                        </button>
-                                    </a>
-                                    <a href="#" target="_blank" class="col-span-1">
-                                        <button
-                                            class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
-                                            <i class="fab fa-github mr-2 text-lg"></i> REPO
-                                        </button>
-                                    </a>
+                            </div>
+                            <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
+                                <div class="flex flex-wrap gap-4 text-iconproyect">
+                                    <i class="fab fa-html5 text-xl"></i>
+                                    <i class="fab fa-css3-alt text-xl"></i>
+                                    <i class="fab fa-js text-xl"></i>
                                 </div>
                             </div>
-                        </div>
-    
-                        <!-- Proyecto 2 -->
-                        <div class="w-full md:w-1/3 px-2 mb-4">
-                            <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
-                                data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                                <div class="container_imgCard--proyectos relative">
-                                    <img src="./assets/images/prueba1.png" alt="Proyecto: Servisoft"
-                                        class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
-                                </div>
-                                <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                    <h2 data-section="proyectos" data-value="title-proyecto2"
-                                        class="text-iconproyect font-bold">
-                                        Servisoft
-                                    </h2>
-    
-                                    <p data-section="proyectos" data-value="info-proyecto2">Mi portafolio web personal,
-                                        donde se
-                                        encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un
-                                        poco sobre
-                                        mi formación.</p>
-                                </div>
-                                <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
-                                    <div class="flex flex-wrap gap-4 text-iconproyect">
-                                        <i class="fab fa-html5 text-xl"></i>
-                                        <i class="fab fa-css3-alt text-xl"></i>
-                                        <i class="fab fa-js text-xl"></i>
-                                        <i class="fab fa-dotnet text-xl"></i>
-                                        <i class="fas fa-database text-xl"></i>
-                                    </div>
-                                </div>
-                                <div
-                                    class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                    <a href="#" target="_blank" class="col-span-1">
-                                        <button
-                                            class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
-                                            <i class="fas fa-eye mr-2"></i> DEMO
-                                        </button>
-                                    </a>
-                                    <a href="#" target="_blank" class="col-span-1">
-                                        <button
-                                            class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
-                                            <i class="fab fa-github mr-2 text-lg"></i> REPO
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <!-- Proyecto 3 -->
-                        <div class="w-full md:w-1/3 px-2 mb-4">
-                            <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
-                                data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                                <div class="container_imgCard--proyectos relative">
-                                    <img src="./assets/images/prueba3.png" alt="Proyecto: Proyecto 3"
-                                        class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
-                                </div>
-                                <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                    <h2 data-section="proyectos" data-value="title-proyecto3"
-                                        class="text-iconproyect font-bold">Multirepuestos Boyaca</h2>
-                                    <p data-section="proyectos" data-value="info-proyecto3">Mi portafolio web personal,
-                                        donde se
-                                        encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un
-                                        poco sobre
-                                        mi formación.</p>
-                                </div>
-                                <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
-                                    <div class="flex flex-wrap gap-4 text-iconproyect">
-                                        <i class="fab fa-html5 text-xl"></i>
-                                        <i class="fab fa-css3-alt text-xl"></i>
-                                        <i class="fab fa-js text-xl"></i>
-                                        <i class="fab fa-react text-xl"></i>
-                                        <i class="fab fa-node text-xl"></i>
-                                    </div>
-                                </div>
-                                <div
-                                    class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                    <a href="#" target="_blank" class="col-span-1">
-                                        <button
-                                            class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
-                                            <i class="fas fa-eye mr-2"></i> DEMO
-                                        </button>
-                                    </a>
-                                    <a href="#" target="_blank" class="col-span-1">
-                                        <button
-                                            class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
-                                            <i class="fab fa-github mr-2 text-lg"></i> REPO
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <a href="./assets/html/proyectos.html" id="show-projects-btn"
-                            class="btn-custom inline-block px-6 py-3 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out">
-                            Ver todos mis proyectos
-                        </a>
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Contacto -->
-            <section class="contacto flex justify-center items-center py-16" id="contacto">
-                <div class="max-w-screen-xl mx-auto p-4">
-                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                        data-section="contacto" data-value="title" data-aos="fade-up">
-                        Contacto
-                    </h1>
-                    <div class="container_box--contacto flex justify-between" data-aos="fade-up"
-                        data-aos-anchor-placement="center-bottom">
-                        <div class="container--contacto">
-                            <div class="container_text--contacto mb-4">
-                                <p data-section="contacto" data-value="text"> No dude en ponerse en contacto conmigo</p>
-                            </div>
-                            <div class="container_text--contacto mb-4">
-                                <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en
-                                    contacto contigo lo antes posible.</p>
-                            </div>
-    
-                            <form id="form" class="form-contact" name="contacto-portafolio" netlify>
-                                <div class="form-row mb-4">
-                                    <input id="nombre" type="text" name="name" placeholder="Nombre" required
-                                        class="nombre-input w-full bg-gray-200 p-3 rounded">
-                                </div>
-                                <div class="form-row mb-4">
-                                    <input id="email" type="email" name="email" placeholder="E-mail" required
-                                        class="w-full bg-gray-200 p-3 rounded">
-                                </div>
-                                <div class="form-row mb-4">
-                                    <input id="asunto" type="text" name="affair" placeholder="Asunto" required
-                                        class="w-full bg-gray-200 p-3 rounded">
-                                </div>
-                                <div class="form-row mb-4">
-                                    <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required
-                                        class="w-full bg-gray-200 p-3 rounded"></textarea>
-                                </div>
-    
-                                <div class="btn_form--contacto mb-4">
-                                    <button class="btn-custom inline-block px-4 py-2 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out" type="submit" data-section="contacto" data-value="btn-enviar">
-                                        <i class="fas fa-paper-plane p-2"></i> Enviar
+                            <div
+                                class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
+                                <a href="#" target="_blank" class="col-span-1">
+                                    <button
+                                        class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
+                                        <i class="fas fa-eye mr-2"></i> DEMO
                                     </button>
-                                </div>
-                            </form>
-    
+                                </a>
+                                <a href="#" target="_blank" class="col-span-1">
+                                    <button
+                                        class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
+                                        <i class="fab fa-github mr-2 text-lg"></i> REPO
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+
+
+
+                    <!-- Proyecto 2 -->
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
+                            data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
+                            <div class="container_imgCard--proyectos relative">
+                                <img src="./assets/images/prueba1.png" alt="Proyecto: Servisoft"
+                                    class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
+                            </div>
+                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                <h2 data-section="proyectos" data-value="title-proyecto2"
+                                    class="text-iconproyect font-bold">
+                                    Servisoft
+                                </h2>
+                                <div class="relative">
+                                    <p
+                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                        Sitio web que simplifica la contratación de servicios profesionales al permitir
+                                        a los clientes explorar categorías, revisar perfiles de trabajadores y
+                                        contactarlos
+                                        directamente. Los trabajadores pueden registrar su perfil, recibir y responder a
+                                        solicitudes específicas, todo con un diseño intuitivo y funcionalidades
+                                        eficientes.
+                                    </p>
+                                    <div
+                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
+                                <div class="flex flex-wrap gap-4 text-iconproyect">
+                                    <i class="fab fa-html5 text-xl"></i>
+                                    <i class="fab fa-css3-alt text-xl"></i>
+                                    <i class="fab fa-js text-xl"></i>
+                                    <i class="fab fa-dotnet text-xl"></i>
+                                    <i class="fas fa-database text-xl"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
+                                <a href="#" target="_blank" class="col-span-1">
+                                    <button
+                                        class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
+                                        <i class="fas fa-eye mr-2"></i> DEMO
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="col-span-1">
+                                    <button
+                                        class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
+                                        <i class="fab fa-github mr-2 text-lg"></i> REPO
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Proyecto 3 -->
+                    <div class="w-full md:w-1/3 px-2 mb-4">
+                        <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
+                            data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
+                            <div class="container_imgCard--proyectos relative">
+                                <img src="./assets/images/prueba3.png" alt="Proyecto: Servisoft"
+                                    class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
+                            </div>
+                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                <h2 data-section="proyectos" data-value="title-proyecto2"
+                                    class="text-iconproyect font-bold">
+                                    Multirepuestos Boyaca
+                                </h2>
+                                <div class="relative">
+                                    <p
+                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                        Aplicación de escritorio para Multirepuestos Boyacá: un sistema de ventas
+                                        diseñado para optimizar el control de inventarios, gestionar proveedores
+                                        y clientes, y generar informes. Garantiza eficiencia y seguridad en la
+                                        empresa de repuestos.
+                                    </p>
+                                    <div
+                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
+                                <div class="flex flex-wrap gap-4 text-iconproyect">
+                                    <i class="fab fa-html5 text-xl"></i>
+                                    <i class="fab fa-css3-alt text-xl"></i>
+                                    <i class="fab fa-js text-xl"></i>
+                                </div>
+                            </div>
+                            <div
+                                class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
+                                <a href="#" target="_blank" class="col-span-1">
+                                    <button
+                                        class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
+                                        <i class="fas fa-eye mr-2"></i> DEMO
+                                    </button>
+                                </a>
+                                <a href="#" target="_blank" class="col-span-1">
+                                    <button
+                                        class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
+                                        <i class="fab fa-github mr-2 text-lg"></i> REPO
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </section>
-    
-        </main>
-    
-        <footer>
-            <div class="flex justify-center space-x-8">
-                <!-- Icono de Instagram -->
-                <div class="icon-circle shadow-lg mb-4 w-14 h-14">
-                    <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                        <i class="fab fa-instagram icon text-2xl"></i>
-                    </a>
-                </div>
-                <!-- Icono de LinkedIn -->
-                <div class="icon-circle shadow-lg mb-4 w-14 h-14">
-                    <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                        <i class="fab fa-linkedin icon text-2xl"></i>
-                    </a>
-                </div>
-                <!-- Icono de GitHub -->
-                <div class="icon-circle shadow-lg mb-4 w-14 h-14">
-                    <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                        <i class="fab fa-github icon text-2xl"></i>
-                    </a>
-                </div>
-                <!-- Icono de Discord -->
-                <div class="icon-circle shadow-lg w-14 h-14">
-                    <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
-                        <i class="fab fa-discord icon text-2xl"></i>
+                <div class="text-center">
+                    <a href="./assets/html/proyectos.html" id="show-projects-btn"
+                        class="btn-custom inline-block px-6 py-3 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out">
+                        Ver todos mis proyectos
                     </a>
                 </div>
             </div>
-    
-            <div class="text-center">
-                <!-- Texto del footer -->
-                <p class="text-gray-600">Copyright © | 2024
-                    <i class="fa fa-rocket text-blue-500"></i>
-                    Steven Guaman
-                </p>
+        </section>
+
+        <!-- Contacto -->
+        <section class="contacto flex justify-center items-center py-16" id="contacto">
+            <div class="max-w-screen-xl mx-auto p-4">
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="contacto" data-value="title" data-aos="fade-up">
+                    Contacto
+                </h1>
+                <div class="container_box--contacto flex justify-between" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
+                    <div class="container--contacto">
+                        <div class="container_text--contacto mb-4">
+                            <p data-section="contacto" data-value="text">No dude en ponerse en contacto conmigo</p>
+                        </div>
+                        <div class="container_text--contacto mb-4">
+                            <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en
+                                contacto contigo lo antes posible.</p>
+                        </div>
+
+                        <form id="form" class="form-contact" name="contacto-portafolio" netlify>
+                            <div class="form-row mb-4">
+                                <input id="nombre" type="text" name="name" placeholder="Nombre" required
+                                    class="nombre-input w-full bg-gray-200 p-3 rounded">
+                            </div>
+                            <div class="form-row mb-4">
+                                <input id="email" type="email" name="email" placeholder="E-mail" required
+                                    class="w-full bg-gray-200 p-3 rounded">
+                            </div>
+                            <div class="form-row mb-4">
+                                <input id="asunto" type="text" name="affair" placeholder="Asunto" required
+                                    class="w-full bg-gray-200 p-3 rounded">
+                            </div>
+                            <div class="form-row mb-4">
+                                <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required
+                                    class="w-full bg-gray-200 p-3 rounded"></textarea>
+                            </div>
+
+                            <div class="btn_form--contacto mb-4">
+                                <button
+                                    class="btn-custom inline-block px-4 py-2 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out"
+                                    type="submit" data-section="contacto" data-value="btn-enviar">
+                                    <i class="fas fa-paper-plane p-2"></i> Enviar
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
             </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="flex justify-center space-x-8">
+            <!-- Icono de Instagram -->
+            <div class="icon-circle shadow-lg mb-4 w-14 h-14">
+                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <i class="fab fa-instagram icon text-2xl"></i>
+                </a>
             </div>
-        </footer>
-    
-        <div class="go-top-container">
-            <div class="go-top-button">
-                <i class="fas fa-chevron-up"></i>
+            <!-- Icono de LinkedIn -->
+            <div class="icon-circle shadow-lg mb-4 w-14 h-14">
+                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <i class="fab fa-linkedin icon text-2xl"></i>
+                </a>
+            </div>
+            <!-- Icono de GitHub -->
+            <div class="icon-circle shadow-lg mb-4 w-14 h-14">
+                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <i class="fab fa-github icon text-2xl"></i>
+                </a>
+            </div>
+            <!-- Icono de Discord -->
+            <div class="icon-circle shadow-lg w-14 h-14">
+                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <i class="fab fa-discord icon text-2xl"></i>
+                </a>
             </div>
         </div>
-    
-        <!-- Archivo Js -->
+
+        <div class="text-center">
+            <!-- Texto del footer -->
+            <p class="text-gray-600">Copyright © | 2024
+                <i class="fa fa-rocket text-blue-500"></i>
+                Steven Guaman
+            </p>
+        </div>
+        </div>
+    </footer>
+
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
+
+    <!-- Archivo Js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Librería de animaciones -->
     <script>
