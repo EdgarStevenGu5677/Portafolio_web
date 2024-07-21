@@ -70,7 +70,7 @@ window.addEventListener('scroll', function () {
 
 //Fin del menu
 
-const words = ["Desarrollador de Software", "Desarrollador Full-Stack", "Ingeniero de Software"];
+const words = ["Desarrollador de Software", "Desarrollador Full-Stack"];
     let index = 0;
     let isDeleting = false;
     let typingSpeed = 200; // Velocidad de escritura en milisegundos
