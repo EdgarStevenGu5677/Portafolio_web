@@ -1,51 +1,78 @@
 {
     "menu": {
+        "item1": "Home",
         "item2": "About me",
         "item3": "Skills",
         "item4": "Training",
-        "item5": "Projects",
-        "item6": "Contact"
+        "item5": "Experience",
+        "item6": "Projects",
+        "item7": "Contact"
     },
-
     "home": {
-        "home_text-1": "Hi! I'm",
-        "home_text-3": "Front-End Web Developer",
-        "parrafo-info": "Statistics and programming student focused on Frontend Web Development. As a person who loves intuitive and aesthetically pleasing designs I seek to create projects that provide the best user experience.",
+        "home_text-1": "Hi, I am",
+        "home_text-3": "Software Developer, Full-Stack Developer",
+        "paragraph-info": "Software developer passionate about creating projects with intuitive, attractive, scalable and functional design to provide the best user experience.",
         "cv_button": "Download CV",
         "contact_button": "Contact"
     },
-
-    "sobre-mi": {
+    "aboutme": {
         "title": "About me",
-        "texto_sobreMi": "I'm a Statistics undergraduate student and a self-taught Web Development student focused on Frontend programming.<br>I aspire to get a job in the Web Development world, gain experience, new knowledge and strengthen my professional life.<br><br>I'm an empathetic and enthusiastic person, with skills focused on teamwork, assertive communication, problem solving, responsible and proactive, I like to learn from others and continuously improve myself."
+        "texto_about_me": "I am a professional in software development, with a solid experience in creating robust applications and solutions. In addition, I have knowledge in the multimedia field, which allows me to effectively integrate graphical elements in the projects I develop. My focus is on developing innovative and functional solutions that meet the specific needs of clients and users. I consider myself empathetic, enthusiastic and proficient in teamwork, communication, problem solving, responsibility and proactivity. I enjoy learning from others and I am always looking to improve myself.",
+        "title_2": "What I like?",
+        "card1": "Read books",
+        "card2": "Drawing",
+        "card3": "Travel",
+        "card4": "Making code",
+        "card5": "Video games"
     },
-
-    "habilidades": {
-        "title": "Skills"
+    "skills": {
+        "title": "Skills",
+        "skills_item1": "Techniques",
+        "skills_item2": "Other"
     },
-
-    "formacion": {
+    "training": {
         "title": "Training",
-        "formacion1": "Statistic",
-        "tiempo-formacion1": "2019 - In progress",
-        "formacion2": "Full-Stack Developer",
-        "tiempo-formacion2": "2022 - In progress",
-        "formacion3": "Accounting for Commercial and Financial Transactions"
+        "training1": "Software engineering",
+        "time-training1": "2024 - In process",
+        "training2": "Software Analysis and Development Technologist",
+        "time-training2": "2022 - 2024",
+        "training3": "Multimedia Design and Integration Technician",
+        "time-training3": "2020 - 2021"
     },
-
-    "proyectos": {
+    "experience": {
+        "title": "Experience",
+        "post1": "IT Apprentice",
+        "exp1_1": "Active participation in project documentation and assistance in meetings with clients for the definition of new projects.",
+        "exp1_2": "Ongoing support and maintenance of existing projects, ensuring functionality and optimization.",
+        "exp1_3": "Collaboration on projects using C# .NET and Laravel for the development of robust and scalable applications.",
+        "exp1_4": "Elaboration of mockups and participation in meetings for the definition of requirements and project flows.",
+        "exp1_5": "Design and definition of SQL database structures, including the creation of tables, relationships and optimized queries to improve application efficiency and performance.",
+        "exp1_6": "Active use of Git (GitHub) and Team Explorer for version management, facilitating team collaboration and efficient project change control.",
+        "tiempo-experience1": "2024 - Present",
+        "post2": "Autodidact",
+        "exp2_1": "I developed a variety of desktop applications in Java, focusing on usability and code efficiency.",
+        "exp2_2": "I designed and developed dynamic websites using C# ASP.NET, ensuring advanced functionalities and an intuitive user experience.",
+        "exp2_3": "Managed and optimized SQL databases, implementing complex queries to ensure data integrity and performance.",
+        "exp2_4": "I used GitHub for version control, facilitating efficient collaboration and change management on projects.",
+        "tiempo-experience2": "2022 - 2023"
+    },
+    "projects": {
         "title": "Projects",
-        "title-proyecto1": "Hangman Game",
-        "info-proyecto1": "A game where the user must guess the secret word with a certain number of chances. The word is chosen randomly by the program and the user will lose the moment the gallows is completed.",
-        "title-proyecto2": "Portfolio",
-        "info-proyecto2": "My personal web portfolio, where you can find some of my most outstanding projects, my technical skills and a bit about my background.",
-        "title-proyecto3": "Text Encryptor",
-        "info-proyecto3": "An encryptor where the user can type a text and the encryptor encrypts it with pre-programmed keys. The encryptor can also decrypt the text."
+        "info-project1": "My personal web portfolio, here you will be able to explore some of my featured projects, you will also learn about my technical skills and discover a little more about my background and training.",
+        "info-project2": "Website that simplifies the recruitment of professional services by allowing clients to browse categories, review worker profiles and contact them directly. Workers can register their profile, receive and respond to specific requests, all with an intuitive design and efficient functionalities.",
+        "info-project3": "Desktop application for Multirepuestos Boyacá: a sales system designed to optimize inventory control, manage suppliers and customers, and generate reports. It guarantees efficiency and security in the spare parts company.",
+        "info-project4": "Web platform offering a wide section of classic and fun games Designed to provide instant entertainment and fun for all users.",
+        "info-project5": "It is an integrated platform for managing business activities, trading operations, sports betting and loan control, with robust tools for inventory management, online sales and financial tracking.",
+        "btn-project": "See all my projects"
     },
-
-    "contacto": {
+    "contact": {
         "title": "Contact",
-        "text": "Complete the form below and I will contact you as soon as possible.",
+        "text": "Do not hesitate to contact me",
+        "text1": "Complete the form below and I will contact you as soon as possible.",
+        "input1": "Name",
+        "input2": "E-mail",
+        "input3": "Subject",
+        "input4": "Message",
         "btn-enviar": "Send"
     }
 }
