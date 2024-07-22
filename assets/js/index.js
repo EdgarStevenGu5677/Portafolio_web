@@ -70,37 +70,6 @@ window.addEventListener('scroll', function () {
 
 //Fin del menu
 
-const words = ["Desarrollador de Software", "Desarrollador Full-Stack"];
-    let index = 0;
-    let isDeleting = false;
-    let typingSpeed = 200; // Velocidad de escritura en milisegundos
-
-    function type() {
-        const word = words[index];
-        const text = document.getElementById("typingEffect");
-        if (isDeleting) {
-            text.textContent = word.substring(0, text.textContent.length - 1);
-        } else {
-            text.textContent = word.substring(0, text.textContent.length + 1);
-        }
-
-        if (!isDeleting && text.textContent === word) {
-            isDeleting = true;
-            typingSpeed = 200; // Espera antes de borrar
-        } else if (isDeleting && text.textContent === "") {
-            isDeleting = false;
-            index = (index + 1) % words.length;
-            typingSpeed = 200; // Velocidad de escritura
-        }
-
-        setTimeout(type, typingSpeed);
-    }
-
-    // Iniciar el efecto de escritura
-    document.addEventListener("DOMContentLoaded", function () {
-        type();
-    });
-
     function mostrarHabilidades(id, event) {
         event.preventDefault();
 

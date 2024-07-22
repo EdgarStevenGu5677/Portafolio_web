@@ -1,76 +1,80 @@
 {
     "menu": {
-        "item1": "Inicio",
-        "item2": "Sobre mí",
-        "item3": "Habilidades",
-        "item4": "Formación",
-        "item5": "Experiencia",
-        "item6": "Proyectos",
-        "item7": "Contacto"
+        "item1": "Home",
+        "item2": "About me",
+        "item3": "Skills",
+        "item4": "Training",
+        "item5": "Experience",
+        "item6": "Projects",
+        "item7": "Contact"
     },
     "home": {
-        "home_text-1": "Hola! Soy",
-        "home_text-3": "Desarrolladora web Front-End",
-        "paragraph-info": "Estudiante de programación con enfoque en desarrollo de software. Apasionado por crear proyectos con diseño intuitivo y atractivo para proporcionar la mejor experiencia al usuario",
-        "cv_button": "Descargar CV",
-        "contact_button": "Contacto"
+        "home_text-1": "Hi,",
+        "home_text-2": "I am",
+        "home_text-3": "Software Developer, Full-Stack Developer",
+        "paragraph-info": "Software developer passionate about creating projects with intuitive, attractive, scalable and functional design to provide the best user experience.",
+        "cv_button": "Download CV",
+        "contact_button": "Contact"
     },
-    "about me": {
-        "title": "Sobre mí",
-        "texto_about me": "Soy desarrollador de software con conocimientos en diseño e integración en multimedia. Aspiro a obtener empleo en el campo del desarrollo, donde pueda aplicar mis habilidades técnicas y creativas para crear soluciones innovadoras. Busco oportunidades para adquirir experiencia, ampliar mis conocimientos y fortalecer mi trayectoria profesional en este emocionante campo. <br><br> Soy empático, entusiasta y competente en trabajo en equipo, comunicación, resolución de problemas, responsabilidad y proactividad. Disfruto aprendiendo de otros y superándome constantemente.",
-        "title_2": "¿Lo que me gusta?",
-        "card1": "Leer libros",
-        "card2": "Dibujar",
-        "card3": "Estudiar",
-        "card4": "Hacer código",
-        "card5": "Jugar videojuegos"
+    "aboutme": {
+        "title": "About me",
+        "texto_about_me": "I am a professional in software development, with a solid experience in creating robust applications and solutions. In addition, I have knowledge in the multimedia field, which allows me to effectively integrate graphical elements in the projects I develop. My focus is on developing innovative and functional solutions that meet the specific needs of clients and users. I consider myself empathetic, enthusiastic and proficient in teamwork, communication, problem solving, responsibility and proactivity. I enjoy learning from others and I am always looking to improve myself.",
+        "title_2": "What I like?",
+        "card1": "Read books",
+        "card2": "Drawing",
+        "card3": "Travel",
+        "card4": "Making code",
+        "card5": "Video games"
     },
     "skills": {
-        "title": "Habilidades",
-        "skills_item1": "Tecnicas",
-        "skills_item2": "Otras"
+        "title": "Skills",
+        "skills_item1": "Techniques",
+        "skills_item2": "Other"
     },
     "training": {
-        "title": "Formación",
-        "training1": "Bachillerato Básico",
-        "time-training1": "2024 - En curso",
-        "training2": "Tecnólogo en Análisis y Desarrollo de Software",
+        "title": "Training",
+        "training1": "Software engineering",
+        "time-training1": "2024 - In process",
+        "training2": "Software Analysis and Development Technologist",
         "time-training2": "2022 - 2024",
-        "training3": "Técnico en Diseño e Integración en Multimedia",
+        "training3": "Multimedia Design and Integration Technician",
         "time-training3": "2020 - 2021"
     },
     "experience": {
-        "title": "Experiencia",
-        "post1": "Area IT",
-        "experience1": "Durante mi experiencia como aprendiz en tecnologías de la información, desarrollé habilidades en programación utilizando .NET y Laravel, así como en el manejo de bases de datos SQL Server. Participé en proyectos que incluyeron el desarrollo de aplicaciones web, aprendí a trabajar en equipo y a comunicarme efectivamente. Esta experiencia sentó una base sólida para mi carrera en tecnología de la información y estoy emocionado por seguir creciendo en este campo.",
-        "tiempo-experience1": "2024 - Presente",
-        "post2": "falta",
-        "experience2": "falta",
+        "title": "Experience",
+        "post1": "IT Apprentice",
+        "exp1_1": "Active participation in project documentation and assistance in meetings with clients for the definition of new projects.",
+        "exp1_2": "Ongoing support and maintenance of existing projects, ensuring functionality and optimization.",
+        "exp1_3": "Collaboration on projects using C# .NET and Laravel for the development of robust and scalable applications.",
+        "exp1_4": "Elaboration of mockups and participation in meetings for the definition of requirements and project flows.",
+        "exp1_5": "Design and definition of SQL database structures, including the creation of tables, relationships and optimized queries to improve application efficiency and performance.",
+        "exp1_6": "Active use of Git (GitHub) and Team Explorer for version management, facilitating team collaboration and efficient project change control.",
+        "tiempo-experience1": "2024 - Present",
+        "post2": "Autodidact",
+        "exp2_1": "I developed a variety of desktop applications in Java, focusing on usability and code efficiency.",
+        "exp2_2": "I designed and developed dynamic websites using C# ASP.NET, ensuring advanced functionalities and an intuitive user experience.",
+        "exp2_3": "Managed and optimized SQL databases, implementing complex queries to ensure data integrity and performance.",
+        "exp2_4": "I used GitHub for version control, facilitating efficient collaboration and change management on projects.",
         "tiempo-experience2": "2022 - 2023"
-
     },
     "projects": {
-        "title": "Proyectos",
-        "title-project1": "Portafolio web",
-        "info-project1": "Mi portafolio web personal, donde se encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre mi formación.",
-        "title-project2": "Servisoft",
-        "info-project2": "falta",
-        "title-project3": "falta",
-        "info-project3": "falta",
-        "title-project4": "falta",
-        "info-project4": "falta",
-        "title-project5": "falta",
-        "info-project5": "falta",
-        "btn-project": "Ver todos mis proyectos"
+        "title": "Projects",
+        "description": "Here you will find all my featured projects. Explore each one to learn more about my technical skills and experience.",
+        "info-project1": "My personal web portfolio, here you will be able to explore some of my featured projects, you will also learn about my technical skills and discover a little more about my background and training.",
+        "info-project2": "Website that simplifies the recruitment of professional services by allowing clients to browse categories, review worker profiles and contact them directly. Workers can register their profile, receive and respond to specific requests, all with an intuitive design and efficient functionalities.",
+        "info-project3": "Desktop application for Multirepuestos Boyacá: a sales system designed to optimize inventory control, manage suppliers and customers, and generate reports. It guarantees efficiency and security in the spare parts company.",
+        "info-project4": "Web platform offering a wide section of classic and fun games Designed to provide instant entertainment and fun for all users.",
+        "info-project5": "It is an integrated platform for managing business activities, trading operations, sports betting and loan control, with robust tools for inventory management, online sales and financial tracking.",
+        "btn-project": "See all my projects"
     },
     "contact": {
-        "title": "Contacto",
-        "text": "No dude en ponerse en contacto conmigo",
-        "text1": "Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.",
-        "input1": "Nombre",
+        "title": "Contact",
+        "text": "Do not hesitate to contact me",
+        "text1": "Complete the form below and I will contact you as soon as possible.",
+        "input1": "Name",
         "input2": "E-mail",
-        "input3": "Asunto",
-        "input4": "Mensaje",
-        "btn-enviar": "Enviar"
+        "input3": "Subject",
+        "input4": "Message",
+        "btn-enviar": "Send"
     }
 }
