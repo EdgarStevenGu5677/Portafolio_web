@@ -23,8 +23,8 @@
         <header id="header"
             class="flex justify-between items-center py-2 md:py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
             <div class="logo md:min-w-0">
-                <a href="#inicio">
-                    <img src="assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
+                <a href="/">
+                    <img src="./assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
                 </a>
             </div>
             <nav id="nav" class="hidden lg:flex lg:flex-row lg:items-center lg:justify-end lg:mr-12">
@@ -42,8 +42,8 @@
                         <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                             <i class="fas fa-moon"></i>
                         </button>
-                        <button id="languageButton" onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
-                            <img id="languageIcon" class="flag-img" src="./assets/images/colombia.webp" alt="Idioma" />
+                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                            <img id="languageIcon" class="flag-img" src="" alt="Idioma" />
                         </button>
                     </div>
                 </ul>
@@ -61,12 +61,12 @@
                 </button>
             </div>
         </header>
-      
+
         <!-- Menú móvil -->
         <div id="mobileNav"
             class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden">
             <ul class="flex flex-col items-center space-y-4 w-full py-4">
-                <li><a href="#inicio" class="menu-link" data-section="menu" data-value="item1"
+                <li><a id="menuInicio"  href="#inicio" class="menu-link" data-section="menu" data-value="item1"
                         onclick="mostrarOcultarMenu()">Inicio</a></li>
                 <li><a href="#sobreMi" class="menu-link" data-section="menu" data-value="item2"
                         onclick="mostrarOcultarMenu()">Sobre mí</a></li>
@@ -84,125 +84,13 @@
                     <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button id="languageButtonMobile" onclick="changeLanguage()"
-                        class="text-gray-800 focus:outline-none">
-                        <img id="languageIconMobile" class="flag-img" src="./assets/images/colombia.webp"
-                            alt="Idioma" />
+                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                        <img id="languageIconMobile" class="flag-img" src="" alt="Idioma" />
                     </button>
                 </div>
             </ul>
         </div>
     </div>
-
-    <script>
-        let currentLanguage = localStorage.getItem('language') || 'es'; // Recuperar idioma del almacenamiento local o usar 'es' por defecto
-        let words = ["Desarrollador de Software", "Desarrollador Full-Stack"];
-        let index = 0;
-        let isDeleting = false;
-        let typingSpeed = 200; // Velocidad de escritura en milisegundos
-
-        async function fetchTexts(language) {
-            try {
-                const response = await fetch(`./assets/lang/${language}.json`);
-                if (!response.ok) {
-                    throw new Error('Error al cargar el archivo de idioma');
-                }
-                return response.json();
-            } catch (error) {
-                console.error(error);
-                return {};
-            }
-        }
-
-        async function changeLanguage() {
-            const texts = await fetchTexts(currentLanguage);
-
-            // Iconos no se deben cambiar, solo las imágenes del idioma.
-            const iconElement = document.getElementById('languageIcon');
-            const iconElementMobile = document.getElementById('languageIconMobile');
-
-            // Cambiar icono e idioma
-            if (currentLanguage === 'en') {
-                iconElement.src = './assets/images/reino-unido.webp'; // Bandera del Reino Unido
-                iconElementMobile.src = './assets/images/reino-unido.webp'; // Bandera del Reino Unido
-                currentLanguage = 'es';
-            } else {
-                iconElement.src = './assets/images/colombia.webp'; // Bandera de Colombia
-                iconElementMobile.src = './assets/images/colombia.webp'; // Bandera de Colombia
-                currentLanguage = 'en';
-            }
-
-            // Guardar el idioma actual en el almacenamiento local
-            localStorage.setItem('language', currentLanguage);
-
-            // Actualizar textos de los elementos con 'data-section' y 'data-value'
-            document.querySelectorAll('[data-section][data-value]').forEach(element => {
-                const section = element.getAttribute('data-section');
-                const value = element.getAttribute('data-value');
-                if (texts[section] && texts[section][value]) {
-                    element.innerText = texts[section][value];
-                }
-            });
-
-            // Actualizar placeholders de inputs y textareas
-            document.querySelectorAll('[data-section][data-value][placeholder]').forEach(element => {
-                const section = element.getAttribute('data-section');
-                const value = element.getAttribute('data-value');
-                if (texts[section] && texts[section][value]) {
-                    element.placeholder = texts[section][value];
-                }
-            });
-
-            // Específicamente para el textarea con id 'mensaje'
-            const textarea = document.getElementById('mensaje');
-            if (textarea) {
-                if (texts.contact && texts.contact.input4) {
-                    textarea.placeholder = texts.contact.input4;
-                } else {
-                    textarea.placeholder = 'Mensaje'; // Valor por defecto
-                }
-            }
-
-            // Actualizar las palabras del efecto de escritura
-            if (texts.home && texts.home["home_text-3"]) {
-                words = texts.home["home_text-3"].split(", ");
-                index = 0; // Reiniciar el índice
-                isDeleting = false; // Reiniciar el estado de eliminación
-                document.getElementById("typingEffect").textContent = ""; // Reiniciar el contenido
-            }
-        }
-
-        function type() {
-            const word = words[index];
-            const text = document.getElementById("typingEffect");
-            if (isDeleting) {
-                text.textContent = word.substring(0, text.textContent.length - 1);
-            } else {
-                text.textContent = word.substring(0, text.textContent.length + 1);
-            }
-
-            if (!isDeleting && text.textContent === word) {
-                isDeleting = true;
-                typingSpeed = 300; // Espera antes de borrar
-            } else if (isDeleting && text.textContent === "") {
-                isDeleting = false;
-                index = (index + 1) % words.length;
-                typingSpeed = 200; // Velocidad de escritura
-            }
-
-            setTimeout(type, typingSpeed);
-        }
-
-        // Inicializar la página con el idioma actual
-        document.addEventListener('DOMContentLoaded', () => {
-            changeLanguage(); // Cargar el idioma inicial al cargar la página
-            type(); // Inicia el efecto de escritura
-        });
-    </script>
-
-
-
-
     <main id="mainContent">
         <!-- Inicio -->
         <section id="inicio"
@@ -248,7 +136,6 @@
                                     class="fas fa-download"></i>
                             </button>
                         </a>
-
                         <!-- Botón de contacto oculto en móviles -->
                         <a href="#contacto" class="hidden lg:inline-block">
                             <button
@@ -257,7 +144,6 @@
                                 Contacto
                             </button>
                         </a>
-
                     </div>
 
                     <!-- Iconos sociales en móviles -->
@@ -811,9 +697,6 @@
                         </div>
                     </div>
 
-
-
-
                     <!-- Proyecto 2 -->
                     <div class="w-full md:w-1/3 px-2 mb-4">
                         <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
@@ -867,9 +750,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
                     <!-- Proyecto 3 -->
                     <div class="w-full md:w-1/3 px-2 mb-4">
                         <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"

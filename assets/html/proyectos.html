@@ -25,7 +25,7 @@
         <header id="header"
             class="flex justify-between items-center py-2 md:py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
             <div class="logo md:min-w-0">
-                <a href="../html/proyectos.html#inicio">
+                <a href="#mainContent">
                     <img src="../images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
                 </a>
             </div>
@@ -33,7 +33,7 @@
                 class="lg:flex lg:flex-row lg:items-center lg:justify-end hidden flex flex-col lg:block mr-12">
                 <ul id="menuList" class="flex space-x-12">
                     <li><a href="../../index.html#inicio" class="menu-link" data-section="menu"
-                            data-value="skills_item1">Inicio</a></li>
+                            data-value="item1">Inicio</a></li>
                     <li><a href="../../index.html#sobreMi" class="menu-link" data-section="menu"
                             data-value="item2">Sobre mí</a></li>
                     <li><a href="../../index.html#habilidades" class="menu-link" data-section="menu"
@@ -51,9 +51,8 @@
                         <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                             <i class="fas fa-moon"></i>
                         </button>
-                        <button id="languageButton" onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
-                            <img id="languageIcon" class="flag-img" src="../../assets/images/colombia.webp"
-                                alt="Idioma" />
+                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                            <img id="languageIcon" class="flag-img" src="" alt="Idioma" />
                         </button>
                     </div>
                 </ul>
@@ -76,8 +75,9 @@
         <div id="mobileNav"
             class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden">
             <ul class="flex flex-col items-center space-y-4 w-full py-4">
-                <li><a href="../../index.html#inicio" id="menuInicio" class="menu-link" data-section="menu"
-                        data-value="item1" onclick="mostrarOcultarMenu()">Inicio</a></li>
+                <li>
+                    <a href="../../index.html#inicio" id="menuInicio" class="menu-link" data-section="menu" data-value="item1" onclick="mostrarOcultarMenu()">Inicio</a>
+                </li>                
                 <li><a href="../../index.html#sobreMi" class="menu-link" data-section="menu" data-value="item2"
                         onclick="mostrarOcultarMenu()">Sobre mí</a>
                 </li>
@@ -98,11 +98,10 @@
                     <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button id="languageButtonMobile" onclick="changeLanguage()"
-                        class="text-gray-800 focus:outline-none">
-                        <img id="languageIconMobile" class="flag-img" src="../../assets/images/colombia.webp"
-                            alt="Idioma" />
+                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                        <img id="languageIconMobile" class="flag-img" src="" alt="Idioma" />
                     </button>
+                    
                 </div>
             </ul>
         </div>
@@ -118,7 +117,8 @@
 
                 <!-- Descripción inicial -->
                 <div>
-                    <p class="mb-4 mx-4 text-lg font-bold"  data-section="projects" data-value="description" >Aquí encontrarás todos mis proyectos destacados. Explora
+                    <p class="mb-4 mx-4 text-lg font-bold" data-section="projects" data-value="description">Aquí
+                        encontrarás todos mis proyectos destacados. Explora
                         cada uno para conocer más sobre mis habilidades técnicas y experiencia.</p>
                 </div>
 
@@ -363,7 +363,7 @@
                             </div>
                             <div
                                 class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                <a href="#" target="_blank" class="col-span-1">
+                                <a href="../lang/en.json" target="_blank" class="col-span-1">
                                     <button
                                         class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
                                         <i class="fas fa-eye mr-2"></i> DEMO
@@ -429,74 +429,6 @@
             <i class="fas fa-chevron-up"></i>
         </div>
     </div>
-    <script>
-        let currentLanguage = localStorage.getItem('language') || 'es'; // Recuperar idioma del almacenamiento local o usar 'es' por defecto
-        console.log('Idioma actual:', currentLanguage);
-
-        async function fetchTexts(language) {
-            try {
-                const response = await fetch(`../lang/${language}.json`);
-                console.log('archivo'.response);
-                if (!response.ok) {
-                    throw new Error('Error al cargar el archivo de idioma');
-                }
-                return response.json();
-            } catch (error) {
-                console.error(error);
-                return {};
-            }
-        }
-
-        async function changeLanguage(newLanguage) {
-            const texts = await fetchTexts(newLanguage);
-
-            // Iconos no se deben cambiar, solo las imágenes del idioma.
-            const iconElement = document.getElementById('languageIcon');
-            const iconElementMobile = document.getElementById('languageIconMobile');
-
-            // Actualizar el idioma del icono
-            if (newLanguage === 'en') {
-                iconElement.src = '../images/reino-unido.webp'; // Bandera del Reino Unido
-                iconElementMobile.src = '../images/reino-unido.webp'; // Bandera del Reino Unido
-            } else {
-                iconElement.src = '../images/colombia.webp'; // Bandera de Colombia
-                iconElementMobile.src = '../images/colombia.webp'; // Bandera de Colombia
-            }
-
-            // Guardar el nuevo idioma en el almacenamiento local
-            localStorage.setItem('language', newLanguage);
-
-            // Actualizar los textos en la página
-            document.querySelectorAll('[data-section]').forEach(element => {
-                const section = element.getAttribute('data-section');
-                const value = element.getAttribute('data-value');
-                if (texts[section] && texts[section][value]) {
-                    element.textContent = texts[section][value];
-                }
-            });
-        }
-
-        // Inicializar la página con el idioma actual
-        document.addEventListener('DOMContentLoaded', async () => {
-            await changeLanguage(currentLanguage); // Cargar el idioma inicial al cargar la página
-        });
-
-        // Manejador para cambiar el idioma al hacer clic en el botón
-        document.getElementById('languageButton')?.addEventListener('click', () => {
-            const newLanguage = currentLanguage === 'en' ? 'es' : 'en';
-            currentLanguage = newLanguage;
-            changeLanguage(newLanguage);
-        });
-
-        document.getElementById('languageButtonMobile')?.addEventListener('click', () => {
-            const newLanguage = currentLanguage === 'en' ? 'es' : 'en';
-            currentLanguage = newLanguage;
-            changeLanguage(newLanguage);
-        });
-    </script>
-
-
-
     <!-- Archivo Js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
