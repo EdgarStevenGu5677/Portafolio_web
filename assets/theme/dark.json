@@ -1,0 +1,7 @@
+{
+    "menuTheme": {
+        "logo": "./assets/images/logo-oscuro.webp",
+        "bodyTheme": "background-color: #17171c",
+        "headerContainer": "background-color: #17171c"
+    }
+}

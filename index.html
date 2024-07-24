@@ -20,13 +20,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="bg-gray-100 overflow-x-hidden">
-    <div id="headerContainer" class="container-header fixed top-0 w-full bg-white z-50 bg-gray-100">
+<body class="bodoverflow-x-hidden" data-section="menuTheme" data-value="bodyTheme">
+    <div id="headerContainer" class="container-header fixed top-0 w-full z-50" data-section="menuTheme" data-value="headerContainer">
         <header id="header"
-            class="flex justify-between items-center py-2 md:py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
+            class="flex justify-between items-center py-2 md:py-4 transition duration-500 ease-in-out">
             <div class="logo md:min-w-0">
                 <a href="/">
-                    <img src="./assets/images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
+                    <div id="LogoContainer" class="w-20 md:w-20 lg:w-20 ml-4"></div>
                 </a>
             </div>
             <nav id="nav" class="hidden lg:flex lg:flex-row lg:items-center lg:justify-end lg:mr-12">
@@ -41,10 +41,10 @@
                     <li><a href="#proyectos" class="menu-link" data-section="menu" data-value="item6">Proyectos</a></li>
                     <li><a href="#contacto" class="menu-link" data-section="menu" data-value="item7">Contacto</a></li>
                     <div class="flex items-center space-x-8 ml-12">
-                        <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
-                            <i class="fas fa-moon"></i>
+                        <button id="ThemeButton" onclick="changeTheme()" class="focus:outline-none">
+                            <span id="ThemeIcon">${ThemeIcons[currentTheme]}</span>
                         </button>
-                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()" class="focus:outline-none">
                             <img id="languageIcon" class="flag-img" src="" alt="Idioma" />
                         </button>
                     </div>
@@ -83,16 +83,111 @@
                 <li><a href="#contacto" class="menu-link" data-section="menu" data-value="item7"
                         onclick="mostrarOcultarMenu()">Contacto</a></li>
                 <div class="flex items-center space-x-8 mt-8">
-                    <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
-                        <i class="fas fa-moon"></i>
+                    <button id="ThemeButtonMobile" onclick="changeTheme()" class="focus:outline-none">
+                        <span id="ThemeIconMobile">${ThemeIcons[currentTheme]}</span>
                     </button>
-                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()" class="focus:outline-none">
                         <img id="languageIconMobile" class="flag-img" src="" alt="Idioma" />
                     </button>
                 </div>
             </ul>
         </div>
     </div>
+    <script>
+        let currentTheme = localStorage.getItem('theme') || 'light';
+    
+        const ThemeIcons = {
+            'light': '<i class="fas fa-moon"></i>',
+            'dark': '<i class="fas fa-sun"></i>'
+        };
+    
+        async function fetchTheme(theme) {
+            try {
+                const response = await fetch(`./assets/theme/${theme}.json`);
+                if (!response.ok) {
+                    throw new Error('Error al cargar el archivo de temas');
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error al cargar los textos:', error);
+                return {};
+            }
+        }
+    
+        async function changeTheme() {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+    
+            const iconSrc = ThemeIcons[currentTheme];
+            document.getElementById('ThemeIcon').innerHTML = iconSrc;
+            document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+    
+            const themeData = await fetchTheme(currentTheme);
+    
+            // Verificar que themeData.menuTheme exista y tenga las propiedades necesarias
+            if (themeData.menuTheme) {
+                // Actualizar estilos usando data attributes
+                document.querySelectorAll('[data-section="menuTheme"]').forEach(element => {
+                    const value = element.getAttribute('data-value');
+                    if (themeData.menuTheme[value]) {
+                        const styles = themeData.menuTheme[value].split(';');
+                        styles.forEach(style => {
+                            const [property, val] = style.split(':');
+                            if (property && val) {
+                                element.style[property.trim()] = val.trim();
+                            }
+                        });
+                    }
+                });
+    
+                // Actualizar logo si está definido en el tema
+                const logoContainer = document.getElementById('LogoContainer');
+                if (themeData.menuTheme.logo) {
+                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.menuTheme.logo}" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">`;
+                } else {
+                    logoContainer.innerHTML = ''; // Si no hay logo definido en el tema, vaciar el contenedor
+                }
+            } else {
+                console.error('El tema no contiene un objeto "menuTheme" válido.');
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', async () => {
+            const themeData = await fetchTheme(currentTheme);
+    
+            // Verificar que themeData.menuTheme exista y tenga las propiedades necesarias
+            if (themeData.menuTheme) {
+                // Aplicar estilos iniciales usando data attributes
+                document.querySelectorAll('[data-section="menuTheme"]').forEach(element => {
+                    const value = element.getAttribute('data-value');
+                    if (themeData.menuTheme[value]) {
+                        const styles = themeData.menuTheme[value].split(';');
+                        styles.forEach(style => {
+                            const [property, val] = style.split(':');
+                            if (property && val) {
+                                element.style[property.trim()] = val.trim();
+                            }
+                        });
+                    }
+                });
+    
+                // Aplicar logo inicial si está definido en el tema
+                const logoContainer = document.getElementById('LogoContainer');
+                if (themeData.menuTheme.logo) {
+                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.menuTheme.logo}" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">`;
+                }
+    
+                // Aplicar icono de tema inicial
+                const iconSrc = ThemeIcons[currentTheme];
+                document.getElementById('ThemeIcon').innerHTML = iconSrc;
+                document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+            } else {
+                console.error('El tema no contiene un objeto "menuTheme" válido.');
+            }
+        });
+    </script>
+    
+    
     <main id="mainContent">
         <!-- Inicio -->
         <section id="inicio"

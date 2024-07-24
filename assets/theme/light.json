@@ -1,0 +1,7 @@
+{
+    "menuTheme": {
+        "logo": "./assets/images/logo.webp",
+        "bodyTheme": "background-color: #f2f3f5",
+        "headerContainer": "background-color: #f2f3f5"
+    }
+}
