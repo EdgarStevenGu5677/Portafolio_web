@@ -20,8 +20,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="bodoverflow-x-hidden" data-section="menuTheme" data-value="bodyTheme">
-    <div id="headerContainer" class="container-header fixed top-0 w-full z-50" data-section="menuTheme" data-value="headerContainer">
+<body class="bodoverflow-x-hidden">
+    <div id="headerContainer" class="container-header fixed top-0 w-full z-50" data-section="colorTheme" data-value="headerContainer">
         <header id="header"
             class="flex justify-between items-center py-2 md:py-4 transition duration-500 ease-in-out">
             <div class="logo md:min-w-0">
@@ -30,7 +30,7 @@
                 </a>
             </div>
             <nav id="nav" class="hidden lg:flex lg:flex-row lg:items-center lg:justify-end lg:mr-12">
-                <ul id="menuList" class="flex space-x-12">
+                <ul id="menuList" class="flex space-x-12" data-section="colorTheme" data-value="textcolor">
                     <li><a href="#inicio" class="menu-link" data-section="menu" data-value="item1">Inicio</a></li>
                     <li><a href="#sobreMi" class="menu-link" data-section="menu" data-value="item2">Sobre mí</a></li>
                     <li><a href="#habilidades" class="menu-link" data-section="menu" data-value="item3">Habilidades</a>
@@ -52,8 +52,8 @@
             </nav>
 
             <div class="lg:hidden ml-4">
-                <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12">
-                    <svg id="menuIcon" class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
+                <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12" >
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" data-section="colorTheme" data-value="textcolor"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path id="menuPath" class="menu-icon" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -66,8 +66,8 @@
 
         <!-- Menú móvil -->
         <div id="mobileNav"
-            class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden">
-            <ul class="flex flex-col items-center space-y-4 w-full py-4">
+            class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden" data-section="colorTheme" data-value="headerContainer">
+            <ul class="flex flex-col items-center space-y-4 w-full py-4" data-section="colorTheme" data-value="textcolor">
                 <li><a id="menuInicio"  href="#inicio" class="menu-link" data-section="menu" data-value="item1"
                         onclick="mostrarOcultarMenu()">Inicio</a></li>
                 <li><a href="#sobreMi" class="menu-link" data-section="menu" data-value="item2"
@@ -124,13 +124,12 @@
     
             const themeData = await fetchTheme(currentTheme);
     
-            // Verificar que themeData.menuTheme exista y tenga las propiedades necesarias
-            if (themeData.menuTheme) {
+            if (themeData.colorTheme) {
                 // Actualizar estilos usando data attributes
-                document.querySelectorAll('[data-section="menuTheme"]').forEach(element => {
+                document.querySelectorAll('[data-section]').forEach(element => {
                     const value = element.getAttribute('data-value');
-                    if (themeData.menuTheme[value]) {
-                        const styles = themeData.menuTheme[value].split(';');
+                    if (themeData.colorTheme[value]) {
+                        const styles = themeData.colorTheme[value].split(';');
                         styles.forEach(style => {
                             const [property, val] = style.split(':');
                             if (property && val) {
@@ -142,26 +141,91 @@
     
                 // Actualizar logo si está definido en el tema
                 const logoContainer = document.getElementById('LogoContainer');
-                if (themeData.menuTheme.logo) {
-                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.menuTheme.logo}" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">`;
+                if (themeData.colorTheme.logo) {
+                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
                 } else {
                     logoContainer.innerHTML = ''; // Si no hay logo definido en el tema, vaciar el contenedor
                 }
+    
+                // Actualizar colores de los enlaces
+                updateLinkColors(themeData.colorTheme.activeColor, themeData.colorTheme.hoverColor);
+    
+                // Actualizar pseudo elementos
+                updatePseudoElementColor(themeData.colorTheme.activeColor);
+    
+                // Actualizar colores de los botones
+                const elementColor = themeData.colorTheme.elementColor;
+                const textColor3 = themeData.colorTheme.textColor3;
+                const hovContact = themeData.colorTheme.hovContact;
+                updateButtonColors(elementColor, textColor3, hovContact);
             } else {
-                console.error('El tema no contiene un objeto "menuTheme" válido.');
+                console.error('El tema no contiene un objeto "colorTheme" válido.');
             }
+        }
+    
+        function updateLinkColors(activeColor, hoverColor) {
+            const styleElement = document.getElementById('linkColorStyle') || document.createElement('style');
+            styleElement.id = 'linkColorStyle';
+            styleElement.innerHTML = `
+                #menuList a.active,
+                #menuList a:hover,
+                #mobileNav a.active,
+                #mobileNav a:hover {
+                    color: ${activeColor};
+                }
+            `;
+            document.head.appendChild(styleElement);
+        }
+    
+        function updatePseudoElementColor(color) {
+            const styleElement = document.getElementById('pseudoElementStyle') || document.createElement('style');
+            styleElement.id = 'pseudoElementStyle';
+            styleElement.innerHTML = `
+                #menuList a.active::after,
+                #mobileNav a.active::after {
+                background-color: ${color};
+                }
+            `;
+            document.head.appendChild(styleElement);
+        }
+    
+        function updateButtonColors(elementColor, textColor3, hovContact) {
+            const styleElement = document.getElementById('buttonColorStyle') || document.createElement('style');
+            styleElement.id = 'buttonColorStyle';
+            styleElement.innerHTML = `
+                .cv_button {
+                    color: ${elementColor};
+                    border: 2px solid ${elementColor};
+                    box-shadow: inset 0 0 0 0 ${elementColor};
+                }
+                .cv_button:hover {
+                    box-shadow: inset 400px 0 0 0 ${elementColor};
+                }
+
+                .cv_button:hover {
+                    color: ${textColor3};
+                }
+                .contact_button {
+                    color: ${textColor3};
+                    background-color: ${elementColor};
+                }
+
+                .contact_button:hover {
+                    background-color: ${hovContact};
+}
+            `;
+            document.head.appendChild(styleElement);
         }
     
         document.addEventListener('DOMContentLoaded', async () => {
             const themeData = await fetchTheme(currentTheme);
     
-            // Verificar que themeData.menuTheme exista y tenga las propiedades necesarias
-            if (themeData.menuTheme) {
+            if (themeData.colorTheme) {
                 // Aplicar estilos iniciales usando data attributes
-                document.querySelectorAll('[data-section="menuTheme"]').forEach(element => {
+                document.querySelectorAll('[data-section="colorTheme"]').forEach(element => {
                     const value = element.getAttribute('data-value');
-                    if (themeData.menuTheme[value]) {
-                        const styles = themeData.menuTheme[value].split(';');
+                    if (themeData.colorTheme[value]) {
+                        const styles = themeData.colorTheme[value].split(';');
                         styles.forEach(style => {
                             const [property, val] = style.split(':');
                             if (property && val) {
@@ -173,25 +237,41 @@
     
                 // Aplicar logo inicial si está definido en el tema
                 const logoContainer = document.getElementById('LogoContainer');
-                if (themeData.menuTheme.logo) {
-                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.menuTheme.logo}" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">`;
+                if (themeData.colorTheme.logo) {
+                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
                 }
     
                 // Aplicar icono de tema inicial
                 const iconSrc = ThemeIcons[currentTheme];
                 document.getElementById('ThemeIcon').innerHTML = iconSrc;
                 document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+    
+                // Actualizar colores de los enlaces
+                updateLinkColors(themeData.colorTheme.activeColor, themeData.colorTheme.hoverColor);
+    
+                // Actualizar pseudo elementos
+                updatePseudoElementColor(themeData.colorTheme.activeColor);
+    
+                // Actualizar colores de los botones
+                const elementColor = themeData.colorTheme.elementColor;
+                const textColor3 = themeData.colorTheme.textColor3;
+                const hovContact = themeData.colorTheme.hovContact;
+                updateButtonColors(elementColor, textColor3, hovContact);
             } else {
-                console.error('El tema no contiene un objeto "menuTheme" válido.');
+                console.error('El tema no contiene un objeto "colorTheme" válido.');
             }
         });
     </script>
     
     
+    
+    
+    
+    
     <main id="mainContent">
         <!-- Inicio -->
         <section id="inicio"
-            class="home flex justify-center bg-gray-100 px-4 lg:px-0 mt-4 md:mt-8 lg:mt-0 overflow-hidden min-h-screen">
+            class="home flex justify-center px-4 lg:px-0 mt-4 md:mt-8 lg:mt-0 overflow-hidden min-h-screen"  data-section="colorTheme" data-value="headerContainer">
             <!-- Contenido aquí -->
             <!-- Contenedor principal -->
             <div class="flex flex-col justify-center w-full lg:flex lg:flex-row">
@@ -200,8 +280,8 @@
                     class="lg:w-2/3 border-gray-300 mx-4 lg:mx-10 flex flex-col justify-center lg:mt-10 text-center lg:text-left order-2 lg:order-2">
                     <div class="container_text-info">
                         <div
-                            class="inicio_text-1 text-xl md:text-3xl lg:text-3xl inline-flex items-center space-x-2 mx-auto">
-                            <p class="inline-flex items-center" data-section="home" data-value="home_text-1">
+                            class="inicio_text-1 text-xl md:text-3xl lg:text-3xl inline-flex items-center space-x-2 mx-auto" data-section="colorTheme" data-value="textcolor">
+                            <p class="inline-flex items-center" data-section="home" data-value="home_text-1" >
                                 Hola!
                             </p>
                             <p class="inline-flex items-center">
@@ -212,13 +292,13 @@
                                 <span class="ml-2">Soy</span>
                             </p>
                         </div>
-                        <p class="inicio_text-2 text-4xl md:text-6xl lg:text-5xl mb-2 font-semibold">Steven Guaman</p>
+                        <p class="inicio_text-2 text-4xl md:text-6xl lg:text-5xl mb-2 font-semibold" data-section="colorTheme" data-value="text2color">Steven Guaman</p>
                     </div>
-                    <div>
+                    <div data-section="colorTheme" data-value="textcolor">
                         <p id="typingEffect" class="home_text-3 text-lg md:text-3xl lg:text-3xl" data-section="inicio"
                             data-value="home_text-3"></p>
                     </div><!-- Parrafo info oculto en móviles -->
-                    <div class="container_parrafo-info hidden lg:block">
+                    <div class="container_parrafo-info hidden lg:block" data-section="colorTheme" data-value="textcolor">
                         <p class="parrafo-info text-base md:text-xl lg:text-xl" data-section="home"
                             data-value="paragraph-info">Desarrollador de software apasionado por crear proyectos
                             con diseño intuitivo, atractivo, escalable y funcional
@@ -320,7 +400,7 @@
                     <!-- Segunda columna (texto) -->
                     <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2">
                         <span class="title_sobreMi block mb-2 text-center lg:text-left text-2xl lg:text-3xl font-bold"
-                            style="color:#1CB0E8 ;">
+                        data-section="colorTheme" data-value="text2color">
                             Steven Guaman<br>
                         </span>
 
@@ -385,7 +465,7 @@
         </section>
 
         <!-- Habilidades -->
-        <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades">
+        <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades" data-section="colorTheme" data-value="headerContainer">
             <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                 data-section="skills" data-value="title" data-aos="fade-up">
                 Habilidades
@@ -554,7 +634,7 @@
         </section>
 
         <!-- Experiencia -->
-        <section class="experiencia py-16" id="experiencia">
+        <section class="experiencia py-16" id="experiencia" data-section="colorTheme" data-value="headerContainer">
             <div class="max-w-screen-xl mx-auto p-8">
                 <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                     data-section="experience" data-value="title" data-aos="fade-up">
@@ -754,7 +834,7 @@
                                     class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
                             </div>
                             <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                <h2 class="text-iconproyect font-bold">
+                                <h2 class="text-iconproyect font-bold"  data-section="colorTheme" data-value="text2color">
                                     Portafolio web
                                 </h2>
                                 <div class="relative">
@@ -803,7 +883,7 @@
                                     class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
                             </div>
                             <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                <h2 class="text-iconproyect font-bold">
+                                <h2 class="text-iconproyect font-bold"  data-section="colorTheme" data-value="text2color">
                                     Servisoft
                                 </h2>
                                 <div class="relative">
@@ -856,7 +936,7 @@
                                     class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
                             </div>
                             <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                <h2 class="text-iconproyect font-bold">
+                                <h2 class="text-iconproyect font-bold" data-section="colorTheme" data-value="text2color">
                                     Multirepuestos Boyaca
                                 </h2>
                                 <div class="relative">
@@ -909,7 +989,7 @@
         </section>
 
         <!-- Contacto -->
-        <section class="contacto flex justify-center items-center py-16" id="contacto">
+        <section class="contacto flex justify-center items-center py-16" id="contacto" data-section="colorTheme" data-value="headerContainer">
             <div class="max-w-screen-xl mx-auto p-4">
                 <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                     data-section="contact" data-value="title" data-aos="fade-up">
@@ -960,8 +1040,8 @@
 
     </main>
 
-    <footer>
-        <div class="flex justify-center space-x-8">
+    <footer class="pb-4" data-section="colorTheme" data-value="headerContainer">
+        <div class="flex justify-center space-x-8" >
             <!-- Icono de Instagram -->
             <div class="icon-circle shadow-lg mb-4 w-14 h-14">
                 <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
@@ -990,7 +1070,7 @@
 
         <div class="text-center">
             <!-- Texto del footer -->
-            <p class="text-gray-600">Copyright © | 2024
+            <p class="text-gray-600 ">Copyright © | 2024
                 <i class="fa fa-rocket text-blue-500"></i>
                 Steven Guaman
             </p>

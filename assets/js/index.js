@@ -32,6 +32,7 @@ function mostrarOcultarMenu() {
         xPath.classList.add('hidden');
     }
 }
+
 // Obtener todas las secciones
 const sections = document.querySelectorAll('section');
 

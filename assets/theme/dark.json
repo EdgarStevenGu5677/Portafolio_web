@@ -1,7 +1,14 @@
 {
-    "menuTheme": {
+    "colorTheme": {
         "logo": "./assets/images/logo-oscuro.webp",
-        "bodyTheme": "background-color: #17171c",
-        "headerContainer": "background-color: #17171c"
+        "bodyTheme": "background-color: #0e1b30",
+        "headerContainer": "background-color: #0e1b30",
+        "textcolor": "color: #ffffff",
+        "hoverColor": "#a9fff2",
+        "activeColor": "#cbeedf",
+        "text2color": "color: #cbeedf",
+        "elementColor": "#cbeedf",
+        "textColor3": "black",
+        "hovContact": "#76A290"
     }
 }
