@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+
     <title>Steven Guaman | Desarrollador de Software</title>
     <!--CSS -->
     <link rel="stylesheet" href="../css/proyectos.css">
@@ -25,27 +27,34 @@
         <header id="header"
             class="flex justify-between items-center py-2 md:py-4 bg-gray-100 transition duration-500 ease-in-out bg-opacity-0">
             <div class="logo md:min-w-0">
-                <a href="#inicio">
+                <a href="#mainContent">
                     <img src="../images/logo.webp" alt="Logo de Steven" class="w-20 md:w-20 lg:w-20 ml-4">
                 </a>
             </div>
             <nav id="nav"
                 class="lg:flex lg:flex-row lg:items-center lg:justify-end hidden flex flex-col lg:block mr-12">
                 <ul id="menuList" class="flex space-x-12">
-                    <li><a href="../../index.html#inicio" class="menu-link">Inicio</a></li>
-                    <li><a href="../../index.html#sobreMi" class="menu-link">Sobre mí</a></li>
-                    <li><a href="../../index.html#habilidades" class="menu-link">Habilidades</a></li>
-                    <li><a href="../../index.html#formacion" class="menu-link">Formación</a></li>
-                    <li><a href="../../index.html#experiencia" class="menu-link">Experiencia</a></li>
+                    <li><a href="../../index.html#inicio" class="menu-link" data-section="menu"
+                            data-value="item1">Inicio</a></li>
+                    <li><a href="../../index.html#sobreMi" class="menu-link" data-section="menu"
+                            data-value="item2">Sobre mí</a></li>
+                    <li><a href="../../index.html#habilidades" class="menu-link" data-section="menu"
+                            data-value="item3">Habilidades</a></li>
+                    <li><a href="../../index.html#formacion" class="menu-link" data-section="menu"
+                            data-value="item4">Formación</a></li>
+                    <li><a href="../../index.html#experiencia" class="menu-link" data-section="menu"
+                            data-value="item5">Experiencia</a></li>
                     <li> <a href="../../index.html#proyectos"
-                            class="menu-link text-iconproyect border-b-3 border-iconproyect mb-2">Proyectos</a></li>
-                    <li><a href="../../index.html#contacto" class="menu-link">Contacto</a></li>
+                            class="menu-link text-iconproyect border-b-3 border-iconproyect mb-2" data-section="menu"
+                            data-value="item6">Proyectos</a></li>
+                    <li><a href="../../index.html#contacto" class="menu-link" data-section="menu"
+                            data-value="item7">Contacto</a></li>
                     <div class="flex items-center space-x-8 ml-12">
                         <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                             <i class="fas fa-moon"></i>
                         </button>
-                        <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
-                            <i class="fas fa-language"></i>
+                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                            <img id="languageIcon" class="flag-img" src="" alt="Idioma" />
                         </button>
                     </div>
                 </ul>
@@ -68,44 +77,50 @@
         <div id="mobileNav"
             class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden">
             <ul class="flex flex-col items-center space-y-4 w-full py-4">
-                <li><a href="../../index.html#inicio" id="menuInicio" class="menu-link"
-                        onclick="mostrarOcultarMenu()">Inicio</a></li>
-                <li><a href="../../index.html#sobreMi" class="menu-link" onclick="mostrarOcultarMenu()">Sobre mí</a>
+                <li>
+                    <a href="../../index.html#inicio" id="menuInicio" class="menu-link" data-section="menu" data-value="item1" onclick="mostrarOcultarMenu()">Inicio</a>
+                </li>                
+                <li><a href="../../index.html#sobreMi" class="menu-link" data-section="menu" data-value="item2"
+                        onclick="mostrarOcultarMenu()">Sobre mí</a>
                 </li>
-                <li><a href="../../index.html#habilidades" class="menu-link"
+                <li><a href="../../index.html#habilidades" class="menu-link" data-section="menu" data-value="item3"
                         onclick="mostrarOcultarMenu()">Habilidades</a></li>
-                <li><a href="../../index.html#formacion" class="menu-link" onclick="mostrarOcultarMenu()">Formación</a>
+                <li><a href="../../index.html#formacion" class="menu-link" data-section="menu" data-value="item4"
+                        onclick="mostrarOcultarMenu()">Formación</a>
                 </li>
-                <li><a href="../../index.html#experiencia" class="menu-link"
+                <li><a href="../../index.html#experiencia" class="menu-link" data-section="menu" data-value="item5"
                         onclick="mostrarOcultarMenu()">Experiencia</a></li>
-                <li><a href="../../index.html#proyectos" class="menu-link" onclick="mostrarOcultarMenu()">Proyectos</a>
+                <li><a href="../../index.html#proyectos" class="menu-link" data-section="menu" data-value="item6"
+                        onclick="mostrarOcultarMenu()">Proyectos</a>
                 </li>
-                <li><a href="../../index.html#contacto" class="menu-link" onclick="mostrarOcultarMenu()">Contacto</a>
+                <li><a href="../../index.html#contacto" class="menu-link" data-section="menu" data-value="item7"
+                        onclick="mostrarOcultarMenu()">Contacto</a>
                 </li>
                 <div class="flex items-center space-x-8 mt-8"> <!-- Reducido el espacio entre botones -->
                     <button onclick="toggleDarkMode()" class="text-gray-800 focus:outline-none">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button onclick="changeLanguage()" class="text-gray-800 focus:outline-none">
-                        <i class="fas fa-language"></i>
+                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()" class="text-gray-800 focus:outline-none">
+                        <img id="languageIconMobile" class="flag-img" src="" alt="Idioma" />
                     </button>
+                    
                 </div>
             </ul>
         </div>
     </div>
-
     <main id="mainContent">
         <!-- Proyectos -->
         <section class="proyectos bg-gray-100 py-16" id="proyectos">
             <div class="max-w-screen-xl mx-auto p-4">
                 <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                    data-section="proyectos" data-value="title" data-aos="fade-up">
+                    data-section="projects" data-value="title" data-aos="fade-up">
                     Proyectos
                 </h1>
 
                 <!-- Descripción inicial -->
                 <div>
-                    <p class="mb-4 mx-4 p-4 text-lg font-bold">Aquí encontrarás todos mis proyectos destacados. Explora
+                    <p class="mb-4 mx-4 text-lg font-bold" data-section="projects" data-value="description">Aquí
+                        encontrarás todos mis proyectos destacados. Explora
                         cada uno para conocer más sobre mis habilidades técnicas y experiencia.</p>
                 </div>
 
@@ -125,8 +140,8 @@
                                     Servisoft
                                 </h2>
                                 <div class="relative">
-                                    <p
-                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                        data-section="projects" data-value="info-project2">
                                         Sitio web que simplifica la contratación de servicios profesionales al permitir
                                         a los clientes explorar categorías, revisar perfiles de trabajadores y
                                         contactarlos
@@ -178,8 +193,8 @@
                                     Portafolio web
                                 </h2>
                                 <div class="relative">
-                                    <p
-                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                        data-section="projects" data-value="info-project1">
                                         Mi portafolio web personal, aquí podrás explorar algunos de mis proyectos
                                         destacados, tambien conoceras mis habilidades técnicas y descubrir un poco
                                         más sobre mi trayectoria y formación.
@@ -228,8 +243,8 @@
                                     Multirepuestos Boyaca
                                 </h2>
                                 <div class="relative">
-                                    <p
-                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                        data-section="projects" data-value="info-project3">
                                         Aplicación de escritorio para Multirepuestos Boyacá: un sistema de ventas
                                         diseñado para optimizar el control de inventarios, gestionar proveedores
                                         y clientes, y generar informes. Garantiza eficiencia y seguridad en la
@@ -279,8 +294,8 @@
                                     Break Games
                                 </h2>
                                 <div class="relative">
-                                    <p
-                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                        data-section="projects" data-value="info-project4">
                                         Plataforma web que ofrece una amplia sección de juegos clásicos y divertidos
                                         Diseñada para proporcionar entretenimiento instantáneo y diversión para todos
                                         los usuarios.
@@ -329,8 +344,8 @@
                                     StockBetPro
                                 </h2>
                                 <div class="relative">
-                                    <p
-                                        class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300">
+                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                        data-section="projects" data-value="info-project5">
                                         Es una plataforma integrada para gestionar actividades empresariales,
                                         operaciones de trading, apuestas deportivas y control de préstamos,
                                         con herramientas robustas para administrar inventarios, ventas en
@@ -350,7 +365,7 @@
                             </div>
                             <div
                                 class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                <a href="#" target="_blank" class="col-span-1">
+                                <a href="../lang/en.json" target="_blank" class="col-span-1">
                                     <button
                                         class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
                                         <i class="fas fa-eye mr-2"></i> DEMO
@@ -416,7 +431,6 @@
             <i class="fas fa-chevron-up"></i>
         </div>
     </div>
-
     <!-- Archivo Js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 

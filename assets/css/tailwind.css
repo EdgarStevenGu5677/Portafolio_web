@@ -25,10 +25,6 @@
   border-bottom-width: 3px;
 }
 
-.text-iconproyect {
-  color: #1CB0E8 !important;
-}
-
 
 /* Archivo de estilos CSS */
 .max-h-24 {
@@ -67,4 +63,51 @@
 /* Mostrar el gradiente solo cuando el texto está cortado */
 .overflow-hidden:hover .bg-gradient-to-t {
   opacity: 0;
+}
+
+.flag-img {
+  width: 18px;
+  /* Ajusta el tamaño según sea necesario */
+  height: auto;
+}
+
+/* Estilos para el tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  /* Ajusta el ancho según sea necesario */
+  background-color: #555;
+  /* Color de fondo del tooltip */
+  color: #fff;
+  /* Color del texto del tooltip */
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  /* Posición del tooltip, ajusta según sea necesario */
+  left: 50%;
+  margin-left: -60px;
+  /* Centro del tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Ejemplo de estilos CSS para el placeholder */
+textarea::placeholder {
+  color: #9e9e9e;
+  /* Color del placeholder */
+  opacity: 1;
+  /* Opacidad del placeholder */
 }

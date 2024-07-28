@@ -1,0 +1,16 @@
+{
+    "colorTheme": {
+        "logo": "./assets/images/logo.webp",
+        "bodyTheme": "background-color: #f2f3f5",
+        "headerContainer": "background-color: #f2f3f5",
+        "textcolor": "color: black",
+        "hoverColor": "#1CB0E8",
+        "activeColor": "#1CB0E8",
+        "text2color": "color: #1CB0E8",
+        "elementColor": "#1CB0E8",
+        "textColor3": "#ffffff",
+        "hovContact": "#0e8eac"
+    }
+
+
+}

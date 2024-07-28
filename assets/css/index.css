@@ -4,14 +4,6 @@
     }
 }
 
-/* Estilo para el enlace activo y hover del Menu*/
-#menuList a.active,
-#menuList a:hover,
-#mobileNav a.active,
-#mobileNav a:hover {
-    color: #1CB0E8;
-}
-
 /* Estilo para la línea debajo del enlace activo del Menu*/
 #menuList a.active::after,
 #mobileNav a.active::after {
@@ -19,16 +11,11 @@
     display: block;
     width: 100%;
     height: 2px;
-    /* Grosor de la línea */
-    background-color: #1CB0E8;
-    /* Color de la línea */
     margin-top: 2px;
-    /* Espacio entre el texto y la línea */
 }
 
 
 /* Home */
-
 .container_button {
     text-align: center;
 }
@@ -38,71 +25,33 @@
 }
 
 .cv_button {
-    color: #1CB0E8;
-    /* Color del texto */
     padding: 10px 20px;
-    /* Espaciado interno */
-    border: 2px solid #1CB0E8;
-    /* Añadir borde con color especificado */
     border-radius: 20px;
-    /* Hacer bordes redondos */
     cursor: pointer;
-    /* Cambiar el cursor al pasar sobre el botón */
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    /* Transición suave */
     width: 200px;
-    /* Ancho fijo para ambos botones */
     height: 30px;
     display: inline-flex;
-    /* Utilizar flexbox para centrar verticalmente el contenido */
     align-items: center;
-    /* Centrar verticalmente el contenido */
     justify-content: center;
-    /* Centrar horizontalmente el contenido */
     letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #0e8eac;
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
 }
 
-.cv_button:hover {
-
-    box-shadow: inset 400px 0 0 0 #1CB0E8;
-    color: #fff;
-}
-
 .contact_button {
-    background-color: #1CB0E8;
-    /* Color de fondo */
-    color: white;
-    /* Color del texto */
     padding: 10px 20px;
-    /* Espaciado interno */
     border: none;
-    /* Quitar borde */
     border-radius: 20px;
-    /* Hacer bordes redondos */
     cursor: pointer;
-    /* Cambiar el cursor al pasar sobre el botón */
     transition: background-color 0.3s;
-    /* Transición suave para el cambio de color de fondo */
     width: 200px;
-    /* Ancho fijo para ambos botones */
     height: 34px;
     display: inline-flex;
-    /* Utilizar flexbox para centrar verticalmente el contenido */
     align-items: center;
-    /* Centrar verticalmente el contenido */
     justify-content: center;
-    /* Centrar horizontalmente el contenido */
-}
-
-
-.contact_button:hover {
-    background-color: #0e8eac;
-    /* Cambiar color de fondo al pasar sobre el botón */
 }
 
 .links {
@@ -146,7 +95,6 @@
 }
 
 .inicio_text-2 {
-    color: #1CB0E8;
     font-size: 5em;
     /* Tamaño relativo */
 }
