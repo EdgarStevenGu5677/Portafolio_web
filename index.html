@@ -157,7 +157,10 @@
                 const elementColor = themeData.colorTheme.elementColor;
                 const textColor3 = themeData.colorTheme.textColor3;
                 const hovContact = themeData.colorTheme.hovContact;
-                updateButtonColors(elementColor, textColor3, hovContact);
+                const botoncolor = themeData.colorTheme.botoncolor;
+                const iconhov = themeData.colorTheme.iconhov;
+                const iconcolor = themeData.colorTheme.iconcolor;
+                updateButtonColors(elementColor, textColor3, hovContact,botoncolor,iconhov,iconcolor);
             } else {
                 console.error('El tema no contiene un objeto "colorTheme" válido.');
             }
@@ -189,7 +192,7 @@
             document.head.appendChild(styleElement);
         }
     
-        function updateButtonColors(elementColor, textColor3, hovContact) {
+        function updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor) {
             const styleElement = document.getElementById('buttonColorStyle') || document.createElement('style');
             styleElement.id = 'buttonColorStyle';
             styleElement.innerHTML = `
@@ -212,7 +215,25 @@
 
                 .contact_button:hover {
                     background-color: ${hovContact};
+                }
+
+                .icon-circle {
+                    background-color: ${botoncolor};
+                }
+
+                .icon-circle:hover {
+                    background-color: ${iconhov};
+                }
+
+                .icon {
+                     color: ${iconcolor};
+                }
+
+.icon-circle:hover .icon {
+    color: white;
+    /* Cambiar color del icono al pasar sobre el círculo */
 }
+
             `;
             document.head.appendChild(styleElement);
         }
@@ -256,14 +277,15 @@
                 const elementColor = themeData.colorTheme.elementColor;
                 const textColor3 = themeData.colorTheme.textColor3;
                 const hovContact = themeData.colorTheme.hovContact;
-                updateButtonColors(elementColor, textColor3, hovContact);
+                const botoncolor = themeData.colorTheme.botoncolor;
+                const iconhov = themeData.colorTheme.iconhov;
+                const iconcolor = themeData.colorTheme.iconcolor;
+                updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor);
             } else {
                 console.error('El tema no contiene un objeto "colorTheme" válido.');
             }
         });
     </script>
-    
-    
     
     
     
@@ -388,7 +410,7 @@
         </section>
 
         <!-- SECCION SOBRE MI -->
-        <section class="sobreMi items-center flex justify-center bg-gray-200 h-full py-16" id="sobreMi">
+        <section class="sobreMi items-center flex justify-center h-full py-16" id="sobreMi"  data-section="colorTheme" data-value="headerContainer2">
             <div class="max-w-screen-xl w-full mx-auto p-8">
                 <!-- Título -->
                 <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
@@ -398,7 +420,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 lg:mt-12">
                     <!-- Segunda columna (texto) -->
-                    <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2">
+                    <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2" data-section="colorTheme" data-value="textcolor">
                         <span class="title_sobreMi block mb-2 text-center lg:text-left text-2xl lg:text-3xl font-bold"
                         data-section="colorTheme" data-value="text2color">
                             Steven Guaman<br>
@@ -429,7 +451,7 @@
                 <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 break-words mt-12 md:mt-16 lg:mt-16 xl:mt-24"
                     data-section="aboutme" data-value="title_2">¿Lo que me gusta?</h1>
 
-                <div class="cards_container--habilidades flex flex-wrap justify-center">
+                <div class="cards_container--habilidades flex flex-wrap justify-center" data-section="colorTheme" data-value="textcolor">
                     <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
                         data-aos="fade-up" data-aos-duration="500">
                         <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
@@ -581,7 +603,7 @@
         </section>
 
         <!-- Formación -->
-        <section class="formacion bg-gray-200 py-16" id="formacion">
+        <section class="formacion py-16" id="formacion" data-section="colorTheme" data-value="headerContainer2">
             <div class="max-w-screen-xl mx-auto p-8">
                 <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                     data-section="training" data-value="title" data-aos="fade-up">
@@ -818,7 +840,7 @@
         </section>
 
         <!-- Proyectos -->
-        <section class="proyectos bg-gray-200 py-16" id="proyectos">
+        <section class="proyectos py-16" id="proyectos" data-section="colorTheme" data-value="headerContainer2">
             <div class="max-w-screen-xl mx-auto p-4">
                 <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                     data-section="projects" data-value="title" data-aos="fade-up">

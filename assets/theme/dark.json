@@ -3,12 +3,16 @@
         "logo": "./assets/images/logo-oscuro.webp",
         "bodyTheme": "background-color: #0e1b30",
         "headerContainer": "background-color: #0e1b30",
+        "headerContainer2": "background-color: #1F2833 ",
         "textcolor": "color: #ffffff",
         "hoverColor": "#a9fff2",
         "activeColor": "#cbeedf",
         "text2color": "color: #cbeedf",
         "elementColor": "#cbeedf",
         "textColor3": "black",
-        "hovContact": "#76A290"
+        "hovContact": "#76A290",
+        "botoncolor": "#1F2833 ",
+        "iconhov": "#76A290",
+        "iconcolor": "#cbeedf"
     }
 }
