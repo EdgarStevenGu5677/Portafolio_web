@@ -1,3 +1,11 @@
+// funcion page load
+window.onload = function () {
+    var contenedor = document.getElementById('contenedor_carga');
+    contenedor.style.visibility = 'hidden';
+    contenedor.style.opacity = '0';
+
+}
+
 //Inicio del menu
 document.addEventListener('DOMContentLoaded', function () {
     const menuInicio = document.getElementById('menuInicio');
@@ -70,7 +78,6 @@ window.addEventListener('scroll', function () {
         header.classList.add('bg-opacity-100');
     }
 });
-
 //Fin del menu
 
 function mostrarHabilidades(id, event) {
@@ -214,4 +221,261 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('languageIconMobile').src = iconSrc;
 
     type();
+});
+
+
+//Script de cambio tema
+let currentTheme = localStorage.getItem('theme') || 'light';
+
+const ThemeIcons = {
+    'light': '<i class="fas fa-moon"></i>',
+    'dark': '<i class="fas fa-sun"></i>'
+};
+
+async function fetchTheme(theme) {
+    try {
+        const response = await fetch(`./assets/theme/${theme}.json`);
+        if (!response.ok) {
+            throw new Error('Error al cargar el archivo de temas');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error al cargar los textos:', error);
+        return {};
+    }
+}
+
+async function applyTheme(themeData) {
+    if (themeData.colorTheme) {
+        document.querySelectorAll('[data-section]').forEach(element => {
+            const value = element.getAttribute('data-value');
+            if (themeData.colorTheme[value]) {
+                const styles = themeData.colorTheme[value].split(';');
+                styles.forEach(style => {
+                    const [property, val] = style.split(':');
+                    if (property && val) {
+                        element.style[property.trim()] = val.trim();
+                    }
+                });
+            }
+        });
+
+        const logoContainer = document.getElementById('LogoContainer');
+        if (themeData.colorTheme.logo) {
+            logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
+        } else {
+            logoContainer.innerHTML = '';
+        }
+
+        // Actualizar imagen del inicio
+        const homeImage = document.getElementById('homeImage');
+        const homeImageSource = document.getElementById('homeImageSource');
+        if (themeData.colorTheme.homeImage) {
+            homeImage.src = themeData.colorTheme.homeImage;
+            homeImageSource.srcset = themeData.colorTheme.homeImage;
+        }
+
+        // Actualizar imagen sobre mí
+        const aboutmeImage = document.getElementById('aboutmeImage');
+        if (themeData.colorTheme.aboutmeImage) {
+            aboutmeImage.src = themeData.colorTheme.aboutmeImage;
+        }
+
+        updateLinkColors(themeData.colorTheme.activeColor, themeData.colorTheme.hoverColor);
+        updatePseudoElementColor(themeData.colorTheme.activeColor);
+        const { elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor, cardLike, cardExp, gradientText, fondText, fondScroll } = themeData.colorTheme;
+        updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor, cardLike, cardExp, gradientText, fondText, fondScroll);
+    } else {
+        console.error('El tema no contiene un objeto "colorTheme" válido.');
+    }
+}
+
+async function changeTheme() {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+
+    const iconSrc = ThemeIcons[currentTheme];
+    document.getElementById('ThemeIcon').innerHTML = iconSrc;
+    document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+
+    const themeData = await fetchTheme(currentTheme);
+    applyTheme(themeData);
+}
+
+function updateLinkColors(activeColor, hoverColor) {
+    const styleElement = document.getElementById('linkColorStyle') || document.createElement('style');
+    styleElement.id = 'linkColorStyle';
+    styleElement.innerHTML = `
+        #menuList a.active,
+        #menuList a:hover,
+        #mobileNav a.active,
+        #mobileNav a:hover {
+            color: ${activeColor};
+        }
+
+        #menuhabilidades a.active {
+            color: ${activeColor};
+            border-bottom: 2px solid ${activeColor};
+        }
+
+        #menuhabilidades a:hover {
+            color: ${activeColor};
+        }
+    `;
+    document.head.appendChild(styleElement);
+}
+
+function updatePseudoElementColor(color) {
+    const styleElement = document.getElementById('pseudoElementStyle') || document.createElement('style');
+    styleElement.id = 'pseudoElementStyle';
+    styleElement.innerHTML = `
+        #menuList a.active::after,
+        #mobileNav a.active::after {
+            background-color: ${color};
+        }
+    `;
+    document.head.appendChild(styleElement);
+}
+
+function updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor, cardLike, cardExp, gradientText, fondText, fondScroll) {
+    const styleElement = document.getElementById('buttonColorStyle') || document.createElement('style');
+    styleElement.id = 'buttonColorStyle';
+    styleElement.innerHTML = ` 
+        .pelotas {
+            background-color: ${elementColor};
+        }
+        .cv_button {
+            color: ${elementColor};
+            border: 2px solid ${elementColor};
+            box-shadow: inset 0 0 0 0 ${elementColor};
+        }
+        .cv_button:hover {
+            box-shadow: inset 400px 0 0 0 ${elementColor};
+        }
+        .cv_button:hover {
+            color: ${textColor3};
+        }
+        .contact_button {
+            color: ${textColor3};
+            background-color: ${elementColor};
+        }
+        .contact_button:hover {
+            background-color: ${hovContact};
+        }
+        .icon-circle {
+            background-color: ${botoncolor};
+        }
+        .icon-circle:hover {
+            background-color: ${iconhov};
+        }
+        .icon {
+            color: ${iconcolor};
+        }
+        .cards--habilidades {
+            background-color: ${cardLike};
+        }
+        .cards--habilidades:hover {
+            background-color: ${cardLike};
+            border: 2px solid ${iconcolor};
+        }
+        .cards--habilidades1 {
+            background-color: ${cardExp};
+        }
+        .cards--habilidades1:hover {
+            background-color: ${cardExp};
+            border: 1px solid ${iconcolor};
+        }
+        .cards--proyectos {
+            background-color: ${cardExp}; 
+            transition: background-color 0.3s, border-color 0.3s; 
+        }
+        .cards--proyectos:hover {
+            background-color: ${cardExp}; 
+            border: 2px solid ${iconcolor};
+            border-color: ${iconcolor}; 
+        }
+        .bg-gradient-to-t {
+            background: linear-gradient(to top, ${gradientText}, transparent);
+        }
+        .btn-custom {
+            background-color: ${elementColor} !important;
+            border: 2px solid ${elementColor} !important;
+            color: ${textColor3} !important;
+        }
+        .btn-custom:hover {
+            background-color: ${hovContact}!important;
+            border-color: ${elementColor} !important;
+        }
+        .btn-custom-outline {
+            border: 2px solid ${elementColor} !important;
+            color: ${elementColor} !important;
+        }
+        .btn-custom-outline:hover {
+            background-color: ${elementColor} !important;
+            color: ${textColor3}  !important;
+        }
+        .nombre-input:focus,
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border: 2px solid ${elementColor};
+            background-color: ${fondText}; 
+            opacity: 0.6; 
+            pointer-events: none;
+        }  
+        .go-top-button {
+            background-color: ${elementColor}; 
+            color: ${textColor3}; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+        .go-top-button:hover {
+            background-color: ${hovContact}; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: ${elementColor};
+            cursor: pointer;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: ${hovContact};
+        }
+        ::-webkit-scrollbar-track {
+            background-color: ${fondScroll};
+        }
+    `;
+    document.head.appendChild(styleElement);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const themeData = await fetchTheme(currentTheme);
+
+    if (themeData.colorTheme) {
+        applyTheme(themeData);
+
+        const iconSrc = ThemeIcons[currentTheme];
+        document.getElementById('ThemeIcon').innerHTML = iconSrc;
+        document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+    } else {
+        console.error('El tema no contiene un objeto "colorTheme" válido.');
+    }
+});
+
+
+//Script boton Scroll 
+document.addEventListener('DOMContentLoaded', function () {
+    const goTopButton = document.getElementById('goTopButton');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) { // Muestra el botón después de hacer scroll 300px
+            goTopButton.classList.remove('hidden');
+            goTopButton.classList.add('visible');
+        } else {
+            goTopButton.classList.remove('visible');
+            goTopButton.classList.add('hidden');
+        }
+    });
+
+    goTopButton.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Desplaza al inicio con animación
+    });
 });

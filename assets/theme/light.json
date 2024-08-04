@@ -1,6 +1,9 @@
 {
     "colorTheme": {
         "logo": "./assets/images/logo.webp",
+        "logo2": "../images/logo.webp",
+        "homeImage": "./assets/images/logop1.png",
+        "aboutmeImage": "./assets/images/sobremi.png",
         "bodyTheme": "background-color: #f2f3f5",
         "headerContainer": "background-color: #f2f3f5",
         "headerContainer2": "background-color: #e4e6eb",
@@ -13,7 +16,14 @@
         "hovContact": "#0e8eac",
         "botoncolor": "white",
         "iconhov": "#0e8eac",
-        "iconcolor": "#1CB0E8"
+        "iconcolor": "#1CB0E8",
+        "textTitle": "color: #1f2937ff",
+        "cardLike": "#f2f3f5",
+        "cardExp": "#e4e6eb",
+        "icon": "color: #1CB0E8",
+        "gradientText": "#f2f3f5",
+        "gradientText1": "#e4e6eb",
+        "fondText": "#C3EEFE",
+        "fondScroll": "#E8EAEC"
     }
 }
-

@@ -1,3 +1,11 @@
+ // funcion page load
+ window.onload = function () {
+    var contenedor = document.getElementById('contenedor_carga');
+    contenedor.style.visibility = 'hidden';
+    contenedor.style.opacity = '0';
+
+}
+
 //Menu movil index inicio
 document.addEventListener('DOMContentLoaded', function () {
     const menuInicio = document.getElementById('menuInicio');
@@ -132,4 +140,207 @@ document.addEventListener('DOMContentLoaded', async () => {
     const iconSrc = languageIcons[currentLanguage];
     document.getElementById('languageIcon').src = iconSrc;
     document.getElementById('languageIconMobile').src = iconSrc;
+});
+
+//Script de cambio tema
+let currentTheme = localStorage.getItem('theme');
+
+const ThemeIcons = {
+    'light': '<i class="fas fa-moon"></i>',
+    'dark': '<i class="fas fa-sun"></i>'
+};
+
+async function fetchTheme(theme) {
+    try {
+        const response = await fetch(`../theme/${theme}.json`);
+        if (!response.ok) {
+            throw new Error('Error al cargar el archivo de temas');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error al cargar los textos:', error);
+        return {};
+    }
+}
+
+async function applyTheme(themeData) {
+    if (themeData.colorTheme) {
+        document.querySelectorAll('[data-section]').forEach(element => {
+            const value = element.getAttribute('data-value');
+            if (themeData.colorTheme[value]) {
+                const styles = themeData.colorTheme[value].split(';');
+                styles.forEach(style => {
+                    const [property, val] = style.split(':');
+                    if (property && val) {
+                        element.style[property.trim()] = val.trim();
+                    }
+                });
+            }
+        });
+
+        const logoContainer = document.getElementById('LogoContainer');
+        if (themeData.colorTheme.logo) {
+            logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo2}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
+        } else {
+            logoContainer.innerHTML = '';
+        }
+
+        updateLinkColors(themeData.colorTheme.hoverColor);
+        updatePseudoElementColor(themeData.colorTheme.activeColor);
+        const { elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor, cardExp, gradientText1, fondScroll } = themeData.colorTheme;
+        updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor, cardExp, gradientText1, fondScroll);
+    } else {
+        console.error('El tema no contiene un objeto "colorTheme" válido.');
+    }
+}
+
+async function changeTheme() {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+
+    const iconSrc = ThemeIcons[currentTheme];
+    document.getElementById('ThemeIcon').innerHTML = iconSrc;
+    document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+
+    const themeData = await fetchTheme(currentTheme);
+    applyTheme(themeData);
+}
+
+
+function updateLinkColors(activeColor, hoverColor) {
+    const styleElement = document.getElementById('linkColorStyle') || document.createElement('style');
+    styleElement.id = 'linkColorStyle';
+    styleElement.innerHTML = `
+    #menuList a:hover,
+    #mobileNav a:hover {
+        color: ${activeColor};
+        
+    }
+
+    #link_proyect{
+        color: ${activeColor};
+        border-bottom: 3px solid ${activeColor};
+    }
+    #menuhabilidades a:hover {
+        color: ${activeColor};
+    }
+`;
+    document.head.appendChild(styleElement);
+}
+
+function updatePseudoElementColor(color) {
+    const styleElement = document.getElementById('pseudoElementStyle') || document.createElement('style');
+    styleElement.id = 'pseudoElementStyle';
+    styleElement.innerHTML = `
+    #menuList a.active::after,
+    #mobileNav a.active::after {
+        background-color: ${color};
+    }
+`;
+    document.head.appendChild(styleElement);
+}
+
+function updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor, cardExp, gradientText1, fondScroll) {
+    const styleElement = document.getElementById('buttonColorStyle') || document.createElement('style');
+    styleElement.id = 'buttonColorStyle';
+    styleElement.innerHTML = ` 
+    .pelotas {
+        background-color: ${elementColor};
+    }
+   
+    .icon-circle {
+        background-color: ${botoncolor};
+    }
+    .icon-circle:hover {
+        background-color: ${iconhov};
+    }
+    .icon {
+        color: ${iconcolor};
+    }
+
+    .cards--proyectos {
+        background-color: ${cardExp}; 
+        transition: background-color 0.3s, border-color 0.3s; 
+    }
+    .cards--proyectos:hover {
+        background-color: ${cardExp}; 
+        border: 2px solid ${iconcolor};
+        border-color: ${iconcolor}; 
+    }
+    .bg-gradient-to-t {
+        background: linear-gradient(to top, ${gradientText1}, transparent);
+    }
+    .btn-custom {
+        background-color: ${elementColor} !important;
+        border: 2px solid ${elementColor} !important;
+        color: ${textColor3} !important;
+    }
+    .btn-custom:hover {
+        background-color: ${hovContact}!important;
+        border-color: ${elementColor} !important;
+    }
+    .btn-custom-outline {
+        border: 2px solid ${elementColor} !important;
+        color: ${elementColor} !important;
+    }
+    .btn-custom-outline:hover {
+        background-color: ${elementColor} !important;
+        color: ${textColor3}  !important;
+    }
+    
+    .go-top-button {
+        background-color: ${elementColor}; 
+        color: ${textColor3}; 
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+    }
+    .go-top-button:hover {
+        background-color: ${hovContact}; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: ${elementColor};
+        cursor: pointer;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: ${hovContact};
+    }
+    ::-webkit-scrollbar-track {
+        background-color: ${fondScroll};
+    }
+`;
+    document.head.appendChild(styleElement);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const themeData = await fetchTheme(currentTheme);
+
+    if (themeData.colorTheme) {
+        applyTheme(themeData);
+
+        const iconSrc = ThemeIcons[currentTheme];
+        document.getElementById('ThemeIcon').innerHTML = iconSrc;
+        document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
+    } else {
+        console.error('El tema no contiene un objeto "colorTheme" válido.');
+    }
+});
+
+
+//Script boton Scroll 
+document.addEventListener('DOMContentLoaded', function () {
+    const goTopButton = document.getElementById('goTopButton');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 150) {
+            goTopButton.classList.remove('hidden');
+            goTopButton.classList.add('visible');
+        } else {
+            goTopButton.classList.remove('visible');
+            goTopButton.classList.add('hidden');
+        }
+    });
+
+    goTopButton.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });

@@ -1,6 +1,9 @@
 {
     "colorTheme": {
         "logo": "./assets/images/logo-oscuro.webp",
+        "logo2": "../images/logo-oscuro.webp",
+        "homeImage": "./assets/images/logop1.png",
+        "aboutmeImage": "./assets/images/sobremi.png",
         "bodyTheme": "background-color: #0e1b30",
         "headerContainer": "background-color: #0e1b30",
         "headerContainer2": "background-color: #1F2833 ",
@@ -13,6 +16,14 @@
         "hovContact": "#76A290",
         "botoncolor": "#1F2833 ",
         "iconhov": "#76A290",
-        "iconcolor": "#cbeedf"
+        "iconcolor": "#cbeedf",
+        "textTitle": "color: #ffffff",
+        "cardLike": "#0e1b30",
+        "cardExp": "#1F2833",
+        "icon": "color: #cbeedf",
+        "gradientText": "#0e1b30",
+        "gradientText1": "#1F2833",
+        "fondText": "#E7FFF5",
+        "fondScroll": "#12223B"
     }
 }

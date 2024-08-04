@@ -5,25 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-
     <title>Steven Guaman | Desarrollador de Software</title>
     <!--CSS -->
     <link rel="stylesheet" href="./assets/css/index.css">
     <!-- Fontawesome Iconos -->
     <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
-
     <!-- Librerías Objetos movimiento -->
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
-
     <!-- Fuentes -->
     <link href="./assets/css/tailwind.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body class="bodoverflow-x-hidden">
-    <div id="headerContainer" class="container-header fixed top-0 w-full z-50" data-section="colorTheme" data-value="headerContainer">
-        <header id="header"
-            class="flex justify-between items-center py-2 md:py-4 transition duration-500 ease-in-out">
+<body class="overflow-x-hidden">
+
+    <div id="contenedor_carga">
+        <div class="cargando">
+            <div class="pelotas"></div>
+            <div class="pelotas"></div>
+            <div class="pelotas"></div>
+        </div>
+    </div>
+    <div id="headerContainer" class="container-header fixed top-0 w-full z-50" data-section="colorTheme"
+        data-value="headerContainer">
+        <header id="header" class="flex justify-between items-center py-2 md:py-4 transition duration-500 ease-in-out">
             <div class="logo md:min-w-0">
                 <a href="/">
                     <div id="LogoContainer" class="w-20 md:w-20 lg:w-20 ml-4"></div>
@@ -41,20 +46,21 @@
                     <li><a href="#proyectos" class="menu-link" data-section="menu" data-value="item6">Proyectos</a></li>
                     <li><a href="#contacto" class="menu-link" data-section="menu" data-value="item7">Contacto</a></li>
                     <div class="flex items-center space-x-8 ml-12">
-                        <button id="ThemeButton" onclick="changeTheme()" class="focus:outline-none">
+                        <button id="ThemeButton" onclick="changeTheme(), mostrarOcultarMenu()"
+                            class="focus:outline-none">
                             <span id="ThemeIcon">${ThemeIcons[currentTheme]}</span>
                         </button>
-                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()" class="focus:outline-none">
+                        <button id="languageButton" onclick="changeLanguage(), mostrarOcultarMenu()"
+                            class="focus:outline-none">
                             <img id="languageIcon" class="flag-img" src="" alt="Idioma" />
                         </button>
                     </div>
                 </ul>
             </nav>
-
             <div class="lg:hidden ml-4">
-                <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12" >
-                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" data-section="colorTheme" data-value="textcolor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <button onclick="mostrarOcultarMenu()" class="focus:outline-none h-auto ml-12">
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" data-section="colorTheme"
+                        data-value="textcolor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path id="menuPath" class="menu-icon" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         <path id="xPath" class="x-icon hidden" stroke-linecap="round" stroke-linejoin="round"
@@ -64,11 +70,14 @@
             </div>
         </header>
 
+
         <!-- Menú móvil -->
         <div id="mobileNav"
-            class="lg:hidden fixed right-0 w-full md:w-1/2 bg-gray-200 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden" data-section="colorTheme" data-value="headerContainer">
-            <ul class="flex flex-col items-center space-y-4 w-full py-4" data-section="colorTheme" data-value="textcolor">
-                <li><a id="menuInicio"  href="#inicio" class="menu-link" data-section="menu" data-value="item1"
+            class="lg:hidden fixed right-0 w-full md:w-1/2 hidden flex flex-col items-center justify-start pt-2 space-y-4 z-50 overflow-x-hidden"
+            data-section="colorTheme" data-value="headerContainer">
+            <ul class="flex flex-col items-center space-y-4 w-full py-4" data-section="colorTheme"
+                data-value="textcolor">
+                <li><a id="menuInicio" href="#inicio" class="menu-link" data-section="menu" data-value="item1"
                         onclick="mostrarOcultarMenu()">Inicio</a></li>
                 <li><a href="#sobreMi" class="menu-link" data-section="menu" data-value="item2"
                         onclick="mostrarOcultarMenu()">Sobre mí</a></li>
@@ -83,217 +92,24 @@
                 <li><a href="#contacto" class="menu-link" data-section="menu" data-value="item7"
                         onclick="mostrarOcultarMenu()">Contacto</a></li>
                 <div class="flex items-center space-x-8 mt-8">
-                    <button id="ThemeButtonMobile" onclick="changeTheme()" class="focus:outline-none">
+                    <button id="ThemeButtonMobile" onclick="changeTheme(), mostrarOcultarMenu()"
+                        class="focus:outline-none">
                         <span id="ThemeIconMobile">${ThemeIcons[currentTheme]}</span>
                     </button>
-                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()" class="focus:outline-none">
+                    <button id="languageButtonMobile" onclick="changeLanguage(), mostrarOcultarMenu()"
+                        class="focus:outline-none">
                         <img id="languageIconMobile" class="flag-img" src="" alt="Idioma" />
                     </button>
                 </div>
             </ul>
         </div>
     </div>
-    <script>
-        let currentTheme = localStorage.getItem('theme') || 'light';
-    
-        const ThemeIcons = {
-            'light': '<i class="fas fa-moon"></i>',
-            'dark': '<i class="fas fa-sun"></i>'
-        };
-    
-        async function fetchTheme(theme) {
-            try {
-                const response = await fetch(`./assets/theme/${theme}.json`);
-                if (!response.ok) {
-                    throw new Error('Error al cargar el archivo de temas');
-                }
-                return await response.json();
-            } catch (error) {
-                console.error('Error al cargar los textos:', error);
-                return {};
-            }
-        }
-    
-        async function changeTheme() {
-            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', currentTheme);
-    
-            const iconSrc = ThemeIcons[currentTheme];
-            document.getElementById('ThemeIcon').innerHTML = iconSrc;
-            document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
-    
-            const themeData = await fetchTheme(currentTheme);
-    
-            if (themeData.colorTheme) {
-                // Actualizar estilos usando data attributes
-                document.querySelectorAll('[data-section]').forEach(element => {
-                    const value = element.getAttribute('data-value');
-                    if (themeData.colorTheme[value]) {
-                        const styles = themeData.colorTheme[value].split(';');
-                        styles.forEach(style => {
-                            const [property, val] = style.split(':');
-                            if (property && val) {
-                                element.style[property.trim()] = val.trim();
-                            }
-                        });
-                    }
-                });
-    
-                // Actualizar logo si está definido en el tema
-                const logoContainer = document.getElementById('LogoContainer');
-                if (themeData.colorTheme.logo) {
-                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
-                } else {
-                    logoContainer.innerHTML = ''; // Si no hay logo definido en el tema, vaciar el contenedor
-                }
-    
-                // Actualizar colores de los enlaces
-                updateLinkColors(themeData.colorTheme.activeColor, themeData.colorTheme.hoverColor);
-    
-                // Actualizar pseudo elementos
-                updatePseudoElementColor(themeData.colorTheme.activeColor);
-    
-                // Actualizar colores de los botones
-                const elementColor = themeData.colorTheme.elementColor;
-                const textColor3 = themeData.colorTheme.textColor3;
-                const hovContact = themeData.colorTheme.hovContact;
-                const botoncolor = themeData.colorTheme.botoncolor;
-                const iconhov = themeData.colorTheme.iconhov;
-                const iconcolor = themeData.colorTheme.iconcolor;
-                updateButtonColors(elementColor, textColor3, hovContact,botoncolor,iconhov,iconcolor);
-            } else {
-                console.error('El tema no contiene un objeto "colorTheme" válido.');
-            }
-        }
-    
-        function updateLinkColors(activeColor, hoverColor) {
-            const styleElement = document.getElementById('linkColorStyle') || document.createElement('style');
-            styleElement.id = 'linkColorStyle';
-            styleElement.innerHTML = `
-                #menuList a.active,
-                #menuList a:hover,
-                #mobileNav a.active,
-                #mobileNav a:hover {
-                    color: ${activeColor};
-                }
-            `;
-            document.head.appendChild(styleElement);
-        }
-    
-        function updatePseudoElementColor(color) {
-            const styleElement = document.getElementById('pseudoElementStyle') || document.createElement('style');
-            styleElement.id = 'pseudoElementStyle';
-            styleElement.innerHTML = `
-                #menuList a.active::after,
-                #mobileNav a.active::after {
-                background-color: ${color};
-                }
-            `;
-            document.head.appendChild(styleElement);
-        }
-    
-        function updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor) {
-            const styleElement = document.getElementById('buttonColorStyle') || document.createElement('style');
-            styleElement.id = 'buttonColorStyle';
-            styleElement.innerHTML = `
-                .cv_button {
-                    color: ${elementColor};
-                    border: 2px solid ${elementColor};
-                    box-shadow: inset 0 0 0 0 ${elementColor};
-                }
-                .cv_button:hover {
-                    box-shadow: inset 400px 0 0 0 ${elementColor};
-                }
-
-                .cv_button:hover {
-                    color: ${textColor3};
-                }
-                .contact_button {
-                    color: ${textColor3};
-                    background-color: ${elementColor};
-                }
-
-                .contact_button:hover {
-                    background-color: ${hovContact};
-                }
-
-                .icon-circle {
-                    background-color: ${botoncolor};
-                }
-
-                .icon-circle:hover {
-                    background-color: ${iconhov};
-                }
-
-                .icon {
-                     color: ${iconcolor};
-                }
-
-.icon-circle:hover .icon {
-    color: white;
-    /* Cambiar color del icono al pasar sobre el círculo */
-}
-
-            `;
-            document.head.appendChild(styleElement);
-        }
-    
-        document.addEventListener('DOMContentLoaded', async () => {
-            const themeData = await fetchTheme(currentTheme);
-    
-            if (themeData.colorTheme) {
-                // Aplicar estilos iniciales usando data attributes
-                document.querySelectorAll('[data-section="colorTheme"]').forEach(element => {
-                    const value = element.getAttribute('data-value');
-                    if (themeData.colorTheme[value]) {
-                        const styles = themeData.colorTheme[value].split(';');
-                        styles.forEach(style => {
-                            const [property, val] = style.split(':');
-                            if (property && val) {
-                                element.style[property.trim()] = val.trim();
-                            }
-                        });
-                    }
-                });
-    
-                // Aplicar logo inicial si está definido en el tema
-                const logoContainer = document.getElementById('LogoContainer');
-                if (themeData.colorTheme.logo) {
-                    logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
-                }
-    
-                // Aplicar icono de tema inicial
-                const iconSrc = ThemeIcons[currentTheme];
-                document.getElementById('ThemeIcon').innerHTML = iconSrc;
-                document.getElementById('ThemeIconMobile').innerHTML = iconSrc;
-    
-                // Actualizar colores de los enlaces
-                updateLinkColors(themeData.colorTheme.activeColor, themeData.colorTheme.hoverColor);
-    
-                // Actualizar pseudo elementos
-                updatePseudoElementColor(themeData.colorTheme.activeColor);
-    
-                // Actualizar colores de los botones
-                const elementColor = themeData.colorTheme.elementColor;
-                const textColor3 = themeData.colorTheme.textColor3;
-                const hovContact = themeData.colorTheme.hovContact;
-                const botoncolor = themeData.colorTheme.botoncolor;
-                const iconhov = themeData.colorTheme.iconhov;
-                const iconcolor = themeData.colorTheme.iconcolor;
-                updateButtonColors(elementColor, textColor3, hovContact, botoncolor, iconhov, iconcolor);
-            } else {
-                console.error('El tema no contiene un objeto "colorTheme" válido.');
-            }
-        });
-    </script>
-    
-    
-    
-    
     <main id="mainContent">
+
         <!-- Inicio -->
         <section id="inicio"
-            class="home flex justify-center px-4 lg:px-0 mt-4 md:mt-8 lg:mt-0 overflow-hidden min-h-screen"  data-section="colorTheme" data-value="headerContainer">
+            class="home flex justify-center px-4 lg:px-0 mt-4 md:mt-8 lg:mt-0 overflow-hidden min-h-screen"
+            data-section="colorTheme" data-value="headerContainer">
             <!-- Contenido aquí -->
             <!-- Contenedor principal -->
             <div class="flex flex-col justify-center w-full lg:flex lg:flex-row">
@@ -301,9 +117,9 @@
                 <div
                     class="lg:w-2/3 border-gray-300 mx-4 lg:mx-10 flex flex-col justify-center lg:mt-10 text-center lg:text-left order-2 lg:order-2">
                     <div class="container_text-info">
-                        <div
-                            class="inicio_text-1 text-xl md:text-3xl lg:text-3xl inline-flex items-center space-x-2 mx-auto" data-section="colorTheme" data-value="textcolor">
-                            <p class="inline-flex items-center" data-section="home" data-value="home_text-1" >
+                        <div class="inicio_text-1 text-xl md:text-3xl lg:text-3xl inline-flex items-center space-x-2 mx-auto"
+                            data-section="colorTheme" data-value="textcolor">
+                            <p class="inline-flex items-center" data-section="home" data-value="home_text-1">
                                 Hola!
                             </p>
                             <p class="inline-flex items-center">
@@ -314,13 +130,15 @@
                                 <span class="ml-2">Soy</span>
                             </p>
                         </div>
-                        <p class="inicio_text-2 text-4xl md:text-6xl lg:text-5xl mb-2 font-semibold" data-section="colorTheme" data-value="text2color">Steven Guaman</p>
+                        <p class="inicio_text-2 text-4xl md:text-6xl lg:text-5xl mb-2 font-semibold"
+                            data-section="colorTheme" data-value="text2color">Steven Guaman</p>
                     </div>
                     <div data-section="colorTheme" data-value="textcolor">
                         <p id="typingEffect" class="home_text-3 text-lg md:text-3xl lg:text-3xl" data-section="inicio"
                             data-value="home_text-3"></p>
                     </div><!-- Parrafo info oculto en móviles -->
-                    <div class="container_parrafo-info hidden lg:block" data-section="colorTheme" data-value="textcolor">
+                    <div class="container_parrafo-info hidden lg:block" data-section="colorTheme"
+                        data-value="textcolor">
                         <p class="parrafo-info text-base md:text-xl lg:text-xl" data-section="home"
                             data-value="paragraph-info">Desarrollador de software apasionado por crear proyectos
                             con diseño intuitivo, atractivo, escalable y funcional
@@ -348,26 +166,26 @@
                     <!-- Iconos sociales en móviles -->
                     <div class="flex justify-center lg:hidden mt-6">
                         <div
-                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-x4 transition-shadow duration-300 ease-in-out">
-                            <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-x4 transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                            <a href="#" target="_blank">
                                 <i class="fab fa-instagram icon"></i>
                             </a>
                         </div>
                         <div
-                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                            <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                            <a href="#" target="_blank">
                                 <i class="fab fa-linkedin icon"></i>
                             </a>
                         </div>
                         <div
-                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                            <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                            <a href="#" target="_blank">
                                 <i class="fab fa-github icon"></i>
                             </a>
                         </div>
                         <div
-                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                            <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                            class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                            <a href="#" target="_blank">
                                 <i class="fab fa-discord icon"></i>
                             </a>
                         </div>
@@ -376,32 +194,37 @@
                 <!-- Columna secundaria -->
                 <div
                     class="lg:w-1/3 mx-auto lg:mx-0 lg:mr-52 flex items-center justify-center lg:justify-end order-1 lg:order-3 mb-4">
-                    <picture class="contenedor_image-inicio" data-aos="zoom-in">
-                        <source media="(min-width: 768px)" srcset="./assets/images/logop1.png">
-                        <img class="image_home w-48 md:w-72 lg:w-full max-w-full h-auto mx-auto"
+                    <picture id="homeImageContainer" class="contenedor_image-inicio" data-aos="zoom-in">
+                        <source id="homeImageSource" media="(min-width: 768px)" srcset="./assets/images/logop1.png">
+                        <img id="homeImage" class="image_home w-48 md:w-72 lg:w-full max-w-full h-auto mx-auto"
                             src="./assets/images/logop1.png" alt="Ilustración programador">
                     </picture>
                 </div>
 
+
                 <!-- Primera columna con iconos sociales en pantallas grandes -->
                 <div class="flex flex-col justify-end lg:w-1/12 mx-6 mb-4 order-3 lg:order-1 hidden lg:flex">
-                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <div
+                        class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                        <a href="#" target="_blank">
                             <i class="fab fa-instagram icon"></i>
                         </a>
                     </div>
-                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <div
+                        class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                        <a href="#" target="_blank">
                             <i class="fab fa-linkedin icon"></i>
                         </a>
                     </div>
-                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <div
+                        class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                        <a href="#" target="_blank">
                             <i class="fab fa-github icon"></i>
                         </a>
                     </div>
-                    <div class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+                    <div
+                        class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
+                        <a href="#" target="_blank">
                             <i class="fab fa-discord icon"></i>
                         </a>
                     </div>
@@ -410,19 +233,22 @@
         </section>
 
         <!-- SECCION SOBRE MI -->
-        <section class="sobreMi items-center flex justify-center h-full py-16" id="sobreMi"  data-section="colorTheme" data-value="headerContainer2">
+        <section class="sobreMi items-center flex justify-center h-full py-16" id="sobreMi" data-section="colorTheme"
+            data-value="headerContainer2">
             <div class="max-w-screen-xl w-full mx-auto p-8">
                 <!-- Título -->
-                <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                    data-section="aboutme" data-value="title">
-                    Sobre mí
-                </h1>
-
+                <div data-section="colorTheme" data-value="textTitle">
+                    <h1 class="title text-center mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                        data-section="aboutme" data-value="title">
+                        Sobre mí
+                    </h1>
+                </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-2 lg:mt-12">
                     <!-- Segunda columna (texto) -->
-                    <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2" data-section="colorTheme" data-value="textcolor">
+                    <div class="container_texto-sobreMi mt-4 lg:mt-0 order-1 lg:order-2" data-section="colorTheme"
+                        data-value="textcolor">
                         <span class="title_sobreMi block mb-2 text-center lg:text-left text-2xl lg:text-3xl font-bold"
-                        data-section="colorTheme" data-value="text2color">
+                            data-section="colorTheme" data-value="text2color">
                             Steven Guaman<br>
                         </span>
 
@@ -443,160 +269,166 @@
                     <!-- Primera columna (imagen) -->
                     <div class="container_image-sobreMi flex justify-center order-2 lg:order-1">
                         <picture>
-                            <img class="image_sobreMi" src="./assets/images/sobremi.png" alt="Ilustración mujer y café">
+                            <img id="aboutmeImage" class="image_sobreMi" src="./assets/images/sobremi.png"
+                                alt="Ilustración mujer y café">
                         </picture>
                     </div>
                 </div>
-
-                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 break-words mt-12 md:mt-16 lg:mt-16 xl:mt-24"
-                    data-section="aboutme" data-value="title_2">¿Lo que me gusta?</h1>
-
-                <div class="cards_container--habilidades flex flex-wrap justify-center" data-section="colorTheme" data-value="textcolor">
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                <div data-section="colorTheme" data-value="textTitle">
+                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold  break-words mt-12 md:mt-16 lg:mt-16 xl:mt-24"
+                        data-section="aboutme" data-value="title_2">¿Lo que me gusta?</h1>
+                </div>
+                <div class="cards_container--habilidades flex flex-wrap justify-center" data-section="colorTheme"
+                    data-value="textcolor">
+                    <div class="cards--habilidades w-36 mx-10 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-105"
                         data-aos="fade-up" data-aos-duration="500">
                         <i class="fas fa-book-open inline-block mb-2 text-3xl"></i>
                         <p data-section="aboutme" data-value="card1">Leer libros</p>
                     </div>
 
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                    <div class="cards--habilidades w-36 mx-10 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-105"
                         data-aos="fade-up" data-aos-duration="700">
                         <i class="fas fa-paint-brush inline-block mb-2 text-3xl"></i>
                         <p data-section="aboutme" data-value="card2">Dibujar</p>
                     </div>
 
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                    <div class="cards--habilidades w-36 mx-10 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-105"
                         data-aos="fade-up" data-aos-duration="900">
                         <i class="fas fa-plane inline-block mb-2 text-3xl"></i>
                         <p data-section="aboutme" data-value="card3">Viajar</p>
                     </div>
 
-
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                    <div class="cards--habilidades w-36 mx-10 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-105"
                         data-aos="fade-up" data-aos-duration="1100">
                         <i class="fas fa-laptop-code inline-block mb-2 text-3xl"></i>
                         <p data-section="aboutme" data-value="card4">Hacer código</p>
                     </div>
 
-                    <div class="cards--habilidades mx-16 my-2 p-4 rounded-lg shadow-md text-center hover:border-blue-200 border-2"
+                    <div class="cards--habilidades w-36 mx-10 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-105"
                         data-aos="fade-up" data-aos-duration="500">
                         <i class="fas fa-gamepad inline-block mb-2 text-3xl"></i>
-                        <p data-section="aboutme" data-value="card5">Jugar videojuegos</p>
+                        <p data-section="aboutme" data-value="card5">Videojuegos</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Habilidades -->
-        <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades" data-section="colorTheme" data-value="headerContainer">
-            <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                data-section="skills" data-value="title" data-aos="fade-up">
-                Habilidades
-            </h1>
+        <section class="habilidades flex flex-col items-center justify-center py-20" id="habilidades"
+            data-section="colorTheme" data-value="headerContainer">
+            <div data-section="colorTheme" data-value="textTitle">
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold  whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                    data-section="skills" data-value="title" data-aos="fade-up">
+                    Habilidades
+                </h1>
+            </div>
             <div>
-                <div class="flexjustify-between " id="menuhabilidades">
-                    <a href="#" class="mr-8 active" onclick="mostrarHabilidades('habilidades1', event)"
+                <div class="flexjustify-between mb-12 " id="menuhabilidades" data-section="colorTheme"
+                    data-value="textcolor">
+                    <a href="#" class="mr-8 active mb-12" onclick="mostrarHabilidades('habilidades1', event)"
                         data-section="skills" data-value="skills_item1">Tecnicas</a>
                     <a href="#" onclick="mostrarHabilidades('habilidades2', event)" data-section="skills"
                         data-value="skills_item2">Otras</a>
                 </div>
                 <div id="habilidades1" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12">
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/html.webp" alt="HTML">
-                        <p>HTML 5</p>
+                        <p data-section="colorTheme" data-value="textcolor">HTML 5</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/css.webp" alt="CSS">
-                        <p>CSS 3</p>
+                        <p data-section="colorTheme" data-value="textcolor">CSS 3</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/js.webp" alt="JavaScript">
-                        <p>JavaScript</p>
+                        <p data-section="colorTheme" data-value="textcolor">JavaScript</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/net.webp" alt="Net">
-                        <p>Asp.Net</p>
+                        <p data-section="colorTheme" data-value="textcolor">Asp.Net</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/laravel.webp" alt="Laravel">
-                        <p>Laravel</p>
+                        <p data-section="colorTheme" data-value="textcolor">Laravel</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/sqlserver.webp" alt="SqlServer">
-                        <p>Sql Server</p>
+                        <p data-section="colorTheme" data-value="textcolor">Sql Server</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/mysql.webp" alt="MySQL">
-                        <p>My SQL</p>
+                        <p data-section="colorTheme" data-value="textcolor">My SQL</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/github.webp" alt="Github">
-                        <p>Git hub</p>
+                        <p data-section="colorTheme" data-value="textcolor">Git hub</p>
                     </div>
                 </div>
 
+
                 <div id="habilidades2" class="grid grid-cols-2 md:grid-cols-4 gap-x-0 md:gap-x-0 gap-y-12 mt-12"
                     style="display:none;">
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/adobexd.webp" alt="Adobexd">
-                        <p>Adobe XD</p>
+                        <p data-section="colorTheme" data-value="textcolor">Adobe XD</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/inskape.webp" alt="Inskape">
-                        <p>Inskape</p>
+                        <p data-section="colorTheme" data-value="textcolor">Inskape</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/krita.webp" alt="Krita">
-                        <p>Krita</p>
+                        <p data-section="colorTheme" data-value="textcolor">Krita</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/gimp.webp" alt="Gimp">
-                        <p>Gimp</p>
+                        <p data-section="colorTheme" data-value="textcolor">Gimp</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/aseprite.webp" alt="Aseprite">
-                        <p>Aseprite</p>
+                        <p data-section="colorTheme" data-value="textcolor">Aseprite</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/notion.webp" alt="Notion">
-                        <p>Notion</p>
+                        <p data-section="colorTheme" data-value="textcolor">Notion</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/trello.webp" alt="Trello">
-                        <p>Trello</p>
+                        <p data-section="colorTheme" data-value="textcolor">Trello</p>
                     </div>
 
-                    <div class="cards--habilidades mx-8 my-2 p-4 rounded-lg shadow-md text-center bg-gray-300 hover:border-blue-300 border-2"
+                    <div class="cards--habilidades1 mx-8 my-2 p-4 rounded-lg shadow-md text-center transition-transform transform hover:scale-110"
                         data-aos="fade-up" data-aos-duration="500">
                         <img src="./assets/images/scratch.webp" alt="Scratch">
-                        <p>Scratch</p>
+                        <p data-section="colorTheme" data-value="textcolor">Scratch</p>
                     </div>
                 </div>
             </div>
@@ -604,50 +436,52 @@
 
         <!-- Formación -->
         <section class="formacion py-16" id="formacion" data-section="colorTheme" data-value="headerContainer2">
-            <div class="max-w-screen-xl mx-auto p-8">
-                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+            <div class="max-w-screen-xl mx-auto p-8"></div>
+            <div data-section="colorTheme" data-value="textTitle">
+                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
                     data-section="training" data-value="title" data-aos="fade-up">
                     Formación
                 </h1>
-                <div class="flex justify-center">
-                    <div class="cards_container--formacion grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-                        <!-- Card 1 -->
-                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
-                            data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                            <div class="card-content p-4">
-                                <img class="logo-universidad w-32 mx-auto mb-4" src="./assets/images/iberoamericana.png"
-                                    alt="Logo - universidad">
-                                <div class="container_texto--formacion text-center">
-                                    <p data-section="training" data-value="training1">Ingenieria de Software</p>
-                                    <p data-section="training" data-value="time-training1">2024 - En curso</p>
-                                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="cards_container--formacion grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                    <!-- Card 1 -->
+                    <div class="cards--habilidades flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full transition-transform transform hover:scale-105"
+                        data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                        <div class="card-content p-4">
+                            <img class="logo-universidad w-32 mx-auto mb-4" src="./assets/images/iberoamericana.png"
+                                alt="Logo - universidad">
+                            <div class="container_texto--formacion text-center" data-section="colorTheme"
+                                data-value="textcolor">
+                                <p data-section="training" data-value="training1">Ingenieria de Software</p>
+                                <p data-section="training" data-value="time-training1">2024 - En curso</p>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Card 2 -->
-                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
-                            data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
-                            <div class="card-content p-4">
-                                <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp"
-                                    alt="Logo - SENA">
-                                <div class="container_texto--formacion text-center">
-                                    <p data-section="training" data-value="training2">Tecnólogo en Análisis y
-                                        Desarrollo de Software</p>
-                                    <p data-section="training" data-value="time-training2">2022 - 2024</p>
-                                </div>
+                    <!-- Card 2 -->
+                    <div class="cards--habilidades flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full transition-transform transform hover:scale-105"
+                        data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+                        <div class="card-content p-4">
+                            <img class="logo-sena w-36 mx-auto mb-8" src="./assets/images/sena.webp" alt="Logo - SENA">
+                            <div class="container_texto--formacion text-center" data-section="colorTheme"
+                                data-value="textcolor">
+                                <p data-section="training" data-value="training2">Tecnólogo en Análisis y
+                                    Desarrollo de Software</p>
+                                <p data-section="training" data-value="time-training2">2022 - 2024</p>
                             </div>
                         </div>
-                        <!-- Card 3 -->
-                        <div class="cards--formacion flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full hover:border-blue-300 border-2"
-                            data-aos="fade-up" data-aos-duration="500">
-                            <div class="card-content p-4">
-                                <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp"
-                                    alt="Logo - SENA">
-                                <div class="container_texto--formacion text-center">
-                                    <p data-section="training" data-value="training3">Técnico en Diseño e Integración
-                                        en Multimedia</p>
-                                    <p data-section="training" data-value="time-training3">2020 - 2021</p>
-                                </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="cards--habilidades flex justify-center items-center bg-white rounded-lg shadow-lg max-w-md w-full transition-transform transform hover:scale-105"
+                        data-aos="fade-up" data-aos-duration="500">
+                        <div class="card-content p-4">
+                            <img class="logo-one w-36 mx-auto mb-8" src="./assets/images/sena.webp" alt="Logo - SENA">
+                            <div class="container_texto--formacion text-center" data-section="colorTheme"
+                                data-value="textcolor">
+                                <p data-section="training" data-value="training3">Técnico en Diseño e Integración
+                                    en Multimedia</p>
+                                <p data-section="training" data-value="time-training3">2020 - 2021</p>
                             </div>
                         </div>
                     </div>
@@ -658,96 +492,105 @@
         <!-- Experiencia -->
         <section class="experiencia py-16" id="experiencia" data-section="colorTheme" data-value="headerContainer">
             <div class="max-w-screen-xl mx-auto p-8">
-                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                    data-section="experience" data-value="title" data-aos="fade-up">
-                    Experiencia
-                </h1>
+                <div data-section="colorTheme" data-value="textTitle">
+                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold  whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                        data-section="experience" data-value="title" data-aos="fade-up">
+                        Experiencia
+                    </h1>
+                </div>
                 <div class="cards_container--experiencia flex flex-col justify-center items-center space-y-6">
 
                     <!-- Primera experiencia -->
-                    <div
-                        class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
-                        <div class="container_texto--experiencia">
+                    <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between"
+                        data-section="colorTheme" data-value="headerContainer2">
+                        <div class="container_texto--experiencia" data-section="colorTheme" data-value="textcolor">
                             <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
                                 <div class="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
-                                    <p class="text-gray-800 text-base sm:text-lg" data-section="experience"
-                                        data-value="post1">Aprendiz IT</p>
-                                    <p class="text-gray-800 text-base sm:text-lg hidden sm:block">
+                                    <p class=" text-base sm:text-lg" data-section="experience" data-value="post1">
+                                        Aprendiz IT</p>
+                                    <p class=" text-base sm:text-lg hidden sm:block">
                                         @Hino Motors Manufacturing Colombia SAS
                                     </p>
-                                    <p class="text-gray-800 text-base sm:text-lg block sm:hidden">
+                                    <p class="text-base sm:text-lg block sm:hidden">
                                         @ HMMC
                                     </p>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <p class="text-gray-800 text-base sm:text-lg" data-section="experience"
+                                    <p class=" text-base sm:text-lg" data-section="experience"
                                         data-value="tiempo-experience1">2024 - Presente</p>
                                     <!-- El botón se muestra en pantallas grandes -->
                                     <button
-                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 duration-300 ease-in-out">
+                                        class="flex items-center space-x-4 toggle-button text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 duration-300 ease-in-out">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
                             <!-- El botón se muestra en móviles centrado y debajo del contenido -->
                             <button
-                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 duration-300 ease-in-out mx-auto mt-4">
+                                class="flex items-center space-x-4 toggle-button text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 duration-300 ease-in-out mx-auto mt-4">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
-                        <p class="font-bold text-lg text-gray-800">Cota-Cundinamarca</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6"
+                        data-section="colorTheme" data-value="headerContainer2">
+                        <p class="font-bold text-lg" data-section="colorTheme" data-value="text2color">
+                            Cota-Cundinamarca
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-section="colorTheme"
+                            data-value="textcolor">
                             <div class="p-6">
                                 <div class="space-y-4">
                                     <div class="flex items-start">
-                                        <i class="fas fa-file-alt text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp1_1">
+                                        <i class="fas fa-file-alt text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class=" text-base" data-section="experience" data-value="exp1_1">
                                             Participación activa en la documentación de proyectos y asistencia en
                                             reuniones con clientes para la definición de nuevos proyectos.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-tools text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp1_2">
+                                        <i class="fas fa-tools text-iconproyect text-xl mr-3" data-section="colorTheme"
+                                            data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp1_2">
                                             Soporte continuo y mantenimiento de proyectos existentes, asegurando la
                                             funcionalidad y optimización.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-code text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp1_3">
-                                            Colaboración en proyectos utilizando C# .NET y Laravel para el desarrollo de
+                                        <i class="fas fa-code text-iconproyect text-xl mr-3" data-section="colorTheme"
+                                            data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp1_3">
+                                            Colaboración en proyectos utilizando C# .NET y Laravel para el
+                                            desarrollo de
                                             aplicaciones robustas y escalables.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-pencil-ruler text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp1_4">
-                                            Elaboración de mockups y participación en reuniones para la definición de
+                                        <i class="fas fa-pencil-ruler text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp1_4">
+                                            Elaboración de mockups y participación en reuniones para la definición
+                                            de
                                             requerimientos y flujos de proyectos.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-database text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp1_5">
+                                        <i class="fas fa-database text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp1_5">
                                             Diseño y definición de estructuras de bases de datos SQL, incluyendo la
                                             creación de tablas, relaciones y consultas optimizadas para mejorar la
                                             eficiencia y el rendimiento de las aplicaciones.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-code-branch text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp1_6">
+                                        <i class="fas fa-code-branch text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp1_6">
                                             Uso activo de Git (GitHub) y Team Explorer para la gestión de versiones,
-                                            facilitando la colaboración en equipo y el control eficiente de cambios en
+                                            facilitando la colaboración en equipo y el control eficiente de cambios
+                                            en
                                             los proyectos.
                                         </p>
                                     </div>
@@ -761,69 +604,74 @@
 
 
                     <!-- Segunda experiencia -->
-                    <div
-                        class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between">
-                        <div class="container_texto--experiencia">
+                    <div class="cards--experiencia bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mx-auto flex flex-col justify-between"
+                        data-section="colorTheme" data-value="headerContainer2">
+                        <div class="container_texto--experiencia" data-section="colorTheme" data-value="textcolor">
                             <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-4">
                                 <div class="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
-                                    <p class="text-gray-800 text-base sm:text-lg" data-section="experience"
-                                        data-value="post2">Autodidacta</p>
-                                    <p class="text-gray-800 text-base sm:text-lg hidden sm:block">
+                                    <p class="text-base sm:text-lg" data-section="experience" data-value="post2">
+                                        Autodidacta</p>
+                                    <p class="text-base sm:text-lg hidden sm:block">
                                         @Freelance
                                     </p>
-                                    <p class="text-gray-800 text-base sm:text-lg block sm:hidden">
+                                    <p class="text-base sm:text-lg block sm:hidden">
                                         @Freelance
                                     </p>
                                 </div>
                                 <div class="flex items-center space-x-4">
-                                    <p class="text-gray-800 text-base sm:text-lg" data-section="experience"
+                                    <p class="text-base sm:text-lg" data-section="experience"
                                         data-value="tiempo-experience2">2022 - 2023</p>
                                     <!-- El botón se muestra en pantallas grandes -->
                                     <button
-                                        class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 duration-300 ease-in-out">
+                                        class="flex items-center space-x-4 toggle-button text-sm sm:text-base md:text-lg hidden md:flex focus:outline-none px-4 py-2 duration-300 ease-in-out">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
                             <!-- El botón se muestra en móviles centrado y debajo del contenido -->
                             <button
-                                class="flex items-center space-x-4 toggle-button text-gray-800 text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 duration-300 ease-in-out mx-auto mt-4">
+                                class="flex items-center space-x-4 toggle-button text-sm sm:text-base md:text-lg block md:hidden focus:outline-none px-4 py-2 duration-300 ease-in-out mx-auto mt-4">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="extra-info hidden-card bg-white rounded-lg shadow-lg w-full lg:w-2/3 p-6 mt-6"
+                        data-section="colorTheme" data-value="headerContainer2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-section="colorTheme"
+                            data-value="textcolor">
                             <div class="p-6">
                                 <div class="space-y-4">
                                     <div class="flex items-start">
-                                        <i class="fas fa-desktop text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp2_1">
-                                            Desarrollé una variedad de aplicaciones de escritorio en Java, enfocándome
+                                        <i class="fas fa-desktop text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp2_1">
+                                            Desarrollé una variedad de aplicaciones de escritorio en Java,
+                                            enfocándome
                                             en la usabilidad y la eficiencia del código.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-laptop-code text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp2_2">
-                                            Diseñé y desarrollé sitios web dinámicos utilizando C# ASP.NET, asegurando
+                                        <i class="fas fa-laptop-code text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp2_2">
+                                            Diseñé y desarrollé sitios web dinámicos utilizando C# ASP.NET,
+                                            asegurando
                                             funcionalidades avanzadas y una experiencia de usuario intuitiva.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-database text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp2_3">
-                                            Gestioné y optimicé bases de datos SQL, implementando consultas complejas
+                                        <i class="fas fa-database text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class=" text-base" data-section="experience" data-value="exp2_3">
+                                            Gestioné y optimicé bases de datos SQL, implementando consultas
+                                            complejas
                                             para garantizar la integridad y el rendimiento de los datos.
                                         </p>
                                     </div>
                                     <div class="flex items-start">
-                                        <i class="fas fa-code-branch text-iconproyect text-xl mr-3"></i>
-                                        <p class="text-gray-700 text-base" data-section="experience"
-                                            data-value="exp2_4">
+                                        <i class="fas fa-code-branch text-iconproyect text-xl mr-3"
+                                            data-section="colorTheme" data-value="icon"></i>
+                                        <p class="text-base" data-section="experience" data-value="exp2_4">
                                             Utilicé GitHub para el control de versiones, facilitando la colaboración
                                             eficiente y la gestión de cambios en los proyectos.
                                         </p>
@@ -842,219 +690,249 @@
         <!-- Proyectos -->
         <section class="proyectos py-16" id="proyectos" data-section="colorTheme" data-value="headerContainer2">
             <div class="max-w-screen-xl mx-auto p-4">
-                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                    data-section="projects" data-value="title" data-aos="fade-up">
-                    Proyectos
-                </h1>
-                <div class="flex flex-wrap justify-center">
-                    <!-- Proyecto 1 -->
-                    <div class="w-full md:w-1/3 px-2 mb-4">
-                        <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
-                            data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                            <div class="container_imgCard--proyectos relative">
-                                <img src="./assets/images/prueba2.png" alt="Proyecto: Portafolio"
-                                    class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
-                            </div>
-                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                <h2 class="text-iconproyect font-bold"  data-section="colorTheme" data-value="text2color">
-                                    Portafolio web
-                                </h2>
-                                <div class="relative">
-                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
-                                        data-section="projects" data-value="info-project1">
-                                        Mi portafolio web personal, aquí podrás explorar algunos de mis proyectos
-                                        destacados, tambien conoceras mis habilidades técnicas y descubrir un poco
-                                        más sobre mi trayectoria y formación.
-                                    </p>
-                                    <div
-                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
-                                <div class="flex flex-wrap gap-4 text-iconproyect">
-                                    <i class="fab fa-html5 text-xl"></i>
-                                    <i class="fab fa-css3-alt text-xl"></i>
-                                    <i class="fab fa-js text-xl"></i>
-                                </div>
-                            </div>
-                            <div
-                                class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                <a href="#" target="_blank" class="col-span-1">
-                                    <button
-                                        class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
-                                        <i class="fas fa-eye mr-2"></i> DEMO
-                                    </button>
-                                </a>
-                                <a href="#" target="_blank" class="col-span-1">
-                                    <button
-                                        class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
-                                        <i class="fab fa-github mr-2 text-lg"></i> REPO
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Proyecto 2 -->
-                    <div class="w-full md:w-1/3 px-2 mb-4">
-                        <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
-                            data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                            <div class="container_imgCard--proyectos relative">
-                                <img src="./assets/images/prueba1.png" alt="Proyecto: Servisoft"
-                                    class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
-                            </div>
-                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                <h2 class="text-iconproyect font-bold"  data-section="colorTheme" data-value="text2color">
-                                    Servisoft
-                                </h2>
-                                <div class="relative">
-                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
-                                        data-section="projects" data-value="info-project2">
-                                        Sitio web que simplifica la contratación de servicios profesionales al permitir
-                                        a los clientes explorar categorías, revisar perfiles de trabajadores y
-                                        contactarlos
-                                        directamente. Los trabajadores pueden registrar su perfil, recibir y responder a
-                                        solicitudes específicas, todo con un diseño intuitivo y funcionalidades
-                                        eficientes.
-                                    </p>
-                                    <div
-                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
-                                <div class="flex flex-wrap gap-4 text-iconproyect">
-                                    <i class="fab fa-html5 text-xl"></i>
-                                    <i class="fab fa-css3-alt text-xl"></i>
-                                    <i class="fab fa-js text-xl"></i>
-                                    <i class="fab fa-dotnet text-xl"></i>
-                                    <i class="fas fa-database text-xl"></i>
-                                </div>
-                            </div>
-                            <div
-                                class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                <a href="#" target="_blank" class="col-span-1">
-                                    <button
-                                        class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
-                                        <i class="fas fa-eye mr-2"></i> DEMO
-                                    </button>
-                                </a>
-                                <a href="#" target="_blank" class="col-span-1">
-                                    <button
-                                        class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
-                                        <i class="fab fa-github mr-2 text-lg"></i> REPO
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Proyecto 3 -->
-                    <div class="w-full md:w-1/3 px-2 mb-4">
-                        <div class="relative cards--proyectos card_portafolio rounded-lg bg-white mb-4 p-4 hover:bg-blue-50 hover:border-blue-300 border-2 border-transparent transition-all duration-300 overflow-hidden"
-                            data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-                            <div class="container_imgCard--proyectos relative">
-                                <img src="./assets/images/prueba3.png" alt="Proyecto: multirepuestos"
-                                    class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
-                            </div>
-                            <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
-                                <h2 class="text-iconproyect font-bold" data-section="colorTheme" data-value="text2color">
-                                    Multirepuestos Boyaca
-                                </h2>
-                                <div class="relative">
-                                    <p class="text-gray-700 text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
-                                        data-section="projects" data-value="info-project3">
-                                        Aplicación de escritorio para Multirepuestos Boyacá: un sistema de ventas
-                                        diseñado para optimizar el control de inventarios, gestionar proveedores
-                                        y clientes, y generar informes. Garantiza eficiencia y seguridad en la
-                                        empresa de repuestos.
-                                    </p>
-                                    <div
-                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
-                                <div class="flex flex-wrap gap-4 text-iconproyect">
-                                    <i class="fab fa-html5 text-xl"></i>
-                                    <i class="fab fa-css3-alt text-xl"></i>
-                                    <i class="fab fa-js text-xl"></i>
-                                </div>
-                            </div>
-                            <div
-                                class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
-                                <a href="#" target="_blank" class="col-span-1">
-                                    <button
-                                        class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
-                                        <i class="fas fa-eye mr-2"></i> DEMO
-                                    </button>
-                                </a>
-                                <a href="#" target="_blank" class="col-span-1">
-                                    <button
-                                        class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
-                                        <i class="fab fa-github mr-2 text-lg"></i> REPO
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                <div data-section="colorTheme" data-value="textTitle">
+                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                        data-section="projects" data-value="title" data-aos="fade-up">
+                        Proyectos
+                    </h1>
                 </div>
-                <div class="text-center">
-                    <a href="./assets/html/proyectos.html" id="show-projects-btn"
-                        class="btn-custom inline-block px-6 py-3 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out"
-                        data-section="projects" data-value="btn-project">
-                        Ver todos mis proyectos
-                    </a>
+                <div>
+                    <div class="flex flex-wrap justify-center">
+                        <!-- Proyecto 1 -->
+                        <div class="w-full md:w-1/3 px-2 mb-4">
+                            <div class="relative cards--proyectos card_portafolio rounded-lg mb-4 p-4 border-transparent transition-all duration-300 overflow-hidden"
+                                data-section="colorTheme" data-value="headerContainer" data-aos="zoom-in-up"
+                                data-aos-anchor-placement="center-bottom">
+                                <div class="relative">
+                                    <img src="./assets/images/prueba2.png" alt="Proyecto: Portafolio"
+                                        class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+                                    </div>
+                                </div>
+                                <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                    <h2 class="text-iconproyect font-bold" data-section="colorTheme"
+                                        data-value="text2color">
+                                        Portafolio web
+                                    </h2>
+                                    <div class="relative" data-section="colorTheme" data-value="textcolor">
+                                        <p class="text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                            data-section="projects" data-value="info-project1">
+                                            Mi portafolio web personal, aquí podrás explorar algunos de mis
+                                            proyectos
+                                            destacados, tambien conoceras mis habilidades técnicas y descubrir un
+                                            poco
+                                            más sobre mi trayectoria y formación.
+                                        </p>
+                                        <div
+                                            class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t to-transparent pointer-events-none">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
+                                    <div class="flex flex-wrap gap-4" data-section="colorTheme" data-value="icon">
+                                        <i class="fab fa-html5 text-xl"></i>
+                                        <i class="fab fa-css3-alt text-xl"></i>
+                                        <i class="fab fa-js text-xl"></i>
+                                    </div>
+                                </div>
+                                <div
+                                    class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
+                                    <a href="#" target="_blank" class="col-span-1">
+                                        <button
+                                            class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
+                                            <i class="fas fa-eye mr-2"></i> DEMO
+                                        </button>
+                                    </a>
+                                    <a href="#" target="_blank" class="col-span-1">
+                                        <button
+                                            class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
+                                            <i class="fab fa-github mr-2 text-lg"></i> REPO
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 2 -->
+                        <div class="w-full md:w-1/3 px-2 mb-4">
+                            <div class="relative cards--proyectos card_portafolio rounded-lg mb-4 p-4 border-transparent transition-all duration-300 overflow-hidden"
+                                data-section="colorTheme" data-value="headerContainer" data-aos="zoom-in-up"
+                                data-aos-anchor-placement="center-bottom">
+                                <div class="relative">
+                                    <img src="./assets/images/prueba1.png" alt="Proyecto: Servisoft"
+                                        class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+                                    </div>
+                                </div>
+                                <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                    <h2 class="text-iconproyect font-bold" data-section="colorTheme"
+                                        data-value="text2color">
+                                        Servisoft
+                                    </h2>
+                                    <div class="relative" data-section="colorTheme" data-value="textcolor">
+                                        <p class="text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                            data-section="projects" data-value="info-project2">
+                                            Sitio web que simplifica la contratación de servicios profesionales al
+                                            permitir
+                                            a los clientes explorar categorías, revisar perfiles de trabajadores y
+                                            contactarlos
+                                            directamente. Los trabajadores pueden registrar su perfil, recibir y
+                                            responder a
+                                            solicitudes específicas, todo con un diseño intuitivo y funcionalidades
+                                            eficientes.
+                                        </p>
+                                        <div
+                                            class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t to-transparent pointer-events-none">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
+                                    <div class="flex flex-wrap gap-4" data-section="colorTheme" data-value="icon">
+                                        <i class="fab fa-html5 text-xl"></i>
+                                        <i class="fab fa-css3-alt text-xl"></i>
+                                        <i class="fab fa-js text-xl"></i>
+                                        <i class="fab fa-dotnet text-xl"></i>
+                                        <i class="fas fa-database text-xl"></i>
+                                    </div>
+                                </div>
+                                <div
+                                    class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
+                                    <a href="#" target="_blank" class="col-span-1">
+                                        <button
+                                            class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
+                                            <i class="fas fa-eye mr-2"></i> DEMO
+                                        </button>
+                                    </a>
+                                    <a href="#" target="_blank" class="col-span-1">
+                                        <button
+                                            class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
+                                            <i class="fab fa-github mr-2 text-lg"></i> REPO
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 3 -->
+                        <div class="w-full md:w-1/3 px-2 mb-4">
+                            <div class="relative cards--proyectos card_portafolio rounded-lg  mb-4 p-4  border-transparent transition-all duration-300 overflow-hidden"
+                                data-section="colorTheme" data-value="headerContainer" data-aos="zoom-in-up"
+                                data-aos-anchor-placement="center-bottom">
+                                <div class="relative">
+                                    <img src="./assets/images/prueba3.png" alt="Proyecto: multirepuestos"
+                                        class="rounded-t-lg group-hover:opacity-75 transition-opacity duration-300">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+                                    </div>
+                                </div>
+                                <div class="container_textCard--proyectos text-portafolio mx-4 mt-8">
+                                    <h2 class="text-iconproyect font-bold" data-section="colorTheme"
+                                        data-value="text2color">
+                                        Multirepuestos Boyaca
+                                    </h2>
+                                    <div class="relative" data-section="colorTheme" data-value="textcolor">
+                                        <p class="text-base max-h-24 overflow-hidden hover:max-h-none transition-max-height duration-300"
+                                            data-section="projects" data-value="info-project3">
+                                            Aplicación de escritorio para Multirepuestos Boyacá: un sistema de
+                                            ventas
+                                            diseñado para optimizar el control de inventarios, gestionar proveedores
+                                            y clientes, y generar informes. Garantiza eficiencia y seguridad en la
+                                            empresa de repuestos.
+                                        </p>
+                                        <div
+                                            class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t to-transparent pointer-events-none">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="container_techCard--proyectos text-portafolio mx-4 mt-4">
+                                    <div class="flex flex-wrap gap-4" data-section="colorTheme" data-value="icon">
+                                        <i class="fab fa-html5 text-xl"></i>
+                                        <i class="fab fa-css3-alt text-xl"></i>
+                                        <i class="fab fa-js text-xl"></i>
+                                    </div>
+                                </div>
+                                <div
+                                    class="container_btn--proyectos grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center mt-4 mb-2 mx-4">
+                                    <a href="#" target="_blank" class="col-span-1">
+                                        <button
+                                            class="btn-custom flex items-center justify-center text-white text-lg w-full px-6 py-3 rounded-md shadow-md transition-all duration-300">
+                                            <i class="fas fa-eye mr-2"></i> DEMO
+                                        </button>
+                                    </a>
+                                    <a href="#" target="_blank" class="col-span-1">
+                                        <button
+                                            class="btn-custom-outline flex items-center justify-center text-lg w-full px-6 py-3 rounded-md shadow-md transition-colors duration-300 ease-in-out">
+                                            <i class="fab fa-github mr-2 text-lg"></i> REPO
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="./assets/html/proyectos.html" id="show-projects-btn"
+                            class="btn-custom inline-block px-6 py-3 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out"
+                            data-section="projects" data-value="btn-project">
+                            Ver todos mis proyectos
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contacto -->
-        <section class="contacto flex justify-center items-center py-16" id="contacto" data-section="colorTheme" data-value="headerContainer">
+        <section class="contacto flex justify-center items-center py-16" id="contacto" data-section="colorTheme"
+            data-value="headerContainer">
             <div class="max-w-screen-xl mx-auto p-4">
-                <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold text-gray-800 whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
-                    data-section="contact" data-value="title" data-aos="fade-up">
-                    Contacto
-                </h1>
+                <div data-section="colorTheme" data-value="textTitle">
+                    <h1 class="title text-center mb-12 mx-4 md:mx-8 lg:mx-12 xl:mx-16 text-3xl md:text-4xl lg:text-2xl xl:text-4xl 2xl:text-4xl font-bold  whitespace-nowrap overflow-hidden mb-4 md:mb-6 lg:mb-8 xl:mb-12"
+                        data-section="contact" data-value="title" data-aos="fade-up">
+                        Contacto
+                    </h1>
+                </div>
                 <div class="container_box--contacto flex justify-between" data-aos="fade-up"
                     data-aos-anchor-placement="center-bottom">
                     <div class="container--contacto">
-                        <div class="container_text--contacto mb-4">
+                        <div class="container_text--contacto mb-4" data-section="colorTheme" data-value="textcolor">
                             <p data-section="contact" data-value="text">No dude en ponerse en contacto conmigo</p>
                         </div>
-                        <div class="container_text--contacto mb-4">
-                            <p data-section="contact" data-value="text1">Completa el siguiente formulario y me pondré en
+                        <div class="container_text--contacto mb-4" data-section="colorTheme" data-value="textcolor">
+                            <p data-section="contact" data-value="text1">Completa el siguiente formulario y me
+                                pondré en
                                 contacto contigo lo antes posible.</p>
                         </div>
                         <form id="form" class="form-contact" name="contacto-portafolio" netlify>
                             <div class="form-row mb-4">
                                 <input id="nombre" type="text" name="name" data-section="contact" data-value="input1"
-                                    placeholder="Nombre" required class="nombre-input w-full bg-gray-200 p-3 rounded">
+                                    placeholder="Nombre" required class="nombre-input w-full p-3 rounded">
                             </div>
                             <div class="form-row mb-4">
                                 <input id="email" type="email" name="email" data-section="contact" data-value="input2"
-                                    placeholder="E-mail" required class="w-full bg-gray-200 p-3 rounded">
+                                    placeholder="E-mail" required class="w-full  p-3 rounded">
                             </div>
                             <div class="form-row mb-4">
                                 <input id="asunto" type="text" name="affair" data-section="contact" data-value="input3"
-                                    placeholder="Asunto" required class="w-full bg-gray-200 p-3 rounded">
+                                    placeholder="Asunto" required class="w-full p-3 rounded">
                             </div>
                             <div class="form-row mb-4">
                                 <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required
-                                    class="w-full bg-gray-200 p-3 rounded"></textarea>
+                                    class="w-full p-3 rounded"></textarea>
                             </div>
                             <div class="btn_form--contacto mb-4">
                                 <button
                                     class="btn-custom inline-block px-4 py-2 text-lg font-semibold rounded-md shadow-md transition-all duration-300 ease-in-out"
                                     type="submit">
                                     <i class="fas fa-paper-plane"></i>
-                                    <p class="inline-block m-0" data-section="contact" data-value="btn-enviar">Enviar
+                                    <p class="inline-block m-0" data-section="contact" data-value="btn-enviar">
+                                        Enviar
                                     </p>
                                 </button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -1063,51 +941,47 @@
     </main>
 
     <footer class="pb-4" data-section="colorTheme" data-value="headerContainer">
-        <div class="flex justify-center space-x-8" >
-            <!-- Icono de Instagram -->
-            <div class="icon-circle shadow-lg mb-4 w-14 h-14">
-                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+        <div class="flex justify-center space-x-8">
+            <div class="icon-circle shadow-lg mb-4 w-14 h-14 transition-transform transform hover:scale-105">
+                <a href="#" target="_blank">
                     <i class="fab fa-instagram icon text-2xl"></i>
                 </a>
             </div>
-            <!-- Icono de LinkedIn -->
-            <div class="icon-circle shadow-lg mb-4 w-14 h-14">
-                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+            <div class="icon-circle shadow-lg mb-4 w-14 h-14 transition-transform transform hover:scale-105">
+                <a href="#" target="_blank">
                     <i class="fab fa-linkedin icon text-2xl"></i>
                 </a>
             </div>
-            <!-- Icono de GitHub -->
-            <div class="icon-circle shadow-lg mb-4 w-14 h-14">
-                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+            <div class="icon-circle shadow-lg mb-4 w-14 h-14 transition-transform transform hover:scale-105">
+                <a href="#" target="_blank">
                     <i class="fab fa-github icon text-2xl"></i>
                 </a>
             </div>
-            <!-- Icono de Discord -->
-            <div class="icon-circle shadow-lg w-14 h-14">
-                <a href="#" target="_blank" class="text-gray-800 hover:text-gray-600">
+            <div class="icon-circle shadow-lg w-14 h-14 transition-transform transform hover:scale-105">
+                <a href="#" target="_blank">
                     <i class="fab fa-discord icon text-2xl"></i>
                 </a>
             </div>
         </div>
 
         <div class="text-center">
-            <!-- Texto del footer -->
-            <p class="text-gray-600 ">Copyright © | 2024
-                <i class="fa fa-rocket text-blue-500"></i>
+            <p data-section="colorTheme" data-value="textcolor">Copyright © | 2024
+                <i class="fa fa-rocket" data-section="colorTheme" data-value="icon"></i>
                 Steven Guaman
             </p>
         </div>
-        </div>
     </footer>
 
-    <div class="go-top-container">
-        <div class="go-top-button">
+    <div class="go-top-container fixed bottom-4 right-4 hidden" id="goTopButton">
+        <div
+            class="go-top-button w-12 h-12 text-white rounded-full flex items-center justify-center shadow-lg transition-transform transform hover:scale-105">
             <i class="fas fa-chevron-up"></i>
         </div>
     </div>
 
+
     <!-- Archivo Js -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="<https://unpkg.com/aos@2.3.1/dist/aos.js>"></script>
     <!-- Librería de animaciones -->
     <script>
         AOS.init();
@@ -1115,7 +989,6 @@
 
     <!-- Mi script -->
     <script src="assets/js/index.js"></script>
-
 </body>
 
 </html>
