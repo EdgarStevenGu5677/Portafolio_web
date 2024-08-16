@@ -11,7 +11,7 @@
     <!-- Fontawesome Iconos -->
     <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
     <!-- Librerías Objetos movimiento -->
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Fuentes -->
     <link href="./assets/css/tailwind.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -179,7 +179,7 @@
                         </div>
                         <div
                             class="icon-circle mb-4 mx-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
-                            <a href="#" target="_blank">
+                            <a href="https://github.com/EdgarStevenGu5677" target="_blank">
                                 <i class="fab fa-github icon"></i>
                             </a>
                         </div>
@@ -218,7 +218,7 @@
                     </div>
                     <div
                         class="icon-circle mb-4 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out transition-transform transform hover:scale-105">
-                        <a href="#" target="_blank">
+                        <a href="https://github.com/EdgarStevenGu5677" target="_blank">
                             <i class="fab fa-github icon"></i>
                         </a>
                     </div>
@@ -905,22 +905,24 @@
                                 pondré en
                                 contacto contigo lo antes posible.</p>
                         </div>
-                        <form id="form" class="form-contact" name="contacto-portafolio" netlify>
+                        <form id="contact-form" method="POST" class="form-contact" name="contacto-portafolio" netlify>
                             <div class="form-row mb-4">
-                                <input id="nombre" type="text" name="name" data-section="contact" data-value="input1"
-                                    placeholder="Nombre" required class="nombre-input w-full p-3 rounded">
+                                <input id="to_name" type="text" name="name" data-section="contact" data-value="input1"
+                                    autocomplete="off" placeholder="Nombre" required
+                                    class="nombre-input w-full p-3 rounded">
                             </div>
                             <div class="form-row mb-4">
-                                <input id="email" type="email" name="email" data-section="contact" data-value="input2"
-                                    placeholder="E-mail" required class="w-full  p-3 rounded">
+                                <input id="user_email" type="email" name="email" data-section="contact"
+                                    autocomplete="off" data-value="input2" placeholder="E-mail" required
+                                    class="w-full  p-3 rounded">
                             </div>
                             <div class="form-row mb-4">
-                                <input id="asunto" type="text" name="affair" data-section="contact" data-value="input3"
-                                    placeholder="Asunto" required class="w-full p-3 rounded">
+                                <input id="affair" type="text" name="affair" data-section="contact" data-value="input3"
+                                    autocomplete="off" placeholder="Asunto" required class="w-full p-3 rounded">
                             </div>
                             <div class="form-row mb-4">
-                                <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required
-                                    class="w-full p-3 rounded"></textarea>
+                                <textarea id="message" cols="20" rows="4" name="message" placeholder="Mensaje"
+                                    autocomplete="off" required class="w-full p-3 rounded"></textarea>
                             </div>
                             <div class="btn_form--contacto mb-4">
                                 <button
@@ -953,7 +955,7 @@
                 </a>
             </div>
             <div class="icon-circle shadow-lg mb-4 w-14 h-14 transition-transform transform hover:scale-105">
-                <a href="#" target="_blank">
+                <a href="https://github.com/EdgarStevenGu5677" target="_blank">
                     <i class="fab fa-github icon text-2xl"></i>
                 </a>
             </div>
@@ -981,7 +983,8 @@
 
 
     <!-- Archivo Js -->
-    <script src="<https://unpkg.com/aos@2.3.1/dist/aos.js>"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- Librería de animaciones -->
     <script>
         AOS.init();
@@ -989,6 +992,9 @@
 
     <!-- Mi script -->
     <script src="assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="assets/js/enviomail.js"></script>
 </body>
 
 </html>

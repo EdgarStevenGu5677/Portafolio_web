@@ -125,6 +125,9 @@ document.querySelectorAll('.toggle-button').forEach(button => {
 });
 
 //Idiomas index 
+if (!localStorage.getItem('language')) {
+    localStorage.setItem('language', 'es');
+}
 let currentLanguage = localStorage.getItem('language') || 'es';
 
 let words = ["Desarrollador de Software", "Desarrollador Full-Stack"];
@@ -133,8 +136,8 @@ let isDeleting = false;
 let typingSpeed = 200;
 
 const languageIcons = {
-    'es': './assets/images/reino-unido.webp', // Icon for Spanish language
-    'en': './assets/images/colombia.webp'     // Icon for English language
+    'es': './assets/images/reino-unido.webp', 
+    'en': './assets/images/colombia.webp'   
 };
 
 async function fetchTexts(language) {
@@ -225,6 +228,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 //Script de cambio tema
+if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'light');
+}
 let currentTheme = localStorage.getItem('theme') || 'light';
 
 const ThemeIcons = {
@@ -292,7 +298,7 @@ async function applyTheme(themeData) {
 
 async function changeTheme() {
     currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', currentTheme);
+    localStorage.setItem('theme', currentTheme || 'light');
 
     const iconSrc = ThemeIcons[currentTheme];
     document.getElementById('ThemeIcon').innerHTML = iconSrc;
@@ -442,6 +448,15 @@ function updateButtonColors(elementColor, textColor3, hovContact, botoncolor, ic
         ::-webkit-scrollbar-track {
             background-color: ${fondScroll};
         }
+            
+        .swal2-confirm.custom-button {
+            color: ${textColor3}; 
+            background-color: ${elementColor};
+        }
+    
+        .swal2-confirm.custom-button:hover {
+            background-color: ${hovContact};
+        }
     `;
     document.head.appendChild(styleElement);
 }
@@ -459,8 +474,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('El tema no contiene un objeto "colorTheme" válido.');
     }
 });
-
-
 //Script boton Scroll 
 document.addEventListener('DOMContentLoaded', function () {
     const goTopButton = document.getElementById('goTopButton');
@@ -479,3 +492,5 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' }); // Desplaza al inicio con animación
     });
 });
+
+
