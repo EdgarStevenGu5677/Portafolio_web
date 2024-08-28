@@ -82,6 +82,30 @@
     margin-top: 2px;
 }
 
+.menu-link,
+.container_text-info,
+.home_text-3,
+.parrafo-info,
+.cv_button,
+.contact_button,
+.title,
+.container_texto-sobreMi,
+.cards_container--habilidades,
+.opcionesHa,
+.cards--habilidades1,
+.cards_container--formacion,
+.cards--experiencia,
+.extra-info,
+.caProyect,
+.btn-custom,
+.container--contacto,
+.textFooter {
+    font-family: 'Ubuntu', sans-serif;
+}
+.custom-width {
+    width: 600px; 
+}
+
 
 /* Home */
 .container_button {

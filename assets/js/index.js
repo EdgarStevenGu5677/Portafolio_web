@@ -42,8 +42,8 @@ function mostrarOcultarMenu() {
 }
 
 //Funcion descargar Curriculum
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.cv_button').addEventListener('click', function(e) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.cv_button').addEventListener('click', function (e) {
         e.preventDefault();
         var pdfUrl = './assets/pdf/currículum.pdf';
         var link = document.createElement('a');
@@ -286,6 +286,20 @@ async function applyTheme(themeData) {
             logoContainer.innerHTML = `<img id="LogoImg" src="${themeData.colorTheme.logo}" alt="Logo" class="w-20 md:w-20 lg:w-20 ml-4">`;
         } else {
             logoContainer.innerHTML = '';
+        }
+
+        const tailwindContainer = document.getElementById('tailwindContainer');
+        if (themeData.colorTheme.tailwind) {
+            tailwindContainer.innerHTML = `<img src="${themeData.colorTheme.tailwind}" class="w-6 h-6">`;
+        } else {
+            tailwindContainer.innerHTML = '';
+        }
+
+        const netContainer = document.getElementById('netContainer');
+        if (themeData.colorTheme.net) {
+            netContainer.innerHTML = `<img src="${themeData.colorTheme.net}" class="w-6 h-6">`;
+        } else {
+            netContainer.innerHTML = '';
         }
 
         // Actualizar imagen del inicio

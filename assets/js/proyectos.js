@@ -1,5 +1,5 @@
- // funcion page load
- window.onload = function () {
+// funcion page load
+window.onload = function () {
     var contenedor = document.getElementById('contenedor_carga');
     contenedor.style.visibility = 'hidden';
     contenedor.style.opacity = '0';
@@ -184,6 +184,24 @@ async function applyTheme(themeData) {
         } else {
             logoContainer.innerHTML = '';
         }
+
+        const tailwindContainers = document.getElementsByClassName('tailwind-container');
+        Array.from(tailwindContainers).forEach(container => {
+            if (themeData.colorTheme.tailwindProyect) {
+                container.innerHTML = `<img src="${themeData.colorTheme.tailwindProyect}" class="w-6 h-6">`;
+            } else {
+                container.innerHTML = '';
+            }
+        });
+
+        const netContainer = document.getElementsByClassName('net-container');
+        Array.from(netContainer).forEach(container => {
+            if (themeData.colorTheme.netProyect) {
+                container.innerHTML = `<img src="${themeData.colorTheme.netProyect}" class="w-6 h-6">`;
+            } else {
+                container.innerHTML = '';
+            }
+        });
 
         updateLinkColors(themeData.colorTheme.hoverColor);
         updatePseudoElementColor(themeData.colorTheme.activeColor);
