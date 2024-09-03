@@ -68,9 +68,10 @@
 
 @media (max-height: 600px) {
     #mainContent {
-        margin-top: 3rem;
+        margin-top: 3.4rem;
     }
 }
+
 
 /* Estilo para la línea debajo del enlace activo del Menu*/
 #menuList a.active::after,
